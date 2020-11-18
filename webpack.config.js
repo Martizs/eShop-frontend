@@ -76,6 +76,18 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "fonts/",
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
@@ -84,6 +96,7 @@ module.exports = {
       pages: path.resolve(__dirname, "src/pages/"),
       utils: path.resolve(__dirname, "src/utils/"),
       redux_store: path.resolve(__dirname, "src/redux_store/"),
+      styles: path.resolve(__dirname, "src/styles/"),
     },
     extensions: [".js", ".jsx"],
   },

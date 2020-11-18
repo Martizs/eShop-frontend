@@ -1,4 +1,9 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+/* styles */
+import { ThemeProvider } from "styled-components";
+import { theme } from "styles/theme";
+import { GlobalStyle } from "styles/GlobalStyle";
+import { MainContainer } from "styles/MainContainer";
 /* pages */
 import { Home } from "pages/home";
 import { About } from "pages/about";
@@ -34,15 +39,18 @@ export function App() {
 
   return (
     <Router>
-      <div>
-        {/* TODO: navigation/header goes here */}
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/admin_login" component={Login} />
-          <PrivateRoute exact path="/admin" component={AdminPage} />
-        </Switch>
-      </div>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <MainContainer>
+          {/* TODO: navigation/header goes here */}
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/admin_login" component={Login} />
+            <PrivateRoute exact path="/admin" component={AdminPage} />
+          </Switch>
+        </MainContainer>
+      </ThemeProvider>
     </Router>
   );
 }
