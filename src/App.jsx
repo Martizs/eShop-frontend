@@ -12,6 +12,8 @@ import { AdminPage } from "pages/admin";
 import { useEffect } from "react";
 /* components */
 import { PrivateRoute } from "components/PrivateRoute";
+import { Header } from "components/Header";
+import { Footer } from "components/Footer";
 /* utils */
 import { apiCall } from "utils/apiCalls";
 /* redux */
@@ -42,13 +44,14 @@ export function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <MainContainer>
-          {/* TODO: navigation/header goes here */}
+          <Header />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/admin_login" component={Login} />
             <PrivateRoute exact path="/admin" component={AdminPage} />
           </Switch>
+          <Footer />
         </MainContainer>
       </ThemeProvider>
     </Router>
