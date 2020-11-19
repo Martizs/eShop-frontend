@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "styles/theme";
 import { GlobalStyle } from "styles/GlobalStyle";
 import { MainContainer } from "styles/MainContainer";
+import { MainScrollCont } from "styles/MainScrollCont";
 /* pages */
 import { Home } from "pages/home";
 import { About } from "pages/about";
@@ -45,13 +46,15 @@ export function App() {
         <GlobalStyle />
         <MainContainer>
           <Header />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/admin_login" component={Login} />
-            <PrivateRoute exact path="/admin" component={AdminPage} />
-          </Switch>
-          <Footer />
+          <MainScrollCont>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/admin_login" component={Login} />
+              <PrivateRoute exact path="/admin" component={AdminPage} />
+            </Switch>
+            <Footer />
+          </MainScrollCont>
         </MainContainer>
       </ThemeProvider>
     </Router>

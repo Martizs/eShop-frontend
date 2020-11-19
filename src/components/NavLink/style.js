@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NavLinkCont = styled.div`
-  font-size: 1.2rem;
+  font-size: ${(props) => props.theme.fontSizes.title};
   font-family: ${(props) => props.theme.fonts.bold};
   white-space: nowrap;
   &:hover {

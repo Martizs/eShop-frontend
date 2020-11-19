@@ -10,4 +10,9 @@ export const theme = {
     reg: "champ",
     bold: "champ-bold",
   },
+  fontSizes: {
+    title: "1.2rem",
+    subTitle: "1rem",
+    text: "0.8rem",
+  },
 };
