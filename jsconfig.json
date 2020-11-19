@@ -8,6 +8,7 @@
         "utils/*": ["./src/utils/*"],
         "redux_store/*": ["src/redux_store/*"],
         "styles/*": ["src/styles/*"],
+        "icons/*": ["src/icons/*"],
       }
     },
     "exclude": ["node_modules", "build", "dist"]

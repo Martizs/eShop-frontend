@@ -11,7 +11,7 @@ export const HeaderContainer = styled(HeadFootCont)`
 export const IconContainer = styled.div`
   position: absolute;
   right: 10px;
-  top: 25px;
+  top: 30px;
   display: flex;
 `;
 
@@ -27,4 +27,9 @@ export const InstaButton = styled(Instagram)`
     color: ${(props) => props.theme.colors.highlightCol};
     cursor: pointer;
   }
+`;
+
+export const LoggoCont = styled.div`
+  width: 279px;
+  padding: 0 1%;
 `;

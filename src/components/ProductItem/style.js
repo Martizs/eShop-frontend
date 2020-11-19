@@ -39,7 +39,7 @@ export const ProdImgTop = styled.img`
 export const ProdTitle = styled.div`
   padding-top: 15px;
   text-align: center;
-  font-size: ${(props) => props.theme.fontSizes.title};
+  font-size: ${(props) => props.theme.fontSizes.subTitle};
   font-family: ${(props) => props.theme.fonts.bold};
   margin: auto;
 `;
@@ -47,7 +47,7 @@ export const ProdTitle = styled.div`
 export const ProdPrice = styled.div`
   padding-top: 5px;
   text-align: center;
-  font-size: ${(props) => props.theme.fontSizes.subTitle};
+  font-size: ${(props) => props.theme.fontSizes.text};
   font-family: ${(props) => props.theme.fonts.reg};
   color: ${(props) => props.theme.colors.highlightCol};
   margin: auto;

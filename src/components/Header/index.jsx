@@ -1,9 +1,21 @@
+import { useHistory } from "react-router-dom";
+/* components */
 import { NavLink } from "components/NavLink";
 /* styles */
 import { NavContainer } from "styles/NavContainer";
-import { HeaderContainer, IconContainer, FBButton, InstaButton } from "./style";
+import {
+  HeaderContainer,
+  IconContainer,
+  FBButton,
+  InstaButton,
+  LoggoCont,
+} from "./style";
+/* icons */
+import { LoggoComp } from "icons/LoggoComp";
 
 export const Header = () => {
+  let history = useHistory();
+
   const iconClick = (url) => {
     window.open(url, "_blank");
   };
@@ -18,7 +30,9 @@ export const Header = () => {
           KANALAS
         </NavLink>
         <NavLink to="/apie">APIE MUS</NavLink>
-        <NavLink to="/">DZHIUNGLES</NavLink>
+        <LoggoCont onClick={() => history.push("/")}>
+          <LoggoComp />
+        </LoggoCont>
         <NavLink to="/parduotuve">PARDUOTUVĖ</NavLink>
         <NavLink to="/krepselis">KREPŠELIS</NavLink>
       </NavContainer>

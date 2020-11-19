@@ -11,8 +11,8 @@ export const theme = {
     bold: "champ-bold",
   },
   fontSizes: {
-    title: "1.2rem",
-    subTitle: "1rem",
-    text: "0.8rem",
+    title: "1.8rem",
+    subTitle: "1.4rem",
+    text: "1rem",
   },
 };
