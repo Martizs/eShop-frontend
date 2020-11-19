@@ -37,14 +37,8 @@ export const Header = () => {
         <NavLink to="/krepselis">KREPŠELIS</NavLink>
       </NavContainer>
       <IconContainer>
-        <FBButton
-          fontSize="large"
-          onClick={() => iconClick("https://www.google.com/")}
-        />
-        <InstaButton
-          fontSize="large"
-          onClick={() => iconClick("https://www.google.com/")}
-        />
+        <FBButton onClick={() => iconClick("https://www.google.com/")} />
+        <InstaButton onClick={() => iconClick("https://www.google.com/")} />
       </IconContainer>
     </HeaderContainer>
   );

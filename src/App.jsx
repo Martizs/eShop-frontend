@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useEffect } from "react";
 /* styles */
 import { ThemeProvider } from "styled-components";
 import { theme } from "styles/theme";
@@ -10,7 +11,8 @@ import { Home } from "pages/home";
 import { About } from "pages/about";
 import { Login } from "pages/login";
 import { AdminPage } from "pages/admin";
-import { useEffect } from "react";
+import { Shop } from "pages/shop";
+import { Product } from "pages/product";
 /* components */
 import { PrivateRoute } from "components/PrivateRoute";
 import { Header } from "components/Header";
@@ -49,7 +51,9 @@ export function App() {
           <MainScrollCont>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/about" component={About} />
+              <Route exact path="/apie" component={About} />
+              <Route exact path="/parduotuve" component={Shop} />
+              <Route exact path="/produktas" component={Product} />
               <Route exact path="/admin_login" component={Login} />
               <PrivateRoute exact path="/admin" component={AdminPage} />
             </Switch>

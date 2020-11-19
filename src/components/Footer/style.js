@@ -1,9 +1,15 @@
 import styled from "styled-components";
+/* styles */
+import { HeadFootCont } from "styles/HeadFootCont";
 /* icons */
 import { CreditCard } from "@material-ui/icons";
 
 export const FooterCont = styled.div`
   margin-top: auto;
+`;
+
+export const FootNavCont = styled(HeadFootCont)`
+  padding-top: 70px;
 `;
 
 export const PaymentIc = styled(CreditCard)`
