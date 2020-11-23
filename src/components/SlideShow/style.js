@@ -4,7 +4,7 @@ import { ArrowBackIos } from "@material-ui/icons";
 export const slidImg = {
   objectFit: "cover",
   width: "100%",
-  // height: "500px",
+  height: "500px",
 };
 
 export const slidImgCont = {

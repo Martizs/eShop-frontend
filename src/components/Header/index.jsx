@@ -29,16 +29,20 @@ export const Header = () => {
         >
           KANALAS
         </NavLink>
-        <NavLink to="/apie">APIE MUS</NavLink>
-        <LoggoCont onClick={() => history.push("/")}>
+        <NavLink to="/ap">APIE MUS</NavLink>
+        <LoggoCont to="/">
           <LoggoComp />
         </LoggoCont>
         <NavLink to="/parduotuve">PARDUOTUVĖ</NavLink>
         <NavLink to="/krepselis">KREPŠELIS</NavLink>
       </NavContainer>
       <IconContainer>
-        <FBButton onClick={() => iconClick("https://www.google.com/")} />
-        <InstaButton onClick={() => iconClick("https://www.google.com/")} />
+        <NavLink to="https://www.google.com/" ext>
+          <FBButton />
+        </NavLink>
+        <NavLink to="https://www.google.com/" ext>
+          <InstaButton />
+        </NavLink>
       </IconContainer>
     </HeaderContainer>
   );

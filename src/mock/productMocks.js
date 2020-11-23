@@ -1,4 +1,4 @@
-export const data = [
+export const prodItems = [
   {
     primaryPic:
       "https://miro.medium.com/max/1800/1*jHgVL8ln-1-P8CGcvUck0g.jpeg",

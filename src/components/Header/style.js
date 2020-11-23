@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 /* styles */
 import { HeadFootCont } from "styles/HeadFootCont";
@@ -29,7 +31,7 @@ export const InstaButton = styled(Instagram)`
   }
 `;
 
-export const LoggoCont = styled.div`
+export const LoggoCont = styled(Link)`
   width: 279px;
   padding: 0 1%;
 `;

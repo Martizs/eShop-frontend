@@ -13,6 +13,7 @@ import { Login } from "pages/login";
 import { AdminPage } from "pages/admin";
 import { Shop } from "pages/shop";
 import { Product } from "pages/product";
+import { Cart } from "pages/cart";
 /* components */
 import { PrivateRoute } from "components/PrivateRoute";
 import { Header } from "components/Header";
@@ -51,9 +52,10 @@ export function App() {
           <MainScrollCont>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/apie" component={About} />
+              <Route exact path="/ap" component={About} />
               <Route exact path="/parduotuve" component={Shop} />
               <Route exact path="/produktas" component={Product} />
+              <Route exact path="/krepselis" component={Cart} />
               <Route exact path="/admin_login" component={Login} />
               <PrivateRoute exact path="/admin" component={AdminPage} />
             </Switch>

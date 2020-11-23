@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 export const AboutTextNorm = styled.div`
-  width: 80%;
   font-size: ${(props) => props.theme.fontSizes.title};
   font-family: ${(props) => props.theme.fonts.bold};
+  width: 80%;
   text-align: center;
   margin: 0 auto;
 `;
 
 export const AboutTextOver = styled(AboutTextNorm)`
   display: -webkit-box;
-  -webkit-line-clamp: 12;
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   overflow: hidden;
 `;

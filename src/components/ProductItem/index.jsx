@@ -18,8 +18,8 @@ export const ProductItem = (props) => {
   //     "https://memegenerator.net/img/instances/53433360/such-price-so-koi-much-cute-wow.jpg";
 
   return (
-    <ProdItCont onClick={() => history.push("/produktas")}>
-      <ImgCont>
+    <ProdItCont>
+      <ImgCont to="/produktas">
         <ProdImg src={props.primaryPic} alt={props.title} />
         <ProdImgTop src={props.secondaryPic} alt={props.title} />
       </ImgCont>

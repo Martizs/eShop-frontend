@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const ProdItCont = styled.div`
@@ -5,7 +6,7 @@ export const ProdItCont = styled.div`
   flex-direction: column;
 `;
 
-export const ImgCont = styled.div`
+export const ImgCont = styled(Link)`
   position: relative;
   margin: auto;
   width: 95%;
@@ -14,6 +15,9 @@ export const ImgCont = styled.div`
 
 export const ProdImg = styled.img`
   width: 100%;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const ProdImgTop = styled.img`

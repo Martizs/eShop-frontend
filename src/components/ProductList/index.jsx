@@ -2,32 +2,25 @@ import { useEffect, useState } from "react";
 /* components */
 import { ProductItem } from "components/ProductItem";
 /* styles */
-import {
-  GridContainer,
-  GridItem,
-  ProdListCont,
-  TitleContainer,
-  GridRow,
-} from "./style";
-/* mock */
-import { data } from "./mock";
+import { GridContainer, GridItem, ProdListCont, GridRow } from "./style";
+import { MainTitleText } from "styles/MainTitleText";
 
-export const ProductList = () => {
+export const ProductList = (props) => {
   const [formedData, setFormedData] = useState([]);
 
   useEffect(() => {
-    const dataz = [...data];
-    const formData = [
-      dataz.splice(0, 3),
-      dataz.splice(0, 3),
-      dataz.splice(0, 3),
-    ];
+    const dataz = [...props.data];
+    let formData = dataz;
+    if (!props.showAll) {
+      formData = [dataz.splice(0, 3), dataz.splice(0, 3), dataz.splice(0, 3)];
+    }
+
     setFormedData(formData);
   }, []);
 
   return (
     <ProdListCont>
-      <TitleContainer>PARDUOTUVĖ</TitleContainer>
+      <MainTitleText>{props.title}</MainTitleText>
       <GridContainer>
         {formedData.map((row, rowInd) => (
           <GridRow key={`row-${rowInd}`}>
