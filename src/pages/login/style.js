@@ -9,5 +9,11 @@ export const LoginLayout = styled.div`
 `;
 
 export const LoginForm = styled.div`
+  border: 2px solid;
+  padding: 20px;
   margin: auto;
+`;
+
+export const RowWrap = styled.div`
+  padding: 10px;
 `;

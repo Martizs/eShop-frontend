@@ -1,50 +1,78 @@
+import React from "react";
+import { withRouter } from "react-router-dom";
 /* styles */
-import { LoginLayout, LoginForm } from "./style";
+import { LoginLayout, LoginForm, RowWrap } from "./style";
+/* components */
+import { TextInput } from "components/TextInput";
+import { Button } from "components/Button";
 /* utils */
 import { apiCall } from "utils/apiCalls";
 /* redux */
-import { useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import { setLogin } from "redux_store/general/actions";
-import { Link } from "react-router-dom";
 
-export const Login = () => {
-  const dispatch = useDispatch();
-  let username = null;
-  let password = null;
+class Login extends React.PureComponent {
+  constructor(props) {
+    super();
+    this.username = null;
+    this.password = null;
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    apiCall("post", "login", { username, password }, false, (data) => {
-      if (data.msg === "success") {
-        dispatch(setLogin(true));
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.loggedIn !== prevProps.loggedIn && this.props.loggedIn) {
+      this.props.history.push("/parduotuve");
+    }
+  }
+
+  handleSubmit() {
+    apiCall(
+      "post",
+      "login",
+      { username: this.username, password: this.password },
+      false,
+      (data) => {
+        if (data.msg === "success") {
+          this.props.dispatch(setLogin(true));
+        }
       }
-    });
-  };
+    );
+  }
 
-  return (
-    <LoginLayout>
-      <Link to="/admin">go to admin</Link>
-      <LoginForm>
-        <form onSubmit={handleSubmit}>
-          <label>
-            username:
-            <input
-              type="text"
-              name="username"
-              onChange={(event) => (username = event.target.value)}
+  render() {
+    return (
+      <LoginLayout>
+        <LoginForm>
+          <RowWrap>
+            <TextInput
+              label="username"
+              handleChange={(event) => (this.username = event.target.value)}
             />
-          </label>
-          <label>
-            password:
-            <input
+          </RowWrap>
+          <RowWrap>
+            <TextInput
+              label="password"
               type="password"
-              name="password"
-              onChange={(event) => (password = event.target.value)}
+              handleChange={(event) => (this.password = event.target.value)}
             />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-      </LoginForm>
-    </LoginLayout>
-  );
-};
+          </RowWrap>
+
+          <RowWrap>
+            <Button text="login" onClick={this.handleSubmit} />
+          </RowWrap>
+        </LoginForm>
+      </LoginLayout>
+    );
+  }
+}
+
+const mapStateToProps = (state) => ({
+  loggedIn: state.loggedIn,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  dispatch,
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));

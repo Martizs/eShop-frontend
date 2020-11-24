@@ -6,10 +6,14 @@ import { ShopContainer } from "./style";
 /* mock */
 import { prodItems } from "mock/productMocks";
 
-export const Shop = () => (
+export const Shop = (props) => (
   <ShopContainer>
     <ProdListWrap>
-      <ProductList title="PARDUOTUVĖ" data={prodItems} />
+      <ProductList
+        private={props.private}
+        title="PARDUOTUVĖ"
+        data={prodItems}
+      />
     </ProdListWrap>
   </ShopContainer>
 );

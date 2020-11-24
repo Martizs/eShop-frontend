@@ -9,7 +9,7 @@ import { MainScrollCont } from "styles/MainScrollCont";
 /* pages */
 import { Home } from "pages/home";
 import { About } from "pages/about";
-import { Login } from "pages/login";
+import Login from "pages/login";
 import { AdminPage } from "pages/admin";
 import { Shop } from "pages/shop";
 import { Product } from "pages/product";

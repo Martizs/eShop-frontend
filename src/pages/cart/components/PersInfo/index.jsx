@@ -11,6 +11,7 @@ export const PersInfo = () => {
       <CartContWrapper>
         <PersInpRow>
           <TextInput
+            req
             width="45%"
             label="Vardas, pavardė:"
             handleChange={(event) =>
@@ -18,6 +19,7 @@ export const PersInfo = () => {
             }
           />
           <TextInput
+            req
             width="45%"
             label="Adresas:"
             handleChange={(event) =>
@@ -27,6 +29,7 @@ export const PersInfo = () => {
         </PersInpRow>
         <PersInpRow>
           <TextInput
+            req
             width="45%"
             label="El. paštas:"
             handleChange={(event) =>
@@ -34,6 +37,7 @@ export const PersInfo = () => {
             }
           />
           <TextInput
+            req
             width="45%"
             label="Miestas:"
             handleChange={(event) =>
@@ -43,6 +47,7 @@ export const PersInfo = () => {
         </PersInpRow>
         <PersInpRow>
           <TextInput
+            req
             width="45%"
             type="tel"
             label="Telefonas:"
@@ -51,6 +56,7 @@ export const PersInfo = () => {
             }
           />
           <TextInput
+            req
             width="45%"
             label="Pašto kodas:"
             handleChange={(event) =>
@@ -60,6 +66,7 @@ export const PersInfo = () => {
         </PersInpRow>
         <PersInpRow toEnd>
           <TextInput
+            req
             width="45%"
             label="Šalis:"
             handleChange={(event) =>

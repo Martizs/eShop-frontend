@@ -23,7 +23,7 @@ export class TextInput extends React.PureComponent {
       <TextInpMainCont width={this.props.width} height={this.props.height}>
         {this.props.label && (
           <InpLabelCont>
-            <LabelAst>*</LabelAst>
+            {this.props.req && <LabelAst>*</LabelAst>}
             <InpLabel>{this.props.label}</InpLabel>
           </InpLabelCont>
         )}
