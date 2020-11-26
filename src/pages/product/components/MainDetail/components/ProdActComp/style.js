@@ -1,11 +1,5 @@
 import styled from "styled-components";
 
-export const ProdActCont = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 46%;
-`;
-
 export const ProdPrice = styled.div`
   font-size: ${(props) => props.theme.fontSizes.title};
   color: ${(props) => props.theme.colors.highlightCol};

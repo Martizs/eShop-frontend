@@ -64,7 +64,14 @@ export const PersInfo = () => {
             }
           />
         </PersInpRow>
-        <PersInpRow toEnd>
+        <PersInpRow>
+          <TextInput
+            width="45%"
+            label="Ekstra informacija:"
+            handleChange={(event) =>
+              console.log("text input be", event.target.value)
+            }
+          />
           <TextInput
             req
             width="45%"

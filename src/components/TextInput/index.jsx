@@ -28,6 +28,8 @@ export class TextInput extends React.PureComponent {
           </InpLabelCont>
         )}
         <TextCont
+          label={this.props.label}
+          defaultValue={this.props.defaultValue}
           type={type}
           placeholder={this.props.placeholder}
           onChange={this.props.handleChange}

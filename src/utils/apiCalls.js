@@ -18,7 +18,8 @@ export function apiCall(type, endpoint, data, prot, successCallback) {
   axiosCall(`/api/${endpoint}`, data || {})
     .then((response) => successCallback(response.data))
     .catch((error) => {
-      if (prot) {
+      // 401 we shoot out for not authenticated error
+      if (prot && error.response.status === 401) {
         store.dispatch(setLogin(false));
       }
       console.log(

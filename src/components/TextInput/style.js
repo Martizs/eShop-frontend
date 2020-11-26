@@ -12,7 +12,10 @@ export const TextAreaCont = styled.textarea`
   font-size: ${({ theme }) => theme.fontSizes.subTitle};
   resize: none;
   width: 100%;
-  height: 100%;
+  /* so here we substract the labels height so that the textarea
+  itself, would not go out of bounds */
+  height: ${({ label, theme }) =>
+    label ? `calc(90% - 8px - ${theme.fontSizes.subTitle})` : "90%"};
 `;
 
 export const TextInputCont = styled.input`
@@ -21,7 +24,12 @@ export const TextInputCont = styled.input`
   color: ${({ theme }) => theme.colors.textColor};
   font-size: ${({ theme }) => theme.fontSizes.subTitle};
   width: 100%;
-  height: 100%;
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
 `;
 
 export const InpLabelCont = styled.div`

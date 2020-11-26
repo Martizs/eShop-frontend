@@ -4,10 +4,10 @@
     "reportVersion": 1,
     "event": "Allocation failed - JavaScript heap out of memory",
     "trigger": "FatalError",
-    "filename": "report.20201122.164312.20444.0.001.json",
-    "dumpEventTime": "2020-11-22T16:43:12Z",
-    "dumpEventTimeStamp": "1606056192079",
-    "processId": 20444,
+    "filename": "report.20201124.144359.21332.0.001.json",
+    "dumpEventTime": "2020-11-24T14:43:59Z",
+    "dumpEventTimeStamp": "1606221839084",
+    "processId": 21332,
     "cwd": "E:\\Projects\\EShopEgleSema\\frontend",
     "commandLine": [
       "C:\\Program Files\\nodejs\\node.exe",
@@ -52,217 +52,199 @@
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 14481640,
+        "user": 287171,
         "nice": 0,
-        "sys": 6865250,
-        "idle": 431675890,
-        "irq": 639609
+        "sys": 85265,
+        "idle": 19556203,
+        "irq": 3796
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 13735562,
+        "user": 595000,
         "nice": 0,
-        "sys": 5836531,
-        "idle": 433450687,
-        "irq": 507750
+        "sys": 167359,
+        "idle": 19166281,
+        "irq": 5546
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 40725578,
+        "user": 2127000,
         "nice": 0,
-        "sys": 10349734,
-        "idle": 401947359,
-        "irq": 445453
+        "sys": 317796,
+        "idle": 17483734,
+        "irq": 4531
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 10142375,
+        "user": 276140,
         "nice": 0,
-        "sys": 5419750,
-        "idle": 437460546,
-        "irq": 418640
+        "sys": 52734,
+        "idle": 19599656,
+        "irq": 625
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 21841656,
+        "user": 1207296,
         "nice": 0,
-        "sys": 5660609,
-        "idle": 425520406,
-        "irq": 487343
+        "sys": 137546,
+        "idle": 18583687,
+        "irq": 2109
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 8523093,
+        "user": 232046,
         "nice": 0,
-        "sys": 14851078,
-        "idle": 429648500,
-        "irq": 5989125
+        "sys": 426296,
+        "idle": 19270187,
+        "irq": 192531
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 18937375,
+        "user": 617484,
         "nice": 0,
-        "sys": 6635468,
-        "idle": 427449812,
-        "irq": 472390
+        "sys": 105546,
+        "idle": 19205484,
+        "irq": 1687
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 9899046,
+        "user": 84421,
         "nice": 0,
-        "sys": 3953703,
-        "idle": 439169906,
-        "irq": 422937
+        "sys": 138109,
+        "idle": 19705984,
+        "irq": 1781
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 13146109,
+        "user": 383187,
         "nice": 0,
-        "sys": 4427109,
-        "idle": 435449437,
-        "irq": 492671
+        "sys": 98515,
+        "idle": 19446812,
+        "irq": 1750
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 17048312,
+        "user": 75312,
         "nice": 0,
-        "sys": 3726171,
-        "idle": 432248171,
-        "irq": 435750
+        "sys": 125875,
+        "idle": 19727328,
+        "irq": 671
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 37036312,
+        "user": 325359,
         "nice": 0,
-        "sys": 5539046,
-        "idle": 410447296,
-        "irq": 455187
+        "sys": 199750,
+        "idle": 19403406,
+        "irq": 2468
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 7875265,
+        "user": 76687,
         "nice": 0,
-        "sys": 4773984,
-        "idle": 440373375,
-        "irq": 441296
+        "sys": 41703,
+        "idle": 19810093,
+        "irq": 750
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 12337718,
+        "user": 275937,
         "nice": 0,
-        "sys": 4687062,
-        "idle": 435997843,
-        "irq": 505593
+        "sys": 120078,
+        "idle": 19532468,
+        "irq": 3046
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 8532750,
+        "user": 69515,
         "nice": 0,
-        "sys": 3622828,
-        "idle": 440867046,
-        "irq": 416156
+        "sys": 29140,
+        "idle": 19829828,
+        "irq": 453
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 14157656,
+        "user": 336046,
         "nice": 0,
-        "sys": 6714156,
-        "idle": 432150812,
-        "irq": 519218
+        "sys": 159500,
+        "idle": 19432937,
+        "irq": 2328
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 8052031,
+        "user": 194796,
         "nice": 0,
-        "sys": 2630187,
-        "idle": 442340406,
-        "irq": 408390
+        "sys": 37187,
+        "idle": 19696500,
+        "irq": 1218
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 13387640,
+        "user": 397625,
         "nice": 0,
-        "sys": 4754687,
-        "idle": 434880296,
-        "irq": 498531
+        "sys": 84843,
+        "idle": 19446015,
+        "irq": 1703
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 8533062,
+        "user": 98937,
         "nice": 0,
-        "sys": 2785546,
-        "idle": 441704015,
-        "irq": 405578
+        "sys": 29312,
+        "idle": 19800234,
+        "irq": 593
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 17282750,
+        "user": 663890,
         "nice": 0,
-        "sys": 4683093,
-        "idle": 431056781,
-        "irq": 599296
+        "sys": 87421,
+        "idle": 19177171,
+        "irq": 7921
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 13652218,
+        "user": 191031,
         "nice": 0,
-        "sys": 3701140,
-        "idle": 435669250,
-        "irq": 410437
+        "sys": 68062,
+        "idle": 19669375,
+        "irq": 3140
       }
     ],
     "networkInterfaces": [
       {
-        "name": "Ethernet",
+        "name": "WiFi",
         "internal": false,
-        "mac": "b4:2e:99:34:56:16",
-        "address": "fd01::79da:e60e:aa4:b53f",
+        "mac": "d4:6e:0e:66:ed:a6",
+        "address": "fe80::d184:3d69:b3e2:ccae",
         "netmask": "ffff:ffff:ffff:ffff::",
         "family": "IPv6",
-        "scopeid": 0
+        "scopeid": 31
       },
       {
-        "name": "Ethernet",
+        "name": "WiFi",
         "internal": false,
-        "mac": "b4:2e:99:34:56:16",
-        "address": "fd01::b9:43bc:6dba:f85e",
-        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
-        "family": "IPv6",
-        "scopeid": 0
-      },
-      {
-        "name": "Ethernet",
-        "internal": false,
-        "mac": "b4:2e:99:34:56:16",
-        "address": "fe80::79da:e60e:aa4:b53f",
-        "netmask": "ffff:ffff:ffff:ffff::",
-        "family": "IPv6",
-        "scopeid": 2
-      },
-      {
-        "name": "Ethernet",
-        "internal": false,
-        "mac": "b4:2e:99:34:56:16",
-        "address": "192.168.0.94",
+        "mac": "d4:6e:0e:66:ed:a6",
+        "address": "192.168.43.83",
         "netmask": "255.255.255.0",
         "family": "IPv4"
       },
@@ -294,71 +276,83 @@
   },
   "nativeStack": [
     {
-      "pc": "0x00007ff7e80f6eb9",
+      "pc": "0x00007ff7b4796eb9",
       "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+10873"
     },
     {
-      "pc": "0x00007ff7e80fb24c",
+      "pc": "0x00007ff7b479b24c",
       "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+28172"
     },
     {
-      "pc": "0x00007ff7e80fa1f8",
+      "pc": "0x00007ff7b479a1f8",
       "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+23992"
     },
     {
-      "pc": "0x00007ff7e81e63cb",
+      "pc": "0x00007ff7b48863cb",
       "symbol": "v8::base::CPU::has_sse+37563"
     },
     {
-      "pc": "0x00007ff7e89d976e",
+      "pc": "0x00007ff7b507976e",
       "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
     },
     {
-      "pc": "0x00007ff7e89c1711",
+      "pc": "0x00007ff7b5061711",
       "symbol": "v8::SharedArrayBuffer::Externalize+833"
     },
     {
-      "pc": "0x00007ff7e888f1cc",
+      "pc": "0x00007ff7b4f2f1cc",
       "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
     },
     {
-      "pc": "0x00007ff7e889866f",
+      "pc": "0x00007ff7b4f3866f",
       "symbol": "v8::internal::Heap::ProtectUnprotectedMemoryChunks+1279"
     },
     {
-      "pc": "0x00007ff7e8896b54",
+      "pc": "0x00007ff7b4f36b54",
       "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3204"
     },
     {
-      "pc": "0x00007ff7e888c7a3",
+      "pc": "0x00007ff7b4f2c7a3",
       "symbol": "v8::internal::Heap::CollectGarbage+1235"
     },
     {
-      "pc": "0x00007ff7e888b044",
+      "pc": "0x00007ff7b4f2b044",
       "symbol": "v8::internal::Heap::AddRetainedMap+2356"
     },
     {
-      "pc": "0x00007ff7e88aa855",
-      "symbol": "v8::internal::Factory::NewFillerObject+53"
+      "pc": "0x00007ff7b4f433be",
+      "symbol": "v8::internal::Factory::AllocateRawFixedArray+94"
     },
     {
-      "pc": "0x00007ff7e86194ed",
-      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+3981"
+      "pc": "0x00007ff7b4f4aa1c",
+      "symbol": "v8::internal::Factory::NewFixedArrayWithFiller+44"
     },
     {
-      "pc": "0x00007ff7e8df300d",
+      "pc": "0x00007ff7b4f4a9e1",
+      "symbol": "v8::internal::Factory::NewUninitializedFixedArray+65"
+    },
+    {
+      "pc": "0x00007ff7b4e2b7ca",
+      "symbol": "v8::Message::GetIsolate+6570"
+    },
+    {
+      "pc": "0x00007ff7b4ce14c0",
+      "symbol": "v8::internal::OrderedHashMap::ValueAt+61376"
+    },
+    {
+      "pc": "0x00007ff7b549300d",
       "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+575565"
     },
     {
-      "pc": "0x00000388b4dbc238",
+      "pc": "0x0000003c55594008",
       "symbol": ""
     }
   ],
   "javascriptHeap": {
-    "totalMemory": 2186104832,
-    "totalCommittedMemory": 2186104832,
-    "usedMemory": 2119510296,
-    "availableMemory": 65766112,
+    "totalMemory": 2159165440,
+    "totalCommittedMemory": 2159165440,
+    "usedMemory": 2121499568,
+    "availableMemory": 55574336,
     "memoryLimit": 2197815296,
     "heapSpaces": {
       "read_only_space": {
@@ -369,38 +363,38 @@
         "available": 230400
       },
       "new_space": {
-        "memorySize": 33554432,
-        "committedMemory": 33554432,
-        "capacity": 16757248,
-        "used": 2834880,
-        "available": 13922368
+        "memorySize": 4194304,
+        "committedMemory": 4194304,
+        "capacity": 2094656,
+        "used": 0,
+        "available": 2094656
       },
       "old_space": {
-        "memorySize": 1380036608,
-        "committedMemory": 1380036608,
-        "capacity": 1373232848,
-        "used": 1350087216,
-        "available": 23145632
+        "memorySize": 1333899264,
+        "committedMemory": 1333899264,
+        "capacity": 1318244760,
+        "used": 1305955544,
+        "available": 12289216
       },
       "code_space": {
-        "memorySize": 3571712,
-        "committedMemory": 3571712,
-        "capacity": 2922464,
-        "used": 2922464,
-        "available": 0
+        "memorySize": 3309568,
+        "committedMemory": 3309568,
+        "capacity": 3149824,
+        "used": 2934272,
+        "available": 215552
       },
       "map_space": {
         "memorySize": 7344128,
         "committedMemory": 7344128,
-        "capacity": 5407600,
-        "used": 5407600,
+        "capacity": 5386560,
+        "used": 5386560,
         "available": 0
       },
       "large_object_space": {
-        "memorySize": 760713216,
-        "committedMemory": 760713216,
-        "capacity": 757676400,
-        "used": 757676400,
+        "memorySize": 809533440,
+        "committedMemory": 809533440,
+        "capacity": 806641456,
+        "used": 806641456,
         "available": 0
       },
       "code_large_object_space": {
@@ -413,23 +407,23 @@
       "new_large_object_space": {
         "memorySize": 0,
         "committedMemory": 0,
-        "capacity": 16757248,
+        "capacity": 2094656,
         "used": 0,
-        "available": 16757248
+        "available": 2094656
       }
     }
   },
   "resourceUsage": {
-    "userCpuSeconds": 427.968,
-    "kernelCpuSeconds": 14.421,
-    "cpuConsumptionPercent": 13.4465,
-    "maxRss": 2901168128,
+    "userCpuSeconds": 492.203,
+    "kernelCpuSeconds": 16.046,
+    "cpuConsumptionPercent": 10.4513,
+    "maxRss": 2979840000,
     "pageFaults": {
-      "IORequired": 5356432,
+      "IORequired": 6559497,
       "IONotRequired": 0
     },
     "fsActivity": {
-      "reads": 10956,
+      "reads": 11337,
       "writes": 7
     }
   },
@@ -443,7 +437,7 @@
     "APPDATA": "C:\\Users\\elbar\\AppData\\Roaming",
     "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
     "ChocolateyLastPathUpdate": "132214202809577503",
-    "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_20700_JMCEAWAVOJSTNCNE",
+    "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_14412_ODCMDMRDZLZGQMLB",
     "CLASSPATH": ".;",
     "COLORTERM": "truecolor",
     "CommonProgramFiles": "C:\\Program Files\\Common Files",
@@ -528,7 +522,7 @@
     "OneDriveConsumer": "C:\\Users\\elbar\\OneDrive",
     "ORIGINAL_XDG_CURRENT_DESKTOP": "undefined",
     "OS": "Windows_NT",
-    "Path": "C:\\Users\\elbar\\AppData\\Local\\Temp\\yarn--1606052901814-0.03048886575728771;E:\\Projects\\EShopEgleSema\\frontend\\node_modules\\.bin;C:\\Users\\elbar\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Program Files\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Users\\elbar\\AppData\\Local\\Programs\\Python\\Python37\\;C:\\Users\\elbar\\AppData\\Local\\Programs\\Python\\Python37\\Scripts\\;C:\\Python27\\;C:\\Python27\\Scripts;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\Programz\\Git\\cmd;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Java\\jdk1.8.0_231\\bin;C:\\Program Files\\nodejs\\;D:\\Downloads\\google-cloud-sdk\\bin;C:\\Program Files\\dotnet\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\elbar\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\xampp\\mysql\\bin;;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;D:\\Programz\\Yarn\\bin\\;C:\\Users\\elbar\\AppData\\Local\\Microsoft\\WindowsApps;D:\\Programz\\Microsoft VS Code\\bin;D:\\Programz\\AndroidStudioSDK\\platform-tools;C:\\Users\\elbar\\AppData\\Roaming\\npm;C:\\Program Files\\JetBrains\\PyCharm Community Edition 2019.3.3\\bin;C:\\Users\\elbar\\AppData\\Local\\Yarn\\bin",
+    "Path": "C:\\Users\\elbar\\AppData\\Local\\Temp\\yarn--1606216975806-0.35286095939192563;E:\\Projects\\EShopEgleSema\\frontend\\node_modules\\.bin;C:\\Users\\elbar\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Program Files\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Users\\elbar\\AppData\\Local\\Programs\\Python\\Python37\\;C:\\Users\\elbar\\AppData\\Local\\Programs\\Python\\Python37\\Scripts\\;C:\\Python27\\;C:\\Python27\\Scripts;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\Programz\\Git\\cmd;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Java\\jdk1.8.0_231\\bin;C:\\Program Files\\nodejs\\;D:\\Downloads\\google-cloud-sdk\\bin;C:\\Program Files\\dotnet\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\elbar\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\xampp\\mysql\\bin;;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;D:\\Programz\\Yarn\\bin\\;C:\\Users\\elbar\\AppData\\Local\\Microsoft\\WindowsApps;D:\\Programz\\Microsoft VS Code\\bin;D:\\Programz\\AndroidStudioSDK\\platform-tools;C:\\Users\\elbar\\AppData\\Roaming\\npm;C:\\Program Files\\JetBrains\\PyCharm Community Edition 2019.3.3\\bin;C:\\Users\\elbar\\AppData\\Local\\Yarn\\bin",
     "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC;.CPL",
     "PROCESSOR_ARCHITECTURE": "AMD64",
     "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 85 Stepping 4, GenuineIntel",

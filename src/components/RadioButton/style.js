@@ -2,23 +2,26 @@ import styled from "styled-components";
 
 export const RadCont = styled.div`
   display: flex;
+  &:hover {
+    cursor: pointer;
+  }
+  padding: 5px 0;
 `;
 
 export const RadLabel = styled.div`
-  font-size: ${({ theme }) => theme.fontSizes.subTitle};
-  font-family: ${({ theme }) => theme.fonts.bold};
+  font-size: ${({ theme, type }) =>
+    type === "small" ? theme.fontSizes.text : theme.fontSizes.subTitle};
+  font-family: ${({ theme, type }) =>
+    type === "small" ? theme.fonts.reg : theme.fonts.bold};
   margin-left: 15px;
 `;
 
 export const OuterCircle = styled.div`
-  width: 1.4rem;
-  height: 1.4rem;
+  width: ${({ type }) => (type === "small" ? "0.7rem" : "1.4rem")};
+  height: ${({ type }) => (type === "small" ? "0.7rem" : "1.4rem")};
   display: flex;
   border-radius: 50%;
   border: 3px solid;
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 export const InnerCircle = styled.div`

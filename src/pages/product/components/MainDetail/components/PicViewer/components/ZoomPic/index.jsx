@@ -68,7 +68,7 @@ class ZoomPic extends React.Component {
         backgrImg={mainUri}
         onMouseMove={this.onMouseMove}
       >
-        <MainPic src={mainUri} alt="img_title" />
+        <MainPic src={mainUri} alt="img" />
       </MainPicWrap>
     );
   }

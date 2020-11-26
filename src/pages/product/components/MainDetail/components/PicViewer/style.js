@@ -1,20 +1,28 @@
 import styled from "styled-components";
 
 export const PicViewerCont = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 46%;
 `;
 
 export const PicRow = styled.div`
   display: flex;
+  flex-wrap: ${({ admin }) => (admin ? "wrap" : "nowrap")};
   overflow-x: auto;
+  overflow-y: hidden;
+`;
+
+export const ThumbNailCont = styled.div`
+  width: ${({ admin }) => (admin ? "23%" : "14%")};
+  margin-right: 10px;
 `;
 
 export const ThumbNail = styled.img`
-  width: 14%;
+  width: 100%;
   border: 2px solid
     ${({ selected, theme }) =>
       selected ? theme.colors.highlightCol : "transparent"};
-  margin-right: 10px;
   &:hover {
     cursor: pointer;
   }

@@ -4,10 +4,10 @@
     "reportVersion": 1,
     "event": "Allocation failed - JavaScript heap out of memory",
     "trigger": "FatalError",
-    "filename": "report.20201123.124920.17492.0.001.json",
-    "dumpEventTime": "2020-11-23T12:49:20Z",
-    "dumpEventTimeStamp": "1606128560538",
-    "processId": 17492,
+    "filename": "report.20201126.115907.21632.0.001.json",
+    "dumpEventTime": "2020-11-26T11:59:07Z",
+    "dumpEventTimeStamp": "1606384747623",
+    "processId": 21632,
     "cwd": "E:\\Projects\\EShopEgleSema\\frontend",
     "commandLine": [
       "C:\\Program Files\\nodejs\\node.exe",
@@ -52,182 +52,182 @@
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 56562,
+        "user": 5898046,
         "nice": 0,
-        "sys": 33625,
-        "idle": 5315968,
-        "irq": 2953
+        "sys": 1623203,
+        "idle": 123847062,
+        "irq": 187500
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 197828,
+        "user": 5415828,
         "nice": 0,
-        "sys": 58796,
-        "idle": 5149531,
-        "irq": 890
+        "sys": 1390843,
+        "idle": 124561640,
+        "irq": 149734
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 615093,
+        "user": 12215546,
         "nice": 0,
-        "sys": 118531,
-        "idle": 4672421,
-        "irq": 1531
+        "sys": 2562015,
+        "idle": 116590640,
+        "irq": 129921
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 112656,
+        "user": 3299515,
         "nice": 0,
-        "sys": 23406,
-        "idle": 5269984,
-        "irq": 468
+        "sys": 1522015,
+        "idle": 126546671,
+        "irq": 123750
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 384906,
+        "user": 6213265,
         "nice": 0,
-        "sys": 49062,
-        "idle": 4972078,
-        "irq": 703
+        "sys": 1821046,
+        "idle": 123333890,
+        "irq": 152046
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 53984,
+        "user": 3996828,
         "nice": 0,
-        "sys": 84734,
-        "idle": 5267328,
-        "irq": 41968
+        "sys": 3142343,
+        "idle": 124229031,
+        "irq": 1338062
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 220468,
+        "user": 4629625,
         "nice": 0,
-        "sys": 40734,
-        "idle": 5144828,
-        "irq": 562
+        "sys": 1219671,
+        "idle": 125518890,
+        "irq": 146734
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 36031,
+        "user": 5743890,
         "nice": 0,
-        "sys": 11796,
-        "idle": 5358203,
-        "irq": 125
+        "sys": 1460093,
+        "idle": 124164203,
+        "irq": 133656
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 148546,
+        "user": 4514343,
         "nice": 0,
-        "sys": 44234,
-        "idle": 5213250,
-        "irq": 1000
+        "sys": 1534265,
+        "idle": 125319578,
+        "irq": 146281
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 32828,
+        "user": 4752625,
         "nice": 0,
-        "sys": 17671,
-        "idle": 5355531,
-        "irq": 171
+        "sys": 926578,
+        "idle": 125688984,
+        "irq": 132125
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 105515,
+        "user": 4384421,
         "nice": 0,
-        "sys": 33078,
-        "idle": 5267437,
-        "irq": 640
+        "sys": 1240453,
+        "idle": 125743312,
+        "irq": 144515
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 48843,
+        "user": 3821265,
         "nice": 0,
-        "sys": 25046,
-        "idle": 5332125,
-        "irq": 406
+        "sys": 958187,
+        "idle": 126588718,
+        "irq": 126640
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 76687,
+        "user": 3590656,
         "nice": 0,
-        "sys": 30734,
-        "idle": 5298593,
-        "irq": 375
+        "sys": 1367046,
+        "idle": 126410468,
+        "irq": 151031
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 38328,
+        "user": 3460562,
         "nice": 0,
-        "sys": 23921,
-        "idle": 5343765,
-        "irq": 437
+        "sys": 986140,
+        "idle": 126921468,
+        "irq": 140453
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 99296,
+        "user": 4577859,
         "nice": 0,
-        "sys": 42843,
-        "idle": 5263875,
-        "irq": 750
+        "sys": 1531406,
+        "idle": 125258906,
+        "irq": 146765
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 35265,
+        "user": 3835421,
         "nice": 0,
-        "sys": 13078,
-        "idle": 5357656,
-        "irq": 93
+        "sys": 923062,
+        "idle": 126609671,
+        "irq": 133796
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 113906,
+        "user": 3517046,
         "nice": 0,
-        "sys": 41906,
-        "idle": 5250187,
-        "irq": 390
+        "sys": 1087734,
+        "idle": 126763375,
+        "irq": 146828
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 28296,
+        "user": 3847218,
         "nice": 0,
-        "sys": 7875,
-        "idle": 5369828,
-        "irq": 78
+        "sys": 924843,
+        "idle": 126596093,
+        "irq": 133578
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 248218,
+        "user": 4112343,
         "nice": 0,
-        "sys": 39421,
-        "idle": 5118359,
-        "irq": 3093
+        "sys": 1088453,
+        "idle": 126167359,
+        "irq": 158796
       },
       {
         "model": "Intel(R) Core(TM) i9-9900X CPU @ 3.50GHz",
         "speed": 3504,
-        "user": 48265,
+        "user": 12392812,
         "nice": 0,
-        "sys": 14906,
-        "idle": 5342828,
-        "irq": 390
+        "sys": 1889875,
+        "idle": 117085468,
+        "irq": 119984
       }
     ],
     "networkInterfaces": [
@@ -244,7 +244,16 @@
         "name": "Ethernet",
         "internal": false,
         "mac": "b4:2e:99:34:56:16",
-        "address": "fd01::2534:8557:fc35:c58d",
+        "address": "fd01::449d:f44c:b4f7:7985",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "b4:2e:99:34:56:16",
+        "address": "fd01::c18b:9626:6080:906c",
         "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
         "family": "IPv6",
         "scopeid": 0
@@ -294,71 +303,79 @@
   },
   "nativeStack": [
     {
-      "pc": "0x00007ff694906eb9",
+      "pc": "0x00007ff6d55b6eb9",
       "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+10873"
     },
     {
-      "pc": "0x00007ff69490b24c",
+      "pc": "0x00007ff6d55bb24c",
       "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+28172"
     },
     {
-      "pc": "0x00007ff69490a1f8",
+      "pc": "0x00007ff6d55ba1f8",
       "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+23992"
     },
     {
-      "pc": "0x00007ff6949f63cb",
+      "pc": "0x00007ff6d56a63cb",
       "symbol": "v8::base::CPU::has_sse+37563"
     },
     {
-      "pc": "0x00007ff6951e976e",
+      "pc": "0x00007ff6d5e9976e",
       "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
     },
     {
-      "pc": "0x00007ff6951d1711",
+      "pc": "0x00007ff6d5e81711",
       "symbol": "v8::SharedArrayBuffer::Externalize+833"
     },
     {
-      "pc": "0x00007ff69509f1cc",
+      "pc": "0x00007ff6d5d4f1cc",
       "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
     },
     {
-      "pc": "0x00007ff6950a866f",
+      "pc": "0x00007ff6d5d5866f",
       "symbol": "v8::internal::Heap::ProtectUnprotectedMemoryChunks+1279"
     },
     {
-      "pc": "0x00007ff6950a6b54",
+      "pc": "0x00007ff6d5d56b54",
       "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3204"
     },
     {
-      "pc": "0x00007ff69509c7a3",
+      "pc": "0x00007ff6d5d4c7a3",
       "symbol": "v8::internal::Heap::CollectGarbage+1235"
     },
     {
-      "pc": "0x00007ff69509b044",
+      "pc": "0x00007ff6d5d4b044",
       "symbol": "v8::internal::Heap::AddRetainedMap+2356"
     },
     {
-      "pc": "0x00007ff6950ba855",
+      "pc": "0x00007ff6d5d6a855",
       "symbol": "v8::internal::Factory::NewFillerObject+53"
     },
     {
-      "pc": "0x00007ff694e294ed",
+      "pc": "0x00007ff6d5ad94ed",
       "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+3981"
     },
     {
-      "pc": "0x00007ff69560300d",
+      "pc": "0x00007ff6d62b300d",
       "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+575565"
     },
     {
-      "pc": "0x00000023ca1be49f",
+      "pc": "0x00007ff6d629369c",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+446172"
+    },
+    {
+      "pc": "0x00007ff6d62a07a8",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+499688"
+    },
+    {
+      "pc": "0x000001925a920b58",
       "symbol": ""
     }
   ],
   "javascriptHeap": {
-    "totalMemory": 2189393920,
-    "totalCommittedMemory": 2189393920,
-    "usedMemory": 2123917544,
-    "availableMemory": 65755352,
+    "totalMemory": 2193293312,
+    "totalCommittedMemory": 2193293312,
+    "usedMemory": 2124698008,
+    "availableMemory": 65244120,
     "memoryLimit": 2197815296,
     "heapSpaces": {
       "read_only_space": {
@@ -372,35 +389,35 @@
         "memorySize": 33554432,
         "committedMemory": 33554432,
         "capacity": 16757248,
-        "used": 1103992,
-        "available": 15653256
+        "used": 1768360,
+        "available": 14988888
       },
       "old_space": {
-        "memorySize": 1449766912,
-        "committedMemory": 1449766912,
-        "capacity": 1447568712,
-        "used": 1422875640,
-        "available": 24693072
+        "memorySize": 1240313856,
+        "committedMemory": 1240313856,
+        "capacity": 1238448112,
+        "used": 1209702512,
+        "available": 28745600
       },
       "code_space": {
-        "memorySize": 3571712,
-        "committedMemory": 3571712,
-        "capacity": 2747200,
-        "used": 2747200,
+        "memorySize": 3833856,
+        "committedMemory": 3833856,
+        "capacity": 2900352,
+        "used": 2900352,
         "available": 0
       },
       "map_space": {
-        "memorySize": 7344128,
-        "committedMemory": 7344128,
-        "capacity": 5415040,
-        "used": 5415040,
+        "memorySize": 7606272,
+        "committedMemory": 7606272,
+        "capacity": 5376480,
+        "used": 5376480,
         "available": 0
       },
       "large_object_space": {
-        "memorySize": 694272000,
-        "committedMemory": 694272000,
-        "capacity": 691193936,
-        "used": 691193936,
+        "memorySize": 907100160,
+        "committedMemory": 907100160,
+        "capacity": 904368568,
+        "used": 904368568,
         "available": 0
       },
       "code_large_object_space": {
@@ -420,16 +437,16 @@
     }
   },
   "resourceUsage": {
-    "userCpuSeconds": 402.593,
-    "kernelCpuSeconds": 13.906,
-    "cpuConsumptionPercent": 7.84959,
-    "maxRss": 2790998016,
+    "userCpuSeconds": 580.281,
+    "kernelCpuSeconds": 20.281,
+    "cpuConsumptionPercent": 9.12986,
+    "maxRss": 3156172800,
     "pageFaults": {
-      "IORequired": 4962055,
+      "IORequired": 8146337,
       "IONotRequired": 0
     },
     "fsActivity": {
-      "reads": 10818,
+      "reads": 11468,
       "writes": 7
     }
   },
@@ -443,7 +460,7 @@
     "APPDATA": "C:\\Users\\elbar\\AppData\\Roaming",
     "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
     "ChocolateyLastPathUpdate": "132214202809577503",
-    "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_15108_BQRXCGXDFWLGYWYE",
+    "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_236_ABNJXZMEILKIJTJO",
     "CLASSPATH": ".;",
     "COLORTERM": "truecolor",
     "CommonProgramFiles": "C:\\Program Files\\Common Files",
@@ -487,6 +504,7 @@
     "npm_package_browserslist_production_1": "not dead",
     "npm_package_browserslist_production_2": "not op_mini all",
     "npm_package_dependencies_axios": "^0.21.0",
+    "npm_package_dependencies_lodash": "^4.17.20",
     "npm_package_dependencies_react": "^17.0.1",
     "npm_package_dependencies_react_animate_height": "^2.0.23",
     "npm_package_dependencies_react_dom": "^17.0.1",
@@ -528,7 +546,7 @@
     "OneDriveConsumer": "C:\\Users\\elbar\\OneDrive",
     "ORIGINAL_XDG_CURRENT_DESKTOP": "undefined",
     "OS": "Windows_NT",
-    "Path": "C:\\Users\\elbar\\AppData\\Local\\Temp\\yarn--1606123253684-0.5843224770271152;E:\\Projects\\EShopEgleSema\\frontend\\node_modules\\.bin;C:\\Users\\elbar\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Program Files\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Users\\elbar\\AppData\\Local\\Programs\\Python\\Python37\\;C:\\Users\\elbar\\AppData\\Local\\Programs\\Python\\Python37\\Scripts\\;C:\\Python27\\;C:\\Python27\\Scripts;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\Programz\\Git\\cmd;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Java\\jdk1.8.0_231\\bin;C:\\Program Files\\nodejs\\;D:\\Downloads\\google-cloud-sdk\\bin;C:\\Program Files\\dotnet\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\elbar\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\xampp\\mysql\\bin;;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;D:\\Programz\\Yarn\\bin\\;C:\\Users\\elbar\\AppData\\Local\\Microsoft\\WindowsApps;D:\\Programz\\Microsoft VS Code\\bin;D:\\Programz\\AndroidStudioSDK\\platform-tools;C:\\Users\\elbar\\AppData\\Roaming\\npm;C:\\Program Files\\JetBrains\\PyCharm Community Edition 2019.3.3\\bin;C:\\Users\\elbar\\AppData\\Local\\Yarn\\bin",
+    "Path": "C:\\Users\\elbar\\AppData\\Local\\Temp\\yarn--1606378169496-0.33668724233389713;E:\\Projects\\EShopEgleSema\\frontend\\node_modules\\.bin;C:\\Users\\elbar\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Program Files\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Users\\elbar\\AppData\\Local\\Programs\\Python\\Python37\\;C:\\Users\\elbar\\AppData\\Local\\Programs\\Python\\Python37\\Scripts\\;C:\\Python27\\;C:\\Python27\\Scripts;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\Programz\\Git\\cmd;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Java\\jdk1.8.0_231\\bin;C:\\Program Files\\nodejs\\;D:\\Downloads\\google-cloud-sdk\\bin;C:\\Program Files\\dotnet\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\elbar\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\xampp\\mysql\\bin;;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;D:\\Programz\\Yarn\\bin\\;C:\\Users\\elbar\\AppData\\Local\\Microsoft\\WindowsApps;D:\\Programz\\Microsoft VS Code\\bin;D:\\Programz\\AndroidStudioSDK\\platform-tools;C:\\Users\\elbar\\AppData\\Roaming\\npm;C:\\Program Files\\JetBrains\\PyCharm Community Edition 2019.3.3\\bin;C:\\Users\\elbar\\AppData\\Local\\Yarn\\bin",
     "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC;.CPL",
     "PROCESSOR_ARCHITECTURE": "AMD64",
     "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 85 Stepping 4, GenuineIntel",

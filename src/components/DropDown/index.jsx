@@ -15,7 +15,8 @@ export const DropDown = (props) => {
   const [currItem, setCurrItem] = useState(props.initVal);
 
   const onItemPress = (item) => {
-    setCurrItem(item);
+    setCurrItem(item.title);
+    props.onItemSelect(item);
     setOpen(false);
   };
 
@@ -25,8 +26,10 @@ export const DropDown = (props) => {
       <AbsAnimateHeight duration={500} height={open ? "auto" : 0}>
         <DDList>
           {props.items.map((item, index) => (
-            <DDItem key={`${item}-${index}`}>
-              <DDItemText onClick={() => onItemPress(item)}>{item}</DDItemText>
+            <DDItem key={`${item.key}-${index}`}>
+              <DDItemText onClick={() => onItemPress(item)}>
+                {item.title}
+              </DDItemText>
             </DDItem>
           ))}
         </DDList>

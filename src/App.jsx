@@ -54,7 +54,7 @@ export function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/ap" component={About} />
               <Route exact path="/parduotuve" component={Shop} />
-              <Route exact path="/produktas" component={Product} />
+              <Route path="/produktas/:id" component={Product} />
               <Route exact path="/krepselis" component={Cart} />
               <Route exact path="/admin_login" component={Login} />
               <PrivateRoute exact path="/admin" component={AdminPage} />

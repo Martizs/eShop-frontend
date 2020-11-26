@@ -1,42 +1,55 @@
-import { useEffect, useState } from "react";
+import { PureComponent } from "react";
 /* components */
 import { ProductItem } from "components/ProductItem";
+import { AdminBut } from "components/AdminBut";
 /* styles */
 import { GridContainer, GridItem, ProdListCont, GridRow } from "./style";
 import { MainTitleText } from "styles/MainTitleText";
+/* utils */
+import { formProdList } from "./util";
+/* redux */
+import { connect } from "react-redux";
 
-export const ProductList = (props) => {
-  const [formedData, setFormedData] = useState([]);
+class ProductList extends PureComponent {
+  constructor(props) {
+    super();
 
-  useEffect(() => {
-    const dataz = [...props.data];
-    let formData = dataz;
-    if (!props.showAll) {
-      formData = [dataz.splice(0, 3), dataz.splice(0, 3), dataz.splice(0, 3)];
-    }
+    this.state = {
+      formedData: formProdList(props.data, props.oneRow),
+    };
+  }
 
-    setFormedData(formData);
-  }, []);
+  render() {
+    return (
+      <ProdListCont>
+        <MainTitleText>{this.props.title}</MainTitleText>
+        {this.props.loggedIn && this.props.edit && (
+          <AdminBut text="ADD PRODUCT" type="add" link="/produktas/new" />
+        )}
+        <GridContainer>
+          {this.state.formedData.map((row, rowInd) => (
+            <GridRow key={`row-${rowInd}`}>
+              {row.map((prod, prodInd) => (
+                <GridItem key={`title-${rowInd}-${prodInd}`}>
+                  <ProductItem
+                    loggedIn={this.props.loggedIn && this.props.edit}
+                    title={prod.title}
+                    price={prod.price}
+                    primaryPic={prod.primaryPic}
+                    secondaryPic={prod.secondaryPic}
+                  />
+                </GridItem>
+              ))}
+            </GridRow>
+          ))}
+        </GridContainer>
+      </ProdListCont>
+    );
+  }
+}
 
-  return (
-    <ProdListCont>
-      <MainTitleText>{props.title}</MainTitleText>
-      <GridContainer>
-        {formedData.map((row, rowInd) => (
-          <GridRow key={`row-${rowInd}`}>
-            {row.map((prod, prodInd) => (
-              <GridItem key={`title-${rowInd}-${prodInd}`}>
-                <ProductItem
-                  title={prod.title}
-                  price={prod.price}
-                  primaryPic={prod.primaryPic}
-                  secondaryPic={prod.secondaryPic}
-                />
-              </GridItem>
-            ))}
-          </GridRow>
-        ))}
-      </GridContainer>
-    </ProdListCont>
-  );
-};
+const mapStateToProps = (state) => ({
+  loggedIn: state.loggedIn,
+});
+
+export default connect(mapStateToProps)(ProductList);

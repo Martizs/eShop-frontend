@@ -1,6 +1,6 @@
-import { useHistory } from "react-router-dom";
 /* components */
 import { NavLink } from "components/NavLink";
+import { AdminBut } from "components/AdminBut";
 /* styles */
 import { NavContainer } from "styles/NavContainer";
 import {
@@ -12,16 +12,28 @@ import {
 } from "./style";
 /* icons */
 import { LoggoComp } from "icons/LoggoComp";
+/* redux */
+import { useDispatch, useSelector } from "react-redux";
+import { setLogin } from "redux_store/general/actions";
+/* utils */
+import { apiCall } from "utils/apiCalls";
 
 export const Header = () => {
-  let history = useHistory();
-
-  const iconClick = (url) => {
-    window.open(url, "_blank");
-  };
+  const loggedIn = useSelector((state) => state.loggedIn);
+  const dispatch = useDispatch();
 
   return (
     <HeaderContainer>
+      {loggedIn && (
+        <AdminBut
+          text="LOG OUT"
+          onClick={() =>
+            apiCall("get", "logOut", null, false, () =>
+              dispatch(setLogin(false))
+            )
+          }
+        />
+      )}
       <NavContainer>
         <NavLink
           to="https://www.youtube.com/channel/UCVfhKzY261aiqKnx6UyZ4Gg"
