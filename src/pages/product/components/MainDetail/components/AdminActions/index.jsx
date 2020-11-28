@@ -22,6 +22,7 @@ export const AdminActions = (props) => (
       <TextInput
         defaultValue={props.price}
         label="Price:"
+        type="number"
         handleChange={props.priceChange}
       />
     </AdInpWraper>
@@ -29,6 +30,7 @@ export const AdminActions = (props) => (
       <TextInput
         defaultValue={props.discPrice}
         label="Discount price:"
+        type="number"
         handleChange={props.discChange}
       />
     </AdInpWraper>
@@ -52,6 +54,7 @@ export const AdminActions = (props) => (
       </CatDDCont>
     </CatContainer>
     <SizeList
+      setNoSize={props.setNoSize}
       editSize={props.editSize}
       defSizes={props.defSizes}
       addSize={props.addSize}

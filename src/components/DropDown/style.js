@@ -18,6 +18,7 @@ export const DDList = styled.ul`
   border: 2px solid;
   left: 0;
   right: 0;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
 `;
 
 export const DDItem = styled.li`

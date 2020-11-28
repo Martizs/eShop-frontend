@@ -1,3 +1,5 @@
+import find from "lodash/find";
+
 export function formProdList(data, oneRow) {
   const triplData = [];
 
@@ -11,7 +13,15 @@ export function formProdList(data, oneRow) {
       prodSet = [];
     }
 
-    prodSet.push(prod);
+    const adjProd = {
+      id: prod._id,
+      title: prod.title,
+      price: prod.price,
+      primaryPic: find(prod.imgData, "primary")?.imgUrl,
+      secondaryPic: find(prod.imgData, "secondary")?.imgUrl,
+    };
+
+    prodSet.push(adjProd);
 
     if (oneRow && oneRow - 1 === i) {
       break;

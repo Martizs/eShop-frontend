@@ -14,9 +14,9 @@ export const ProductItem = (props) => {
   return (
     <ProdItCont>
       {props.loggedIn && (
-        <AdminBut text="EDIT" type="edit" link="/produktas/1" />
+        <AdminBut text="EDIT" type="edit" link={`/produktas/${props.id}`} />
       )}
-      <ImgCont to="/produktas/1">
+      <ImgCont to={`/produktas/${props.id}`}>
         <ProdImg src={props.primaryPic} alt={props.title} />
         <ProdImgTop src={props.secondaryPic} alt={props.title} />
       </ImgCont>

@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 /* styles */
 import { ThemeProvider } from "styled-components";
 import { theme } from "styles/theme";
@@ -14,7 +14,9 @@ import { AdminPage } from "pages/admin";
 import { Shop } from "pages/shop";
 import { Product } from "pages/product";
 import { Cart } from "pages/cart";
+import { NotFound } from "pages/notFound";
 /* components */
+import { ToastContainer } from "react-toastify";
 import { PrivateRoute } from "components/PrivateRoute";
 import { Header } from "components/Header";
 import { Footer } from "components/Footer";
@@ -23,8 +25,12 @@ import { apiCall } from "utils/apiCalls";
 /* redux */
 import { useDispatch } from "react-redux";
 import { setLogin } from "redux_store/general/actions";
+/* css */
+import "react-toastify/dist/ReactToastify.css";
 
 export function App() {
+  const scrollRef = useRef(null);
+
   const dispatch = useDispatch();
   useEffect(() => {
     // so if a new tab is opened,
@@ -43,19 +49,36 @@ export function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const scrollTop = () => {
+    scrollRef.current.scrollTo(0, 0);
+  };
+
   return (
     <Router>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <MainContainer>
+          <ToastContainer
+            position="top-center"
+            autoClose={4000}
+            hideProgressBar={true}
+            closeOnClick
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
           <Header />
-          <MainScrollCont>
+          <MainScrollCont ref={scrollRef}>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/ap" component={About} />
               <Route exact path="/parduotuve" component={Shop} />
-              <Route path="/produktas/:id" component={Product} />
+              <Route
+                path="/produktas/:id"
+                render={(props) => <Product {...props} scrollTop={scrollTop} />}
+              />
               <Route exact path="/krepselis" component={Cart} />
+              <Route exact path="/nerasta" component={NotFound} />
               <Route exact path="/admin_login" component={Login} />
               <PrivateRoute exact path="/admin" component={AdminPage} />
             </Switch>

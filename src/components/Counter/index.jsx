@@ -2,22 +2,27 @@ import { useState } from "react";
 /* styles */
 import { ArrowDown, ArrowUp, CounterCont, NumberInp, ArrowCont } from "./style";
 
-export const Counter = () => {
+export const Counter = (props) => {
   const [count, setCount] = useState(1);
 
   const decr = () => {
     if (count > 1) {
-      setCount(parseInt(count, 10) - 1);
+      const newCount = parseInt(count, 10) - 1;
+      setCount(newCount);
+      props.setCount(newCount);
     }
   };
 
   const incr = () => {
-    setCount(parseInt(count, 10) + 1);
+    const newCount = parseInt(count, 10) + 1;
+    setCount(newCount);
+    props.setCount(newCount);
   };
 
   const onInputChange = (event) => {
     if (event.target.validity.valid) {
       setCount(event.target.value);
+      props.setCount(event.target.value);
     }
   };
 

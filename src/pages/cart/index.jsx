@@ -31,7 +31,8 @@ export const Cart = () => {
           </TableCell>
           <TableCell percWidth={colWidths[2]} />
           <TableCell percWidth={colWidths[3]} />
-          <TableCell percWidth={colWidths[4]} toEnd>
+          <TableCell percWidth={colWidths[4]} />
+          <TableCell percWidth={colWidths[5]} toEnd>
             <PriceText>420.69 €</PriceText>
           </TableCell>
         </TableFooter>

@@ -5,7 +5,7 @@ export const prodCategories = [
   },
   {
     title: "DRABUŽIAI",
-    key: " drab",
+    key: "drab",
   },
   {
     title: "KITA",

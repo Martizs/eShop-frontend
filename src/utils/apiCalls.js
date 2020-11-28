@@ -12,16 +12,30 @@ import { setLogin } from "redux_store/general/actions";
 // prot - variable is to indicate if a protected route is being accessed
 // if we get an error call when the user access the protected route
 // we log them out in the frontend
-export function apiCall(type, endpoint, data, prot, successCallback) {
+export function apiCall(
+  type,
+  endpoint,
+  data,
+  prot,
+  successCallback,
+  errorCallback
+) {
   const axiosCall = type === "post" ? axios.post : axios.get;
 
-  axiosCall(`/api/${endpoint}`, data || {})
+  const reqData = type === "post" ? data : { params: data };
+
+  axiosCall(`/api/${endpoint}`, reqData || {})
     .then((response) => successCallback(response.data))
     .catch((error) => {
       // 401 we shoot out for not authenticated error
       if (prot && error.response.status === 401) {
         store.dispatch(setLogin(false));
       }
+
+      if (!!errorCallback) {
+        errorCallback(error.response.data.msg);
+      }
+
       console.log(
         "error:",
         error.response.data.msg,

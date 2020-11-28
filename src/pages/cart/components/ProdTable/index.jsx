@@ -24,12 +24,15 @@ export const ProdTable = () => {
           <ColTitle>PRODUKTAS</ColTitle>
         </TableCell>
         <TableCell percWidth={colWidths[2]}>
-          <ColTitle>VIENETO KAINA</ColTitle>
+          <ColTitle>DYDIS</ColTitle>
         </TableCell>
         <TableCell percWidth={colWidths[3]}>
+          <ColTitle>VIENETO KAINA</ColTitle>
+        </TableCell>
+        <TableCell percWidth={colWidths[4]}>
           <ColTitle>KIEKIS</ColTitle>
         </TableCell>
-        <TableCell percWidth={colWidths[4]} toEnd>
+        <TableCell percWidth={colWidths[5]} toEnd>
           <ColTitle>VISO</ColTitle>
         </TableCell>
       </TableHeader>
@@ -45,12 +48,15 @@ export const ProdTable = () => {
             />
           </TableCell>
           <TableCell percWidth={colWidths[2]}>
-            <PriceText>420.69 €</PriceText>
+            <PriceText>XL</PriceText>
           </TableCell>
           <TableCell percWidth={colWidths[3]}>
+            <PriceText>420.69 €</PriceText>
+          </TableCell>
+          <TableCell percWidth={colWidths[4]}>
             <Counter />
           </TableCell>
-          <TableCell percWidth={colWidths[4]} toEnd>
+          <TableCell percWidth={colWidths[5]} toEnd>
             <PriceText>420.69 €</PriceText>
           </TableCell>
         </TableRow>
@@ -65,12 +71,15 @@ export const ProdTable = () => {
             />
           </TableCell>
           <TableCell percWidth={colWidths[2]}>
-            <PriceText>420.69 €</PriceText>
+            <PriceText>XL</PriceText>
           </TableCell>
           <TableCell percWidth={colWidths[3]}>
+            <PriceText>420.69 €</PriceText>
+          </TableCell>
+          <TableCell percWidth={colWidths[4]}>
             <Counter />
           </TableCell>
-          <TableCell percWidth={colWidths[4]} toEnd>
+          <TableCell percWidth={colWidths[5]} toEnd>
             <PriceText>420.69 €</PriceText>
           </TableCell>
         </TableRow>
@@ -81,7 +90,8 @@ export const ProdTable = () => {
           </TableCell>
           <TableCell percWidth={colWidths[2]} />
           <TableCell percWidth={colWidths[3]} />
-          <TableCell percWidth={colWidths[4]} toEnd>
+          <TableCell percWidth={colWidths[4]} />
+          <TableCell percWidth={colWidths[5]} toEnd>
             <PriceText>420.69 €</PriceText>
           </TableCell>
         </TableFooter>

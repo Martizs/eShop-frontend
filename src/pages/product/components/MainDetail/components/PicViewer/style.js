@@ -14,7 +14,7 @@ export const PicRow = styled.div`
 `;
 
 export const ThumbNailCont = styled.div`
-  width: ${({ admin }) => (admin ? "23%" : "14%")};
+  width: ${({ admin }) => (admin ? "30%" : "14%")};
   margin-right: 10px;
 `;
 

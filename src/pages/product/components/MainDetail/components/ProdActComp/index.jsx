@@ -1,5 +1,3 @@
-/* mock */
-import { sizeItems } from "./mock";
 /* components */
 import { Button } from "components/Button";
 import { DropDown } from "components/DropDown";
@@ -23,14 +21,20 @@ export const ProdActComp = (props) => (
     <ProdDesc>{props.desc}</ProdDesc>
     <ActContainer>
       <CounterWrap>
-        <Counter />
+        <Counter setCount={props.setSelAmount} />
       </CounterWrap>
 
       <ButtContainer>
-        <DDWrapper>
-          <DropDown initVal="DYDIS" items={sizeItems} />
-        </DDWrapper>
-        <Button onClick={() => console.log("i krepseli")} text="Į KREPŠELĮ" />
+        {props.defSizes[0]?.name && (
+          <DDWrapper>
+            <DropDown
+              initVal="DYDIS"
+              items={props.defSizes}
+              onItemSelect={props.userSelSize}
+            />
+          </DDWrapper>
+        )}
+        <Button onClick={props.addToBasket} text="Į KREPŠELĮ" />
       </ButtContainer>
     </ActContainer>
   </ProdActCont>

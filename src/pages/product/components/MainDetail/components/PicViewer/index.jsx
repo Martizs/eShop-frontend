@@ -36,6 +36,7 @@ export const PicViewer = (props) => {
   const addImage = ({ rawImg, imgUrl }) => {
     const newImgData = [...imgData];
     newImgData.push({
+      filename: rawImg.name,
       key: Math.random().toString(36).substr(2, 10),
       rawImg,
       imgUrl,
@@ -46,7 +47,7 @@ export const PicViewer = (props) => {
 
   const remImage = (key) => {
     const newImgData = [...imgData];
-    remove(imgData, (item) => item.key === key);
+    remove(newImgData, (item) => item.key === key);
     changeImgData(imgSort(newImgData));
   };
 
@@ -108,18 +109,22 @@ export const PicViewer = (props) => {
               src={item.imgUrl}
               alt="img"
             />
-            <RadioButton
-              type="small"
-              label="primary"
-              checked={item.primary}
-              onCheck={() => setPrimaryImg(item.key)}
-            />
-            <RadioButton
-              type="small"
-              label="secondary"
-              checked={item.secondary}
-              onCheck={() => setSecondaryImg(item.key)}
-            />
+            {props.loggedIn && (
+              <>
+                <RadioButton
+                  type="small"
+                  label="primary"
+                  checked={item.primary}
+                  onCheck={() => setPrimaryImg(item.key)}
+                />
+                <RadioButton
+                  type="small"
+                  label="secondary"
+                  checked={item.secondary}
+                  onCheck={() => setSecondaryImg(item.key)}
+                />
+              </>
+            )}
           </ThumbNailCont>
         ))}
       </PicRow>
@@ -128,9 +133,6 @@ export const PicViewer = (props) => {
           type="file"
           id="upload-button"
           style={{ display: "none" }}
-          onClick={(event) => {
-            event.target.value = null;
-          }}
           onChange={handleUpload}
         />
       )}

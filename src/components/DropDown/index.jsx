@@ -15,7 +15,7 @@ export const DropDown = (props) => {
   const [currItem, setCurrItem] = useState(props.initVal);
 
   const onItemPress = (item) => {
-    setCurrItem(item.title);
+    setCurrItem(item.title || item.name);
     props.onItemSelect(item);
     setOpen(false);
   };
@@ -28,7 +28,7 @@ export const DropDown = (props) => {
           {props.items.map((item, index) => (
             <DDItem key={`${item.key}-${index}`}>
               <DDItemText onClick={() => onItemPress(item)}>
-                {item.title}
+                {item.title || item.name}
               </DDItemText>
             </DDItem>
           ))}

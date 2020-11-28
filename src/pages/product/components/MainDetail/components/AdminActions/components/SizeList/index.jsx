@@ -18,14 +18,15 @@ import remove from "lodash/remove";
 
 export const SizeList = (props) => {
   const [rendList, setRendList] = useState(props.defSizes || []);
-  // TODO: cover noSize initial value load, shouldnt be false
-  // always
-  const [noSize, setNoSize] = useState(false);
+  const [noSize, setNoSize] = useState(
+    props.defSizes[0] && !props.defSizes[0].name ? true : false
+  );
 
   const addItem = () => {
     const newRendList = [...rendList];
     const newItem = {
-      key: Math.random().toString(36).substr(2, 10),
+      _id: Math.random().toString(36).substr(2, 10),
+      new: true,
     };
 
     newRendList.push(newItem);
@@ -34,10 +35,10 @@ export const SizeList = (props) => {
     setRendList(newRendList);
   };
 
-  const remItem = (key) => {
+  const remItem = (_id) => {
     const newRendList = [...rendList];
-    remove(newRendList, (item) => item.key === key);
-    props.remSize(key);
+    remove(newRendList, (item) => item._id === _id);
+    props.remSize(_id);
 
     setRendList(newRendList);
   };
@@ -45,11 +46,13 @@ export const SizeList = (props) => {
   const onSizeCheck = () => {
     const noSizeObj = [
       {
-        key: Math.random().toString(36).substr(2, 10),
+        _id: Math.random().toString(36).substr(2, 10),
+        new: true,
       },
     ];
 
     props.setSize(!noSize ? noSizeObj : []);
+    props.setNoSize(!noSize);
     setNoSize(!noSize);
     setRendList(!noSize ? noSizeObj : []);
   };
@@ -73,11 +76,12 @@ export const SizeList = (props) => {
 
       <SizeListCont>
         {rendList.map((item, index) => (
-          <SizeItem key={item.key}>
+          <SizeItem key={item._id}>
             {!noSize && (
               <TextInput
                 width="30%"
                 label="Name: "
+                defaultValue={item.name}
                 handleChange={(event) =>
                   props.editSize(index, event.target.value, true)
                 }
@@ -88,6 +92,7 @@ export const SizeList = (props) => {
               width="30%"
               label="Amount:"
               type="number"
+              defaultValue={item.amount}
               handleChange={(event) =>
                 props.editSize(index, event.target.value)
               }
@@ -98,7 +103,7 @@ export const SizeList = (props) => {
                   type="del"
                   butStyle="small"
                   text="REMOVE"
-                  onClick={() => remItem(item.key)}
+                  onClick={() => remItem(item._id)}
                 />
               </RemSizeCont>
             )}
