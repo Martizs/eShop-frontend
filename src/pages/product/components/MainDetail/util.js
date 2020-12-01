@@ -70,7 +70,7 @@ export function prodValidation(title, price, noSize, sizes, imgData) {
   return 1;
 }
 
-export function baskValidation(selectedSize, selectedAmount, noSize) {
+export function baskValidation(selectedSize, selectedAmount, noSize, sizes) {
   if (!selectedSize) {
     return "Pasirinkite prekės dydį";
   }
@@ -78,6 +78,21 @@ export function baskValidation(selectedSize, selectedAmount, noSize) {
   const selAmount = parseInt(selectedAmount, 10);
   if (!selAmount) {
     return "Pasirinkite prekių kiekį";
+  }
+
+  let notAvailable = true;
+
+  for (let i = 0; i < sizes.length; i++) {
+    const size = sizes[i];
+
+    if (parseInt(size.amount, 10)) {
+      notAvailable = false;
+      break;
+    }
+  }
+
+  if (notAvailable) {
+    return "Šios prekės nebėra";
   }
 
   const sizeAmount = parseInt(selectedSize.amount, 10);

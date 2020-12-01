@@ -12,9 +12,12 @@ import {
   SizeLabel,
   SizeButCont,
   SizeRadCont,
+  SizeItemCont,
+  PendOrdCont,
 } from "./style";
 /* utils */
 import remove from "lodash/remove";
+import { toast } from "react-toastify";
 
 export const SizeList = (props) => {
   const [rendList, setRendList] = useState(props.defSizes || []);
@@ -35,26 +38,47 @@ export const SizeList = (props) => {
     setRendList(newRendList);
   };
 
-  const remItem = (_id) => {
+  const remItem = (orders, _id) => {
     const newRendList = [...rendList];
-    remove(newRendList, (item) => item._id === _id);
-    props.remSize(_id);
 
-    setRendList(newRendList);
+    if (!orders?.length) {
+      remove(newRendList, (item) => item._id === _id);
+      props.remSize(_id);
+
+      setRendList(newRendList);
+    } else {
+      toast.error("Cannot delete a size with pending orders");
+    }
   };
 
   const onSizeCheck = () => {
-    const noSizeObj = [
-      {
-        _id: Math.random().toString(36).substr(2, 10),
-        new: true,
-      },
-    ];
+    let ordersPending = false;
 
-    props.setSize(!noSize ? noSizeObj : []);
-    props.setNoSize(!noSize);
-    setNoSize(!noSize);
-    setRendList(!noSize ? noSizeObj : []);
+    for (let i = 0; i < rendList.length; i++) {
+      const rendItem = rendList[i];
+      if (rendItem.orders?.length) {
+        ordersPending = true;
+        break;
+      }
+    }
+
+    if (ordersPending) {
+      toast.error(
+        "Please address the pending orders before changing the 'NO SIZE' value"
+      );
+    } else {
+      const noSizeObj = [
+        {
+          _id: Math.random().toString(36).substr(2, 10),
+          new: true,
+        },
+      ];
+
+      props.setSize(!noSize ? noSizeObj : []);
+      props.setNoSize(!noSize);
+      setNoSize(!noSize);
+      setRendList(!noSize ? noSizeObj : []);
+    }
   };
 
   return (
@@ -76,38 +100,43 @@ export const SizeList = (props) => {
 
       <SizeListCont>
         {rendList.map((item, index) => (
-          <SizeItem key={item._id}>
-            {!noSize && (
+          <SizeItemCont key={item._id}>
+            <SizeItem>
+              {!noSize && (
+                <TextInput
+                  width="30%"
+                  label="Name: "
+                  defaultValue={item.name}
+                  handleChange={(event) =>
+                    props.editSize(index, event.target.value, true)
+                  }
+                />
+              )}
+
               <TextInput
                 width="30%"
-                label="Name: "
-                defaultValue={item.name}
+                label="Amount:"
+                type="number"
+                defaultValue={item.amount}
                 handleChange={(event) =>
-                  props.editSize(index, event.target.value, true)
+                  props.editSize(index, event.target.value)
                 }
               />
+              {!noSize && (
+                <RemSizeCont>
+                  <AdminBut
+                    type="del"
+                    butStyle="small"
+                    text="REMOVE"
+                    onClick={() => remItem(item.orders, item._id)}
+                  />
+                </RemSizeCont>
+              )}
+            </SizeItem>
+            {!!item.orders?.length && (
+              <PendOrdCont>Pending orders: {item.orders.length}</PendOrdCont>
             )}
-
-            <TextInput
-              width="30%"
-              label="Amount:"
-              type="number"
-              defaultValue={item.amount}
-              handleChange={(event) =>
-                props.editSize(index, event.target.value)
-              }
-            />
-            {!noSize && (
-              <RemSizeCont>
-                <AdminBut
-                  type="del"
-                  butStyle="small"
-                  text="REMOVE"
-                  onClick={() => remItem(item._id)}
-                />
-              </RemSizeCont>
-            )}
-          </SizeItem>
+          </SizeItemCont>
         ))}
       </SizeListCont>
     </SizeListMainCont>

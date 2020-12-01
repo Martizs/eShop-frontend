@@ -25,7 +25,7 @@ export const AdButStyle = styled.div`
         return theme.colors.unknownCol;
     }
   }};
-  margin: 10px auto;
+  margin: ${({ margin }) => (margin !== undefined ? margin : "10px auto")};
   padding: ${({ butStyle }) => (butStyle === "fit" ? "5px 0" : "5px 30px")};
   white-space: nowrap;
   &:hover {

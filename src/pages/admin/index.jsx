@@ -1,22 +1,45 @@
-/* utils */
-import { apiCall } from "utils/apiCalls";
-/* redux */
-import { useDispatch } from "react-redux";
-import { setLogin } from "redux_store/general/actions";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+/* components */
+import { AdminBut } from "components/AdminBut";
+import { SendOptions } from "./components/SendOptions";
+import { Orders } from "./components/Orders";
+/* styles */
+import { AdminContainer, AdminNavCont } from "./style";
 
 export const AdminPage = (props) => {
-  const dispatch = useDispatch();
+  const [admPage, setAdmPage] = useState("orders");
 
-  const logOut = () => {
-    apiCall("get", "logOut", null, false, () => dispatch(setLogin(false)));
+  const renderAdminPage = () => {
+    switch (admPage) {
+      case "send":
+        return <SendOptions />;
+      case "orders":
+        return <Orders />;
+      default:
+        return <Orders />;
+    }
   };
 
   return (
-    <div>
-      <Link to="/">go home</Link>
-      <div>welcome to admin page</div>
-      <div onClick={logOut}>press me to logout</div>
-    </div>
+    <AdminContainer>
+      <AdminNavCont>
+        <AdminBut
+          text="MANAGE SEND OPTIONS"
+          type="edit"
+          onClick={() => setAdmPage("send")}
+        />
+        <AdminBut
+          text="MANAGE BANNER IMAGES"
+          type="edit"
+          onClick={() => setAdmPage("banner")}
+        />
+        <AdminBut
+          text="MANAGE ORDERS"
+          type="edit"
+          onClick={() => setAdmPage("orders")}
+        />
+      </AdminNavCont>
+      {renderAdminPage()}
+    </AdminContainer>
   );
 };

@@ -10,11 +10,14 @@ export const ImgCont = styled(Link)`
   position: relative;
   margin: auto;
   width: 95%;
+  pointer-events: ${({ disabled }) => (disabled ? "none" : "initial")};
   /* max-width: 287px; */
 `;
 
 export const ProdImg = styled.img`
   width: 100%;
+  opacity: ${({ disabled }) => (disabled ? "0.6" : "1")};
+  pointer-events: ${({ disabled }) => (disabled ? "none" : "initial")};
   &:hover {
     cursor: pointer;
   }
@@ -22,6 +25,7 @@ export const ProdImg = styled.img`
 
 export const ProdImgTop = styled.img`
   position: absolute;
+  pointer-events: ${({ disabled }) => (disabled ? "none" : "initial")};
   left: 10%;
   top: 10%;
   width: 80%;
@@ -38,6 +42,19 @@ export const ProdImgTop = styled.img`
     top: 0;
     width: 100%;
   }
+`;
+
+export const NotAvCont = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  padding: 10px 0;
+  text-align: center;
+  color: ${(props) => props.theme.colors.textColor};
+  font-size: ${(props) => props.theme.fontSizes.subTitle};
+  font-family: ${(props) => props.theme.fonts.bold};
+  background-color: ${(props) => props.theme.colors.secondBackgrCol};
 `;
 
 export const ProdTitle = styled.div`

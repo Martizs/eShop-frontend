@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 /* redux */
 import store from "redux_store/store";
 import { setLogin } from "redux_store/general/actions";
@@ -28,23 +29,16 @@ export function apiCall(
     .then((response) => successCallback(response.data))
     .catch((error) => {
       // 401 we shoot out for not authenticated error
-      if (prot && error.response.status === 401) {
+      if (prot && error.response?.status === 401) {
         store.dispatch(setLogin(false));
       }
 
       if (!!errorCallback) {
         errorCallback(error.response.data.msg);
+      } else if (error.response?.status !== 401) {
+        toast.error("Įvyko klaida, pabandykite perkrauti puslapį");
       }
 
-      console.log(
-        "error:",
-        error.response.data.msg,
-        "with endpoint:",
-        endpoint,
-        "call_type:",
-        type,
-        "data:",
-        data
-      );
+      console.log("error:", error.response.data.msg);
     });
 }

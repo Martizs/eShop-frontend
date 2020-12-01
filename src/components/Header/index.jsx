@@ -1,6 +1,7 @@
 /* components */
 import { NavLink } from "components/NavLink";
 import { AdminBut } from "components/AdminBut";
+import { CartNav } from "./components/CartNav";
 /* styles */
 import { NavContainer } from "styles/NavContainer";
 import {
@@ -46,7 +47,7 @@ export const Header = () => {
           <LoggoComp />
         </LoggoCont>
         <NavLink to="/parduotuve">PARDUOTUVĖ</NavLink>
-        <NavLink to="/krepselis">KREPŠELIS</NavLink>
+        <CartNav />
       </NavContainer>
       <IconContainer>
         <NavLink to="https://www.google.com/" ext>

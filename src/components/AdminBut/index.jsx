@@ -22,6 +22,7 @@ export const AdminBut = (props) => {
   return (
     <AdButCont butStyle={props.butStyle}>
       <AdButStyle
+        margin={props.margin}
         butStyle={props.butStyle}
         type={props.type}
         onMouseDown={mouseDownHandler}

@@ -30,9 +30,13 @@ export const DDItem = styled.li`
 `;
 
 export const DDItemText = styled.div`
+  text-decoration: ${({ disabled }) => (disabled ? "line-through" : "none")};
+  color: ${({ disabled, theme }) =>
+    disabled ? "rgba(255, 255, 255, 0.5)" : theme.colors.textColor};
   font-size: ${(props) => props.theme.fontSizes.subTitle};
   font-family: ${(props) => props.theme.fonts.bold};
   text-align: center;
+  pointer-events: ${({ disabled }) => (disabled ? "none" : "initial")};
   &:hover {
     cursor: pointer;
     color: ${(props) => props.theme.colors.highlightCol};

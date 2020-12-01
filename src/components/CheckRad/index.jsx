@@ -5,14 +5,15 @@ import { useState } from "react";
 import { CheckRadCont } from "./style";
 
 export const CheckRad = (props) => {
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(props.defValue);
 
   const onCheck = () => {
     setChecked(!checked);
+    props.setChecked(!checked);
   };
 
   return (
-    <CheckRadCont>
+    <CheckRadCont padding={props.padding}>
       <RadioButton label={props.label} checked={checked} onCheck={onCheck} />
     </CheckRadCont>
   );

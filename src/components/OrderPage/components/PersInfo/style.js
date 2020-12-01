@@ -7,3 +7,8 @@ export const PersInpRow = styled.div`
   justify-content: ${({ toEnd }) => (toEnd ? "flex-end" : "space-between")};
   padding-bottom: 12px;
 `;
+
+export const UsInfoAdmTxt = styled.div`
+  font-size: ${({ theme }) => theme.fontSizes.subTitle};
+  font-family: ${({ theme }) => theme.fonts.bold};
+`;

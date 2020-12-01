@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ArrowDown, ArrowUp, CounterCont, NumberInp, ArrowCont } from "./style";
 
 export const Counter = (props) => {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(props.defCount || 1);
 
   const decr = () => {
     if (count > 1) {

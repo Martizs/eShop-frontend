@@ -8,6 +8,7 @@ import {
   ProdTitle,
   ProdImgTop,
   ImgCont,
+  NotAvCont,
 } from "./style";
 
 export const ProductItem = (props) => {
@@ -16,9 +17,18 @@ export const ProductItem = (props) => {
       {props.loggedIn && (
         <AdminBut text="EDIT" type="edit" link={`/produktas/${props.id}`} />
       )}
-      <ImgCont to={`/produktas/${props.id}`}>
-        <ProdImg src={props.primaryPic} alt={props.title} />
-        <ProdImgTop src={props.secondaryPic} alt={props.title} />
+      <ImgCont disabled={props.disabled} to={`/produktas/${props.id}`}>
+        <ProdImg
+          disabled={props.disabled}
+          src={props.primaryPic}
+          alt={props.title}
+        />
+        <ProdImgTop
+          disabled={props.disabled}
+          src={props.secondaryPic}
+          alt={props.title}
+        />
+        {props.disabled && <NotAvCont>Nebėra</NotAvCont>}
       </ImgCont>
 
       <ProdTitle>{props.title}</ProdTitle>

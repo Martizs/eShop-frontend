@@ -44,6 +44,12 @@ export const ColTitle = styled.div`
   white-space: nowrap;
 `;
 
+export const CellText = styled.div`
+  font-size: ${({ theme }) => theme.fontSizes.subTitle};
+  font-family: ${({ theme }) => theme.fonts.bold};
+  white-space: nowrap;
+`;
+
 export const CloseIc = styled(Close)`
   font-size: 2rem !important;
   &:hover {

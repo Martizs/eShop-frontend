@@ -13,12 +13,24 @@ export function formProdList(data, oneRow) {
       prodSet = [];
     }
 
+    let itemsAvailable = false;
+
+    for (let j = 0; j < prod.sizes.length; j++) {
+      const size = prod.sizes[j];
+
+      if (parseInt(size.amount, 10)) {
+        itemsAvailable = true;
+        break;
+      }
+    }
+
     const adjProd = {
       id: prod._id,
       title: prod.title,
       price: prod.price,
       primaryPic: find(prod.imgData, "primary")?.imgUrl,
       secondaryPic: find(prod.imgData, "secondary")?.imgUrl,
+      disabled: !itemsAvailable,
     };
 
     prodSet.push(adjProd);

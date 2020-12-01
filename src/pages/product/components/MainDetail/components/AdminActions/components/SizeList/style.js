@@ -9,6 +9,11 @@ export const SizeListMainCont = styled.div`
 
 export const SizeListCont = styled.div``;
 
+export const SizeItemCont = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const SizeItem = styled.div`
   display: flex;
   justify-content: space-between;
@@ -16,6 +21,12 @@ export const SizeItem = styled.div`
 
 export const RemSizeCont = styled.div`
   margin-top: auto;
+`;
+
+export const PendOrdCont = styled.div`
+  padding: 8px 0;
+  font-size: ${({ theme }) => theme.fontSizes.subTitle};
+  color: ${({ theme }) => theme.colors.secondBackgrCol};
 `;
 
 export const SizeLabel = styled.div`

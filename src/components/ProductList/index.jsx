@@ -54,6 +54,7 @@ class ProductList extends PureComponent {
                 {row.map((prod, prodInd) => (
                   <GridItem key={`title-${rowInd}-${prodInd}`}>
                     <ProductItem
+                      disabled={prod.disabled}
                       loggedIn={this.props.loggedIn && this.props.edit}
                       id={prod.id}
                       title={prod.title}

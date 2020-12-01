@@ -5,11 +5,12 @@ import { LoadingIc } from "components/LoadingIc";
 import { PicViewer } from "./components/PicViewer";
 import { ProdActComp } from "./components/ProdActComp";
 import { AdminBut } from "components/AdminBut";
+import { AdminActions } from "./components/AdminActions";
 /* style */
 import { MainDetButCont, MainDetStyle, MainDetStyleIn } from "./style";
 /* redux */
 import { connect } from "react-redux";
-import { AdminActions } from "./components/AdminActions";
+import { addCartItem } from "redux_store/cart/actions";
 /* consts */
 import { prodCategories } from "./components/AdminActions/const";
 /* utils */
@@ -93,7 +94,6 @@ class MainDetail extends PureComponent {
           newProd.category = find(prodCategories, ["key", prod.category]);
           newProd.dataLoaded = true;
 
-          console.log("newProd", newProd);
           this.title = newProd.title;
           this.price = newProd.price + "";
           this.discPrice = newProd.discPrice + "";
@@ -103,6 +103,8 @@ class MainDetail extends PureComponent {
             return {
               ...size,
               amount: size.amount + "",
+              disabled: !size.amount,
+              disabledText: " - nebėra",
             };
           });
           this.imgData = newProd.imgData;
@@ -112,7 +114,10 @@ class MainDetail extends PureComponent {
           this.selectedSize = this.noSize ? newProd.sizes[0] : null;
 
           if (this.mounted) {
-            this.setState(newProd);
+            this.setState({
+              ...newProd,
+              sizes: this.sizes,
+            });
           }
         },
         () => {
@@ -208,10 +213,27 @@ class MainDetail extends PureComponent {
 
   delete() {
     if (window.confirm("Are you sure you want to delete the product?")) {
-      const { id } = this.props.match.params;
-      apiCall("post", "delProd", { id }, true, () => {
-        this.props.history.push("/parduotuve");
-      });
+      // we also check if there are any pending orders before letting them
+      // delete stuff
+      let ordersExist = false;
+
+      for (let i = 0; i < this.sizes.length; i++) {
+        const size = this.sizes[i];
+
+        if (size.orders?.length) {
+          ordersExist = true;
+          break;
+        }
+      }
+
+      if (ordersExist) {
+        toast.error("Cannot delete a product with pending orders");
+      } else {
+        const { id } = this.props.match.params;
+        apiCall("post", "delProd", { id }, true, () => {
+          this.props.history.push("/parduotuve");
+        });
+      }
     }
   }
 
@@ -227,13 +249,29 @@ class MainDetail extends PureComponent {
     const baskVal = baskValidation(
       this.selectedSize,
       this.selectedAmount,
-      this.noSize
+      this.noSize,
+      this.sizes
     );
 
     if (baskVal !== 1) {
       toast.error(baskVal);
     } else {
-      console.log("add to basket");
+      const { id } = this.props.match.params;
+      this.props.dispatch(
+        addCartItem({
+          prodId: id,
+          key: Math.random().toString(36).substr(2, 10),
+          title: this.title,
+          selectedSize: this.selectedSize,
+          price:
+            this.discPrice.length && this.discPrice !== "null"
+              ? this.discPrice
+              : this.price,
+          selectedAmount: this.selectedAmount,
+          img: find(this.imgData, "primary"),
+        })
+      );
+      this.props.history.push("/parduotuve");
     }
   }
 
@@ -321,4 +359,10 @@ const mapStateToProps = (state) => ({
   loggedIn: state.loggedIn,
 });
 
-export default withRouter(connect(mapStateToProps)(MainDetail));
+const mapDispatchToProps = (dispatch) => ({
+  dispatch,
+});
+
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(MainDetail)
+);

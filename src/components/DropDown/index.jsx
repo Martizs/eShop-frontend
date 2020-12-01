@@ -25,13 +25,22 @@ export const DropDown = (props) => {
       <Button onClick={() => setOpen(!open)} text={currItem} />
       <AbsAnimateHeight duration={500} height={open ? "auto" : 0}>
         <DDList>
-          {props.items.map((item, index) => (
-            <DDItem key={`${item.key}-${index}`}>
-              <DDItemText onClick={() => onItemPress(item)}>
-                {item.title || item.name}
-              </DDItemText>
-            </DDItem>
-          ))}
+          {props.items.map((item, index) => {
+            let itText = item.title || item.name;
+
+            itText = item.disabled ? itText + item.disabledText : itText;
+
+            return (
+              <DDItem key={`${item.key}-${index}`}>
+                <DDItemText
+                  disabled={item.disabled}
+                  onClick={() => onItemPress(item)}
+                >
+                  {itText}
+                </DDItemText>
+              </DDItem>
+            );
+          })}
         </DDList>
       </AbsAnimateHeight>
     </DDContainer>

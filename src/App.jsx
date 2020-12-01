@@ -13,8 +13,11 @@ import Login from "pages/login";
 import { AdminPage } from "pages/admin";
 import { Shop } from "pages/shop";
 import { Product } from "pages/product";
-import { Cart } from "pages/cart";
+import { Ordered } from "pages/ordered";
 import { NotFound } from "pages/notFound";
+import { Cart } from "pages/cart";
+import { Canceled } from "pages/canceled";
+import { PayPalTest } from "pages/paypalTest";
 /* components */
 import { ToastContainer } from "react-toastify";
 import { PrivateRoute } from "components/PrivateRoute";
@@ -79,7 +82,10 @@ export function App() {
               />
               <Route exact path="/krepselis" component={Cart} />
               <Route exact path="/nerasta" component={NotFound} />
+              <Route path="/uzsakyta/:orderId" component={Ordered} />
+              <Route path="/atsaukta/:orderId" component={Canceled} />
               <Route exact path="/admin_login" component={Login} />
+              <Route exact path="/test" component={PayPalTest} />
               <PrivateRoute exact path="/admin" component={AdminPage} />
             </Switch>
             <Footer />

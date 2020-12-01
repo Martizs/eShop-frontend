@@ -1,8 +1,5 @@
-import { NotFoundCont, NotFoundSubTitle, NotFoundTitle } from "./style";
+import { MessagePage } from "components/MessagePage";
 
 export const NotFound = () => (
-  <NotFoundCont>
-    <NotFoundTitle>404</NotFoundTitle>
-    <NotFoundSubTitle>Puslapis nerastas</NotFoundSubTitle>
-  </NotFoundCont>
+  <MessagePage title="404" text="Puslapis nerastas" />
 );
