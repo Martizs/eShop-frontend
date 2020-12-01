@@ -18,7 +18,7 @@ export function formProdList(data, oneRow) {
     for (let j = 0; j < prod.sizes.length; j++) {
       const size = prod.sizes[j];
 
-      if (parseInt(size.amount, 10)) {
+      if (parseInt(size.amount, 10) > 0) {
         itemsAvailable = true;
         break;
       }

@@ -103,7 +103,7 @@ class MainDetail extends PureComponent {
             return {
               ...size,
               amount: size.amount + "",
-              disabled: !size.amount,
+              disabled: size.amount < 1,
               disabledText: " - nebėra",
             };
           });
