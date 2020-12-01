@@ -3,6 +3,10 @@ export function prodValidation(title, price, noSize, sizes, imgData) {
     return "Product requires a title";
   }
 
+  if (title.length > 110) {
+    return "Title length can only be 110 characters";
+  }
+
   if (!price || !price.length) {
     return "Product requires a price";
   }
@@ -25,6 +29,10 @@ export function prodValidation(title, price, noSize, sizes, imgData) {
       const size = sizes[i];
       if (!size.name || !size.name.length) {
         return "A size needs a name";
+      }
+
+      if (size.name.length > 16) {
+        return "Size name length can only be 16 characters";
       }
 
       if (

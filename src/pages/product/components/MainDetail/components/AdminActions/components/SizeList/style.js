@@ -23,12 +23,6 @@ export const RemSizeCont = styled.div`
   margin-top: auto;
 `;
 
-export const PendOrdCont = styled.div`
-  padding: 8px 0;
-  font-size: ${({ theme }) => theme.fontSizes.subTitle};
-  color: ${({ theme }) => theme.colors.secondBackgrCol};
-`;
-
 export const SizeLabel = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.title};
   font-family: ${({ theme }) => theme.fonts.bold};

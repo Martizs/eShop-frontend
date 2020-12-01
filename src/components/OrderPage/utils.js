@@ -43,6 +43,13 @@ export function orderValid(cartItems, orderData) {
   for (let i = 0; i < ordProdSizes.length; i++) {
     const ordProdSize = ordProdSizes[i];
 
+    if (
+      !ordProdSize.selectedAmount ||
+      !(ordProdSize.selectedAmount + "").length
+    ) {
+      return `Turite pasirinkti prekių kiekį`;
+    }
+
     if (ordProdSize.selectedAmount > ordProdSize.sizeAmount) {
       if (!ordProdSize.sizeTitle) {
         return `Prekės "${ordProdSize.prodTitle}" yra like tik ${ordProdSize.sizeAmount} vienetai, pasirinkite nedaugiau kaip ${ordProdSize.sizeAmount}`;
@@ -53,63 +60,16 @@ export function orderValid(cartItems, orderData) {
     }
   }
 
-  const {
-    sendOption,
-    fullName,
-    address,
-    email,
-    city,
-    phone,
-    postCode,
-    country,
-  } = orderData;
+  const { sendOption } = orderData;
 
-  if (
-    sendOption.extraInfo &&
-    (!sendOption.extraVal || !sendOption.extraVal.length)
-  ) {
-    return "Užpildykite pasirinkto siuntimo būdo lauką";
-  }
-
-  if (!fullName.length) {
-    return "Įveskite vardą ir pavardę";
-  }
-
-  if (!address.length) {
-    return "Įveskite adresą";
-  }
-
-  if (!email.length || email.indexOf("@") === -1) {
-    return "Įveskite teisingą El. pašto adresą";
-  }
-
-  if (!city.length) {
-    return "Įveskite miestą";
-  }
-
-  if (!phone.length) {
-    return "Įveskite telefono numerį";
-  }
-
-  const validChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+"];
-  for (let i = 0; i < phone.length; i++) {
-    const phoneChar = phone[i];
-
-    if (validChars.indexOf(phoneChar) === -1) {
-      return "Įveskite teisingą telefono numerį su šalies kodu. Pvz: +37061234567";
+  if (sendOption.extraInfo) {
+    if (!sendOption.extraVal || !sendOption.extraVal.length) {
+      return "Užpildykite pasirinkto siuntimo būdo lauką";
     }
-  }
 
-  if (phone.indexOf("+") === -1) {
-    return "Įveskite teisingą telefono numerį su šalies kodu. Pvz: +37061234567";
-  }
-
-  if (!postCode.length) {
-    return "Įveskite pašto kodą";
-  }
-
-  if (!country.length) {
-    return "Įveskite šalį";
+    if (sendOption.extraVal.length > 86) {
+      return "Siuntimo būdo laukelis negali viršyti 86 raidžių";
+    }
   }
 
   return 1;

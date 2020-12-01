@@ -26,7 +26,9 @@ export function apiCall(
   const reqData = type === "post" ? data : { params: data };
 
   axiosCall(`/api/${endpoint}`, reqData || {})
-    .then((response) => successCallback(response.data))
+    .then((response) => {
+      successCallback(response.data);
+    })
     .catch((error) => {
       // 401 we shoot out for not authenticated error
       if (prot && error.response?.status === 401) {
@@ -38,7 +40,6 @@ export function apiCall(
       } else if (error.response?.status !== 401) {
         toast.error("Įvyko klaida, pabandykite perkrauti puslapį");
       }
-
       console.log("error:", error.response.data.msg);
     });
 }

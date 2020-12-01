@@ -213,27 +213,10 @@ class MainDetail extends PureComponent {
 
   delete() {
     if (window.confirm("Are you sure you want to delete the product?")) {
-      // we also check if there are any pending orders before letting them
-      // delete stuff
-      let ordersExist = false;
-
-      for (let i = 0; i < this.sizes.length; i++) {
-        const size = this.sizes[i];
-
-        if (size.orders?.length) {
-          ordersExist = true;
-          break;
-        }
-      }
-
-      if (ordersExist) {
-        toast.error("Cannot delete a product with pending orders");
-      } else {
-        const { id } = this.props.match.params;
-        apiCall("post", "delProd", { id }, true, () => {
-          this.props.history.push("/parduotuve");
-        });
-      }
+      const { id } = this.props.match.params;
+      apiCall("post", "delProd", { id }, true, () => {
+        this.props.history.push("/parduotuve");
+      });
     }
   }
 

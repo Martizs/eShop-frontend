@@ -84,6 +84,10 @@ export class SendOptions extends PureComponent {
     this.actualOptions[index].name = value;
   }
 
+  editShort(index, value) {
+    this.actualOptions[index].short = value;
+  }
+
   editPrice(index, value) {
     this.actualOptions[index].price = value;
   }
@@ -131,11 +135,27 @@ export class SendOptions extends PureComponent {
           <>
             {this.state.rendOptions.map((rendOpt, index) => (
               <SendOptionRow key={rendOpt._id}>
+                <OptRemBut>
+                  <AdminBut
+                    text="REMOVE"
+                    type="del"
+                    onClick={() => this.remOption(rendOpt._id)}
+                  />
+                </OptRemBut>
                 <SendOptionRowInn>
                   <TextInput
                     req
                     defaultValue={rendOpt.name}
-                    width="40%"
+                    width="30%"
+                    label="Short label (40 chars):"
+                    handleChange={(event) =>
+                      this.editShort(index, event.target.value)
+                    }
+                  />
+                  <TextInput
+                    req
+                    defaultValue={rendOpt.name}
+                    width="30%"
                     label="Label:"
                     handleChange={(event) =>
                       this.editName(index, event.target.value)
@@ -144,21 +164,13 @@ export class SendOptions extends PureComponent {
                   <TextInput
                     req
                     defaultValue={rendOpt.price}
-                    width="40%"
+                    width="30%"
                     type="number"
                     label="Price:"
                     handleChange={(event) =>
                       this.editPrice(index, event.target.value)
                     }
                   />
-                  <OptRemBut>
-                    <AdminBut
-                      margin={0}
-                      text="REMOVE"
-                      type="del"
-                      onClick={() => this.remOption(rendOpt._id)}
-                    />
-                  </OptRemBut>
                 </SendOptionRowInn>
                 <ExtraInfoCont>
                   <CheckRad

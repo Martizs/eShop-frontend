@@ -13,11 +13,9 @@ import {
   SizeButCont,
   SizeRadCont,
   SizeItemCont,
-  PendOrdCont,
 } from "./style";
 /* utils */
 import remove from "lodash/remove";
-import { toast } from "react-toastify";
 
 export const SizeList = (props) => {
   const [rendList, setRendList] = useState(props.defSizes || []);
@@ -38,47 +36,27 @@ export const SizeList = (props) => {
     setRendList(newRendList);
   };
 
-  const remItem = (orders, _id) => {
+  const remItem = (_id) => {
     const newRendList = [...rendList];
 
-    if (!orders?.length) {
-      remove(newRendList, (item) => item._id === _id);
-      props.remSize(_id);
+    remove(newRendList, (item) => item._id === _id);
+    props.remSize(_id);
 
-      setRendList(newRendList);
-    } else {
-      toast.error("Cannot delete a size with pending orders");
-    }
+    setRendList(newRendList);
   };
 
   const onSizeCheck = () => {
-    let ordersPending = false;
+    const noSizeObj = [
+      {
+        _id: Math.random().toString(36).substr(2, 10),
+        new: true,
+      },
+    ];
 
-    for (let i = 0; i < rendList.length; i++) {
-      const rendItem = rendList[i];
-      if (rendItem.orders?.length) {
-        ordersPending = true;
-        break;
-      }
-    }
-
-    if (ordersPending) {
-      toast.error(
-        "Please address the pending orders before changing the 'NO SIZE' value"
-      );
-    } else {
-      const noSizeObj = [
-        {
-          _id: Math.random().toString(36).substr(2, 10),
-          new: true,
-        },
-      ];
-
-      props.setSize(!noSize ? noSizeObj : []);
-      props.setNoSize(!noSize);
-      setNoSize(!noSize);
-      setRendList(!noSize ? noSizeObj : []);
-    }
+    props.setSize(!noSize ? noSizeObj : []);
+    props.setNoSize(!noSize);
+    setNoSize(!noSize);
+    setRendList(!noSize ? noSizeObj : []);
   };
 
   return (
@@ -128,14 +106,11 @@ export const SizeList = (props) => {
                     type="del"
                     butStyle="small"
                     text="REMOVE"
-                    onClick={() => remItem(item.orders, item._id)}
+                    onClick={() => remItem(item._id)}
                   />
                 </RemSizeCont>
               )}
             </SizeItem>
-            {!!item.orders?.length && (
-              <PendOrdCont>Pending orders: {item.orders.length}</PendOrdCont>
-            )}
           </SizeItemCont>
         ))}
       </SizeListCont>

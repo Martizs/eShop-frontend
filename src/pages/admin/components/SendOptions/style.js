@@ -16,7 +16,8 @@ export const SendOptionRowInn = styled.div`
 `;
 
 export const OptRemBut = styled.div`
-  margin-top: auto;
+  width: 30%;
+  margin: 10px auto;
 `;
 
 export const ExtraInfoCont = styled.div`
