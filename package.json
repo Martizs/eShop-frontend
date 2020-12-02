@@ -6,6 +6,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "autosize": "^4.0.2",
     "axios": "^0.21.0",
     "lodash": "^4.17.20",
     "react": "^17.0.1",

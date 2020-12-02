@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 /* components */
 import { AboutText } from "components/AboutText";
@@ -6,9 +7,22 @@ import { SlideShow } from "components/SlideShow";
 /* styles */
 import { HomeCont, AboutWrapper } from "./style";
 import { ProdListWrap } from "styles/ProdListWrap";
+/* utils */
+import { apiCall } from "utils/apiCalls";
 
 export const Home = () => {
   let history = useHistory();
+
+  const [aboutText, setText] = useState("");
+
+  useEffect(() => {
+    apiCall("get", "getAbout", null, false, (data) => {
+      const item = data[0];
+      if (item) {
+        setText(item.text);
+      }
+    });
+  }, []);
 
   return (
     <HomeCont>
@@ -16,8 +30,8 @@ export const Home = () => {
       <ProdListWrap>
         <ProductList title="PARDUOTUVĖ" />
       </ProdListWrap>
-      <AboutWrapper onClick={() => history.push("/apie")}>
-        <AboutText overFlow />
+      <AboutWrapper onClick={() => history.push("/ap")}>
+        <AboutText overFlow text={aboutText} />
       </AboutWrapper>
     </HomeCont>
   );

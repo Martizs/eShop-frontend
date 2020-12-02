@@ -28,6 +28,7 @@ export class TextInput extends React.PureComponent {
           </InpLabelCont>
         )}
         <TextCont
+          ref={this.props.textRef}
           disabled={this.props.disabled}
           label={this.props.label}
           defaultValue={this.props.defaultValue}

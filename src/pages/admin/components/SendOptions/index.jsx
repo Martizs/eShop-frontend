@@ -145,7 +145,7 @@ export class SendOptions extends PureComponent {
                 <SendOptionRowInn>
                   <TextInput
                     req
-                    defaultValue={rendOpt.name}
+                    defaultValue={rendOpt.short}
                     width="30%"
                     label="Short label (40 chars):"
                     handleChange={(event) =>

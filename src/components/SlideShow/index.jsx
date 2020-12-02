@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Zoom } from "react-slideshow-image";
 /* styles */
 import {
@@ -8,32 +9,56 @@ import {
   ArrowContainer,
 } from "./style";
 import "react-slideshow-image/dist/styles.css";
-/* mock */
-import { imgData } from "./mock";
+/* utils */
+import { apiCall } from "utils/apiCalls";
 
-export const SlideShow = () => {
+export const SlideShow = (props) => {
+  const [imgData, setImgData] = useState([]);
+
+  useEffect(() => {
+    apiCall(
+      "get",
+      "getBanners",
+      null,
+      false,
+      (data) => {
+        setImgData(data);
+      },
+      (err) => {
+        // nothing happens
+      }
+    );
+  }, []);
+
   const zoomInProperties = {
     scale: 2,
     duration: 4000,
     transitionDuration: 300,
     easing: "cubic-out",
-    prevArrow: (
+    arrows: false,
+  };
+
+  if (!props.noArrows) {
+    zoomInProperties.arrows = true;
+
+    zoomInProperties.prevArrow = (
       <ArrowContainer>
         <BackArrow />
       </ArrowContainer>
-    ),
-    nextArrow: (
+    );
+
+    zoomInProperties.nextArrow = (
       <ArrowContainer>
         <ForwArrow />
       </ArrowContainer>
-    ),
-  };
+    );
+  }
 
   return (
     <Zoom {...zoomInProperties}>
-      {imgData.map((each, index) => (
+      {imgData.map((img, index) => (
         <div key={index} style={slidImgCont}>
-          <img style={slidImg} src={each} />
+          <img style={slidImg} src={img.imgUrl} />
         </div>
       ))}
     </Zoom>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PicViewerCont = styled.div`
   display: flex;
   flex-direction: column;
-  width: 46%;
+  width: ${({ fullscreen }) => (fullscreen ? "100%" : "46%")};
 `;
 
 export const PicRow = styled.div`
@@ -26,4 +26,10 @@ export const ThumbNail = styled.img`
   &:hover {
     cursor: pointer;
   }
+`;
+
+export const BanImageCont = styled.img`
+  object-fit: cover;
+  width: 100%;
+  height: 500px;
 `;

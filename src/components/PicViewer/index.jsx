@@ -5,7 +5,13 @@ import ZoomPic from "./components/ZoomPic";
 import { RadioButton } from "components/RadioButton";
 import { AdminBut } from "components/AdminBut";
 /* style */
-import { PicViewerCont, PicRow, ThumbNail, ThumbNailCont } from "./style";
+import {
+  PicViewerCont,
+  PicRow,
+  ThumbNail,
+  ThumbNailCont,
+  BanImageCont,
+} from "./style";
 /* utils */
 import remove from "lodash/remove";
 import findIndex from "lodash/findIndex";
@@ -82,8 +88,13 @@ export const PicViewer = (props) => {
   };
 
   return (
-    <PicViewerCont>
-      <ZoomPic mainUri={mainImg?.imgUrl} />
+    <PicViewerCont fullscreen={props.fullscreen}>
+      {props.noRad ? (
+        <BanImageCont src={mainImg?.imgUrl} alt="ban_img" />
+      ) : (
+        <ZoomPic mainUri={mainImg?.imgUrl} />
+      )}
+
       {props.loggedIn && (
         <AdminUpload
           htmlFor="upload-button"
@@ -109,7 +120,7 @@ export const PicViewer = (props) => {
               src={item.imgUrl}
               alt="img"
             />
-            {props.loggedIn && (
+            {props.loggedIn && !props.noRad && (
               <>
                 <RadioButton
                   type="small"

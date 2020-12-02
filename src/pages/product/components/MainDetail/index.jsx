@@ -2,7 +2,7 @@ import { PureComponent, createRef } from "react";
 import { withRouter } from "react-router-dom";
 /* components */
 import { LoadingIc } from "components/LoadingIc";
-import { PicViewer } from "./components/PicViewer";
+import { PicViewer } from "../../../../components/PicViewer";
 import { ProdActComp } from "./components/ProdActComp";
 import { AdminBut } from "components/AdminBut";
 import { AdminActions } from "./components/AdminActions";

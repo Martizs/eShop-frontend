@@ -1,6 +1,7 @@
 import { useState } from "react";
 /* components */
 import { AdminBut } from "components/AdminBut";
+import { BannerImages } from "./components/BannerImages";
 import { SendOptions } from "./components/SendOptions";
 /* styles */
 import { AdminContainer, AdminNavCont } from "./style";
@@ -12,6 +13,8 @@ export const AdminPage = (props) => {
     switch (admPage) {
       case "send":
         return <SendOptions />;
+      case "banner":
+        return <BannerImages />;
       default:
         return <SendOptions />;
     }

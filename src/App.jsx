@@ -16,6 +16,9 @@ import { Product } from "pages/product";
 import { Ordered } from "pages/ordered";
 import { NotFound } from "pages/notFound";
 import { Cart } from "pages/cart";
+import { Contacts } from "pages/contacts";
+import { Info } from "pages/info";
+import { Policy } from "pages/policy";
 /* components */
 import { ToastContainer } from "react-toastify";
 import { PrivateRoute } from "components/PrivateRoute";
@@ -73,6 +76,9 @@ export function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/ap" component={About} />
+              <Route exact path="/kontaktai" component={Contacts} />
+              <Route exact path="/info" component={Info} />
+              <Route exact path="/priv" component={Policy} />
               <Route exact path="/parduotuve" component={Shop} />
               <Route
                 path="/produktas/:id"

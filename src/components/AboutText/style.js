@@ -6,6 +6,7 @@ export const AboutTextNorm = styled.div`
   width: 80%;
   text-align: center;
   margin: 0 auto;
+  white-space: pre-wrap;
 `;
 
 export const AboutTextOver = styled(AboutTextNorm)`
