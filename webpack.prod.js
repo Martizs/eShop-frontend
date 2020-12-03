@@ -5,8 +5,8 @@ const path = require("path");
 
 module.exports = {
   // activate development for quicker compile time stuff
-  mode: "development",
-  // mode: "production",
+  // mode: "development",
+  mode: "production",
   // NOTE: entry always defaults to './src'
   output: {
     filename: "[name].[contenthash].js",
