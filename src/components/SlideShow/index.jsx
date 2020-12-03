@@ -13,7 +13,7 @@ import "react-slideshow-image/dist/styles.css";
 import { apiCall } from "utils/apiCalls";
 
 export const SlideShow = (props) => {
-  const [imgData, setImgData] = useState([]);
+  const [imgzData, setImgData] = useState([]);
 
   useEffect(() => {
     apiCall(
@@ -56,7 +56,7 @@ export const SlideShow = (props) => {
 
   return (
     <Zoom {...zoomInProperties}>
-      {imgData?.map((img, index) => (
+      {imgzData?.map((img, index) => (
         <div key={index} style={slidImgCont}>
           <img style={slidImg} src={img.imgUrl} />
         </div>
