@@ -27,6 +27,16 @@ export function apiCall(
 
   successCallback([]);
 
+  axiosCall(`/api/${endpoint}`, reqData || {})
+    .then((response) => {
+      console.log("response", response);
+      successCallback([]);
+    })
+    .catch((error) => {
+      console.log("error", error);
+      successCallback([]);
+    });
+
   // axiosCall(`/api/${endpoint}`, reqData || {})
   //   .then((response) => {
   //     if (prot && response.data.error) {
