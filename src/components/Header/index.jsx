@@ -61,7 +61,7 @@ export const Header = () => {
         <NavLink to="https://www.google.com/" ext>
           <FBButton />
         </NavLink>
-        <NavLink to="https://www.google.com/" ext>
+        <NavLink to="https://www.instagram.com/dzhiungles" ext>
           <InstaButton />
         </NavLink>
       </IconContainer>

@@ -34,7 +34,7 @@ export const ProductItem = (props) => {
           src={props.secondaryPic}
           alt={props.title}
         />
-        {props.disabled && <NotAvCont>Nebėra</NotAvCont>}
+        {props.disabled && <NotAvCont>Išparduota</NotAvCont>}
       </ImgCont>
 
       <ProdTitle>{props.title}</ProdTitle>

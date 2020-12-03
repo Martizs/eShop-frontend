@@ -104,7 +104,7 @@ class MainDetail extends PureComponent {
               ...size,
               amount: size.amount + "",
               disabled: size.amount < 1,
-              disabledText: " - nebėra",
+              disabledText: " - išbarduota",
             };
           });
           this.imgData = newProd.imgData;
