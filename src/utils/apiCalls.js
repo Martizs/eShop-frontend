@@ -27,30 +27,30 @@ export function apiCall(
 
   successCallback([]);
 
-  axiosCall(`/api/${endpoint}`, reqData || {})
-    .then((response) => {
-      console.log("response", response);
-      successCallback([]);
-    })
-    .catch((error) => {
-      console.log("error", error);
-      successCallback([]);
-    });
-
   // axiosCall(`/api/${endpoint}`, reqData || {})
   //   .then((response) => {
-  //     if (prot && response.data.error) {
-  //       store.dispatch(setLogin(false));
-  //     } else {
-  //       successCallback(response.data);
-  //     }
+  //     console.log("response", response);
+  //     successCallback([]);
   //   })
   //   .catch((error) => {
-  //     if (!!errorCallback) {
-  //       errorCallback(error.response.data.msg);
-  //     }
-
-  //     toast.error("Įvyko klaida, pabandykite perkrauti puslapį");
-  //     console.log("error:", error.response.data.msg);
+  //     console.log("error", error);
+  //     successCallback([]);
   //   });
+
+  axiosCall(`/api/${endpoint}`, reqData || {})
+    .then((response) => {
+      if (prot && response.data.error) {
+        store.dispatch(setLogin(false));
+      } else {
+        successCallback(response.data);
+      }
+    })
+    .catch((error) => {
+      if (!!errorCallback) {
+        errorCallback(error.response.data.msg);
+      }
+
+      toast.error("Įvyko klaida, pabandykite perkrauti puslapį");
+      console.log("error:", error.response.data.msg);
+    });
 }
