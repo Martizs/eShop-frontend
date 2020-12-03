@@ -1,12 +1,12 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const Dotenv = require("dotenv-webpack");
 const path = require("path");
+// const webpack = require("webpack");
 
 module.exports = {
   // activate development for quicker compile time stuff
-  mode: "development",
-  // mode: "production",
+  // mode: "development",
+  mode: "production",
   // NOTE: entry always defaults to './src'
   output: {
     filename: "[name].[contenthash].js",
@@ -48,7 +48,7 @@ module.exports = {
     },
   },
   // TODO: remove this and all unnecesary things from production webpack build
-  devtool: "inline-source-map",
+  // devtool: "inline-source-map",
   module: {
     rules: [
       {
@@ -105,11 +105,8 @@ module.exports = {
   },
   target: "web",
   plugins: [
-    new Dotenv({
-      path: "./.env",
-      safe: true,
-    }),
     new CleanWebpackPlugin(),
+    // new webpack.optimize.ModuleConcatenationPlugin(),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html",
