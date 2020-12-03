@@ -56,7 +56,7 @@ export const SlideShow = (props) => {
 
   return (
     <Zoom {...zoomInProperties}>
-      {imgData.map((img, index) => (
+      {imgData?.map((img, index) => (
         <div key={index} style={slidImgCont}>
           <img style={slidImg} src={img.imgUrl} />
         </div>

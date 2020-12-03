@@ -104,7 +104,7 @@ export const PicViewer = (props) => {
         />
       )}
       <PicRow admin={props.loggedIn}>
-        {imgData.map((item) => (
+        {imgData?.map((item) => (
           <ThumbNailCont key={item.key} admin={props.loggedIn}>
             {props.loggedIn && (
               <AdminBut
