@@ -11,6 +11,8 @@ import { apiCall } from "utils/apiCalls";
 import { useHistory } from "react-router-dom";
 import { initCart } from "redux_store/cart/actions";
 import { initSendOpt } from "redux_store/send/actions";
+import { useState } from "react";
+import { LoadingIc } from "components/LoadingIc";
 
 const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 
@@ -23,6 +25,8 @@ export const PayPalModal = (props) => {
 
   const cartItems = useSelector((state) => state.cartItems);
   const sendOpt = useSelector((state) => state.sendOpt);
+
+  const [ppLoading, setPPLoading] = useState(false);
 
   const createOrder = (data, actions) => {
     const formedData = formOrder(cartItems, sendOpt);
@@ -50,6 +54,7 @@ export const PayPalModal = (props) => {
   };
 
   const onApprove = (data, actions) => {
+    setPPLoading(true);
     return actions.order.capture().then((details) => {
       apiCall("post", "orderSucces", { cartItems }, false, () => {
         dispatch(initCart());
@@ -79,6 +84,8 @@ export const PayPalModal = (props) => {
         },
       }}
     >
+      {ppLoading && <LoadingIc />}
+
       <PayPalButton
         style={{
           color: "black",
