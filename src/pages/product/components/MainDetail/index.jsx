@@ -305,6 +305,7 @@ class MainDetail extends PureComponent {
                 <ProdActComp
                   title={title}
                   price={price}
+                  discPrice={discPrice}
                   desc={desc}
                   defSizes={sizes}
                   userSelSize={this.userSelSize}

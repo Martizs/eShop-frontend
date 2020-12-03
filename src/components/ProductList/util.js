@@ -4,7 +4,6 @@ export function formProdList(data, oneRow) {
   const triplData = [];
 
   let prodSet = [];
-
   for (let i = 0; i < data.length; i++) {
     const prod = data[i];
 
@@ -28,6 +27,7 @@ export function formProdList(data, oneRow) {
       id: prod._id,
       title: prod.title,
       price: prod.price,
+      discPrice: prod.discPrice,
       primaryPic: find(prod.imgData, "primary")?.imgUrl,
       secondaryPic: find(prod.imgData, "secondary")?.imgUrl,
       disabled: !itemsAvailable,

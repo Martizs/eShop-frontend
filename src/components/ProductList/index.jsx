@@ -113,6 +113,7 @@ class ProductList extends PureComponent {
                           id={prod.id}
                           title={prod.title}
                           price={prod.price}
+                          discPrice={prod.discPrice}
                           primaryPic={prod.primaryPic}
                           secondaryPic={prod.secondaryPic}
                         />

@@ -9,9 +9,15 @@ import {
   ProdImgTop,
   ImgCont,
   NotAvCont,
+  ProdDisc,
+  PriceCont,
+  DiscWrapper,
 } from "./style";
 
 export const ProductItem = (props) => {
+  const discPrice =
+    props.discPrice && props.discPrice > 0 ? props.discPrice + "€" : "";
+
   return (
     <ProdItCont>
       {props.loggedIn && (
@@ -32,7 +38,17 @@ export const ProductItem = (props) => {
       </ImgCont>
 
       <ProdTitle>{props.title}</ProdTitle>
-      <ProdPrice>{props.price}€</ProdPrice>
+
+      {discPrice ? (
+        <PriceCont>
+          <DiscWrapper>
+            <ProdPrice>{props.price}€</ProdPrice>
+          </DiscWrapper>
+          <ProdDisc>{discPrice}</ProdDisc>
+        </PriceCont>
+      ) : (
+        <ProdPrice>{props.price}€</ProdPrice>
+      )}
     </ProdItCont>
   );
 };

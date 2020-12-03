@@ -65,11 +65,30 @@ export const ProdTitle = styled.div`
   margin: auto;
 `;
 
-export const ProdPrice = styled.div`
+export const DiscWrapper = styled.span`
+  text-decoration: line-through;
+  color: ${(props) => props.theme.colors.secondBackgrCol};
+`;
+
+export const ProdPrice = styled.span`
+  display: flex;
   padding-top: 5px;
   text-align: center;
   font-size: ${(props) => props.theme.fontSizes.text};
   font-family: ${(props) => props.theme.fonts.reg};
   color: ${(props) => props.theme.colors.highlightCol};
   margin: auto;
+`;
+
+export const ProdDisc = styled.div`
+  margin: auto 0 auto 10px;
+  padding-top: 5px;
+  font-size: ${(props) => props.theme.fontSizes.text};
+  font-family: ${(props) => props.theme.fonts.reg};
+  color: ${(props) => props.theme.colors.secondBackgrCol};
+`;
+
+export const PriceCont = styled.div`
+  margin: 0 auto;
+  display: flex;
 `;

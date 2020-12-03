@@ -11,13 +11,25 @@ import {
   ButtContainer,
   ProdTitle,
   CounterWrap,
+  PriceCont,
+  DiscWrapper,
+  ProdDisc,
 } from "./style";
 import { ProdActCont } from "../../style";
 
 export const ProdActComp = (props) => (
   <ProdActCont>
     <ProdTitle>{props.title}</ProdTitle>
-    <ProdPrice>{props.price}€</ProdPrice>
+    {props.discPrice ? (
+      <PriceCont>
+        <DiscWrapper>
+          <ProdPrice>{props.price}€</ProdPrice>
+        </DiscWrapper>
+        <ProdDisc>{props.discPrice}€</ProdDisc>
+      </PriceCont>
+    ) : (
+      <ProdPrice>{props.price}€</ProdPrice>
+    )}
     <ProdDesc>{props.desc}</ProdDesc>
     <ActContainer>
       <CounterWrap>
