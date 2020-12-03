@@ -9,7 +9,8 @@ export const FooterCont = styled.div`
 `;
 
 export const FootNavCont = styled(HeadFootCont)`
-  padding-top: 70px;
+  position: relative;
+  padding-top: 80px;
 `;
 
 export const PaymentIc = styled(CreditCard)`

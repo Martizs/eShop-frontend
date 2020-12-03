@@ -1,0 +1,25 @@
+.pagination {
+  padding-top: 20px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.pagination li {
+  list-style-type: none;
+}
+
+.page {
+  margin: 0 10px;
+  display: flex;
+  font-size: 1.2rem;
+  font-family: champ-bold;
+}
+
+.page:hover {
+  cursor: pointer;
+  color: #ffda7c;
+}
+
+.active {
+  color: #c94050;
+}

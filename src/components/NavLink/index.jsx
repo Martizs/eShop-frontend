@@ -9,7 +9,7 @@ export const NavLink = (props) => {
 
   return (
     <NavLinkCont onMouseDown={mouseDownHandler} to={props.to || ""}>
-      {props.children}
+      {props?.children}
     </NavLinkCont>
   );
 };

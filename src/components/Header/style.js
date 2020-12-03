@@ -4,7 +4,7 @@ import styled from "styled-components";
 /* styles */
 import { HeadFootCont } from "styles/HeadFootCont";
 /* icons */
-import { Facebook, Instagram } from "@material-ui/icons";
+import { Facebook, Instagram, Email } from "@material-ui/icons";
 
 export const HeaderContainer = styled(HeadFootCont)``;
 
@@ -13,6 +13,14 @@ export const IconContainer = styled.div`
   right: 20px;
   top: 25px;
   display: flex;
+`;
+
+export const EmailBut = styled(Email)`
+  font-size: 2.8rem !important;
+  &:hover {
+    color: ${(props) => props.theme.colors.highlightCol};
+    cursor: pointer;
+  }
 `;
 
 export const FBButton = styled(Facebook)`

@@ -10,9 +10,11 @@ import {
   FBButton,
   InstaButton,
   LoggoCont,
+  EmailBut,
 } from "./style";
 /* icons */
 import { LoggoComp } from "icons/LoggoComp";
+import { Rat2Comp } from "icons/Rat2Comp";
 /* redux */
 import { useDispatch, useSelector } from "react-redux";
 import { setLogin } from "redux_store/general/actions";
@@ -25,7 +27,7 @@ export const Header = () => {
 
   return (
     <HeaderContainer>
-      {loggedIn && (
+      {loggedIn ? (
         <AdminBut
           text="LOG OUT"
           onClick={() =>
@@ -34,7 +36,10 @@ export const Header = () => {
             )
           }
         />
+      ) : (
+        <Rat2Comp />
       )}
+
       <NavContainer>
         <NavLink
           to="https://www.youtube.com/channel/UCVfhKzY261aiqKnx6UyZ4Gg"
@@ -50,6 +55,9 @@ export const Header = () => {
         <CartNav />
       </NavContainer>
       <IconContainer>
+        <NavLink to="/kontaktai">
+          <EmailBut />
+        </NavLink>
         <NavLink to="https://www.google.com/" ext>
           <FBButton />
         </NavLink>

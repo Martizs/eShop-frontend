@@ -89,6 +89,7 @@ export function App() {
               <Route exact path="/uzsakyta" component={Ordered} />
               <Route exact path="/admin_login" component={Login} />
               <PrivateRoute exact path="/admin" component={AdminPage} />
+              <Route component={NotFound} />
             </Switch>
             <Footer />
           </MainScrollCont>

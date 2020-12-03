@@ -3,18 +3,21 @@ import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 /* utils */
 import { formOrder } from "./util";
 import { apiCall } from "utils/apiCalls";
 import { useHistory } from "react-router-dom";
+import { initCart } from "redux_store/cart/actions";
+import { initSendOpt } from "redux_store/send/actions";
 
 const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 
 Modal.setAppElement("#root");
 
 export const PayPalModal = (props) => {
+  const dispatch = useDispatch();
   const theme = useContext(ThemeContext);
   let history = useHistory();
 
@@ -49,6 +52,8 @@ export const PayPalModal = (props) => {
   const onApprove = (data, actions) => {
     return actions.order.capture().then((details) => {
       apiCall("post", "orderSucces", { cartItems }, false, () => {
+        dispatch(initCart());
+        dispatch(initSendOpt());
         history.push({
           pathname: "/uzsakyta",
           state: { order_successful: true },

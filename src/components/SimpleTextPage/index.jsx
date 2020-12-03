@@ -58,7 +58,7 @@ class SimpleTextPage extends PureComponent {
     return (
       <SimpleTextCont>
         <MainTitleText>{this.props.title}</MainTitleText>
-        {this.props.children}
+        {this.props?.children}
         {this.props.loggedIn ? (
           <SimpleInput>
             {this.state.dataLoaded ? (

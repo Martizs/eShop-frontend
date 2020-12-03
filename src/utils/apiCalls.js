@@ -27,19 +27,18 @@ export function apiCall(
 
   axiosCall(`/api/${endpoint}`, reqData || {})
     .then((response) => {
-      successCallback(response.data);
+      if (prot && response.data.error) {
+        store.dispatch(setLogin(false));
+      } else {
+        successCallback(response.data);
+      }
     })
     .catch((error) => {
-      // 401 we shoot out for not authenticated error
-      if (prot && error.response?.status === 401) {
-        store.dispatch(setLogin(false));
-      }
-
       if (!!errorCallback) {
         errorCallback(error.response.data.msg);
-      } else if (error.response?.status !== 401) {
-        toast.error("Įvyko klaida, pabandykite perkrauti puslapį");
       }
+
+      toast.error("Įvyko klaida, pabandykite perkrauti puslapį");
       console.log("error:", error.response.data.msg);
     });
 }
