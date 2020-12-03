@@ -25,20 +25,22 @@ export function apiCall(
 
   const reqData = type === "post" ? data : { params: data };
 
-  axiosCall(`/api/${endpoint}`, reqData || {})
-    .then((response) => {
-      if (prot && response.data.error) {
-        store.dispatch(setLogin(false));
-      } else {
-        successCallback(response.data);
-      }
-    })
-    .catch((error) => {
-      if (!!errorCallback) {
-        errorCallback(error.response.data.msg);
-      }
+  successCallback([]);
 
-      toast.error("Įvyko klaida, pabandykite perkrauti puslapį");
-      console.log("error:", error.response.data.msg);
-    });
+  // axiosCall(`/api/${endpoint}`, reqData || {})
+  //   .then((response) => {
+  //     if (prot && response.data.error) {
+  //       store.dispatch(setLogin(false));
+  //     } else {
+  //       successCallback(response.data);
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     if (!!errorCallback) {
+  //       errorCallback(error.response.data.msg);
+  //     }
+
+  //     toast.error("Įvyko klaida, pabandykite perkrauti puslapį");
+  //     console.log("error:", error.response.data.msg);
+  //   });
 }
