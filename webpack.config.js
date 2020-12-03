@@ -5,8 +5,9 @@ const path = require("path");
 
 module.exports = {
   // activate development for quicker compile time stuff
-  // mode: "development",
-  mode: "production",
+  mode: "development",
+  // TODO: you can try changing back to production
+  // mode: "production",
   // NOTE: entry always defaults to './src'
   output: {
     filename: "[name].[contenthash].js",
@@ -53,6 +54,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
+        // TODO: you can try adding this back in
         // exclude: /node_modules/,
         use: {
           loader: "babel-loader",
