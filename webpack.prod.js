@@ -34,7 +34,9 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        // TODO: still getting uncaught style errors from
+        // vendor js so gonna try to comment this again
+        // exclude: /node_modules/,
         use: {
           loader: "babel-loader",
         },
