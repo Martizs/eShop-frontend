@@ -69,8 +69,6 @@ class ProductList extends PureComponent {
           if (this.mounted) {
             const pageCount = prodData.count / 9;
 
-            console.log("prodData", prodData);
-
             this.setState({
               page,
               pageCount,
