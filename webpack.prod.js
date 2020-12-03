@@ -5,6 +5,8 @@ const path = require("path");
 
 module.exports = {
   // activate development for quicker compile time stuff
+  // NOTE: there are source map errors for some node modules
+  // when running/serving in development mode
   // mode: "development",
   mode: "production",
   // NOTE: entry always defaults to './src'
@@ -32,8 +34,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        // TODO: uncomment this if not needed
-        // exclude: /node_modules/,
+        exclude: /node_modules/,
         use: {
           loader: "babel-loader",
         },
