@@ -45,6 +45,10 @@ module.exports = {
         target: "http://localhost:4000/",
         secure: "false",
       },
+      "/static/*": {
+        target: "http://localhost:4000/",
+        secure: "false",
+      },
     },
   },
   // TODO: remove this and all unnecesary things from production webpack build
