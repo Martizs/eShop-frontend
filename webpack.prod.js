@@ -7,8 +7,9 @@ module.exports = {
   // activate development for quicker compile time stuff
   // NOTE: there are source map errors for some node modules
   // when running/serving in development mode
-  // mode: "development",
-  mode: "production",
+  // TODO: change this
+  mode: "development",
+  // mode: "production",
   // NOTE: entry always defaults to './src'
   output: {
     filename: "[name].[contenthash].js",
