@@ -44,6 +44,9 @@ export function apiCall(
       }
     })
     .catch((error) => {
+      console.log("error", error);
+      console.log("error.response", error.response);
+
       if (!!errorCallback) {
         errorCallback(error.response.data.msg);
       }
