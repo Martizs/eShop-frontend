@@ -22,9 +22,8 @@ export const PicViewer = (props) => {
   const [mainImg, setMainImg] = useState(imgData[0]);
 
   useEffect(() => {
-    setImgData(props.imgData);
-    setMainImg(props.imgData && props.imgData[0]);
-  }, [props.imgData]);
+    setMainImg(imgData[0]);
+  }, [imgData]);
 
   const changeImgData = (newImgData) => {
     setImgData(newImgData);
