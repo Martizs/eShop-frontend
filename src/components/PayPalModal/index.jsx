@@ -13,6 +13,7 @@ import { initCart } from "redux_store/cart/actions";
 import { initSendOpt } from "redux_store/send/actions";
 import { useState } from "react";
 import { LoadingIc } from "components/LoadingIc";
+import { LoadingCont } from "./style";
 
 const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 
@@ -84,7 +85,11 @@ export const PayPalModal = (props) => {
         },
       }}
     >
-      {ppLoading && <LoadingIc />}
+      {ppLoading && (
+        <LoadingCont>
+          <LoadingIc />
+        </LoadingCont>
+      )}
 
       <PayPalButton
         style={{

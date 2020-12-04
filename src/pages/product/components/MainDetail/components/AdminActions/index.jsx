@@ -47,7 +47,7 @@ export const AdminActions = (props) => (
       <CatLabel>Category: </CatLabel>
       <CatDDCont>
         <DropDown
-          initVal={props.category.title}
+          initVal={props.category?.title}
           items={prodCategories}
           onItemSelect={props.onCatSelect}
         />

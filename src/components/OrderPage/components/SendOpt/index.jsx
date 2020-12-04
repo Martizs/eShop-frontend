@@ -27,8 +27,9 @@ export class SendOpt extends PureComponent {
   componentDidMount() {
     apiCall("get", "getOptions", null, false, (data) => {
       this.sendOptData = data;
-      this.setState({ sendOptData: data, currOpt: data[0]._id }, () =>
-        this.props.setSendOption(data[0], true)
+      this.setState(
+        { sendOptData: data, currOpt: data && data[0] && data[0]._id },
+        () => this.props.setSendOption(data[0], true)
       );
     });
   }

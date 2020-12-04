@@ -58,7 +58,7 @@ class OrderPage extends PureComponent {
   }
 
   setSendOption(option, newOpt) {
-    if (newOpt) {
+    if (newOpt && option) {
       this.setState({
         wholeSum: getItemSum(this.props.cartItems) + option.price,
       });

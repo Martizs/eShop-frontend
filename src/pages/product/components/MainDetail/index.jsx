@@ -99,7 +99,7 @@ class MainDetail extends PureComponent {
           this.discPrice = newProd.discPrice + "";
           this.desc = newProd.desc;
           this.category = newProd.category;
-          this.sizes = newProd.sizes.map((size) => {
+          this.sizes = newProd.sizes?.map((size) => {
             return {
               ...size,
               amount: size.amount + "",
@@ -109,7 +109,9 @@ class MainDetail extends PureComponent {
           });
           this.imgData = newProd.imgData;
           this.noSize =
-            newProd.sizes[0] && !newProd.sizes[0].name ? true : false;
+            newProd.sizes && newProd.sizes[0] && !newProd.sizes[0].name
+              ? true
+              : false;
 
           this.selectedSize = this.noSize ? newProd.sizes[0] : null;
 

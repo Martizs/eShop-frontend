@@ -37,7 +37,7 @@ export const ProdActComp = (props) => (
       </CounterWrap>
 
       <ButtContainer>
-        {props.defSizes[0]?.name && (
+        {props.defSizes && props.defSizes[0]?.name && (
           <DDWrapper>
             <DropDown
               initVal="DYDIS"

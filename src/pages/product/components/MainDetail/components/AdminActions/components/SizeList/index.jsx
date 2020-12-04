@@ -20,7 +20,9 @@ import remove from "lodash/remove";
 export const SizeList = (props) => {
   const [rendList, setRendList] = useState(props.defSizes || []);
   const [noSize, setNoSize] = useState(
-    props.defSizes[0] && !props.defSizes[0].name ? true : false
+    props.defSizes && props.defSizes[0] && !props.defSizes[0].name
+      ? true
+      : false
   );
 
   const addItem = () => {

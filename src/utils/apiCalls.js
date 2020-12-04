@@ -25,8 +25,6 @@ export function apiCall(
 
   const reqData = type === "post" ? data : { params: data };
 
-  successCallback([]);
-
   // axiosCall(`/api/${endpoint}`, reqData || {})
   //   .then((response) => {
   //     console.log("response", response);
