@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const MenuItemStyle = styled(Link)`
+export const MenuItemStyle = styled.div`
   font-size: ${(props) => props.theme.fontSizes.title};
   font-family: ${(props) => props.theme.fonts.bold};
   text-align: center;
