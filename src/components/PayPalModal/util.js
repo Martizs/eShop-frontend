@@ -36,3 +36,28 @@ export function formOrder(cartItems, sendOpt) {
     total_price,
   };
 }
+
+export function getStyle(theme) {
+  return window.innerWidth > 320
+    ? {
+        content: {
+          maxWidth: 750,
+          height: "fit-content",
+          margin: "auto",
+          maxHeight: "280px",
+          backgroundColor: theme.colors.textColor,
+        },
+      }
+    : {
+        content: {
+          maxWidth: 750,
+          width: "100%",
+          padding: 0,
+          left: 0,
+          height: "fit-content",
+          margin: "auto",
+          maxHeight: "280px",
+          backgroundColor: theme.colors.textColor,
+        },
+      };
+}

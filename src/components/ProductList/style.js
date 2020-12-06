@@ -14,9 +14,19 @@ export const GridRow = styled.div`
   justify-content: space-around;
 `;
 
+export const CatDDCont = styled.div`
+  width: 90%;
+  margin: 0 auto;
+  z-index: 10;
+  padding-bottom: 20px;
+`;
+
 export const GridItem = styled.div`
   margin: 0 5px 20px 5px;
   width: 32%;
+  @media (max-width: 600px) {
+    width: 45%;
+  }
 `;
 
 export const InnerCont = styled.div`
@@ -24,6 +34,9 @@ export const InnerCont = styled.div`
   flex-direction: column;
   width: ${({ innerCont }) => (innerCont ? "60%" : "100%")};
   margin: 0 auto;
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 export const BackPagArrow = styled(ArrowBackIos)`

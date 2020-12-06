@@ -13,11 +13,14 @@ export const CatBut = styled.div`
     cursor: pointer;
     color: ${({ theme }) => theme.colors.highlightCol};
   }
+  @media (max-width: 650px) {
+    font-size: ${(props) => props.theme.fontSizes.subTitle};
+  }
 `;
 
 export const Divider = styled.div`
-  margin: auto 0;
-  width: 100%;
-  height: 4px;
+  margin: ${({ margin }) => margin || "auto 0"};
+  width: ${({ width }) => width || "100%"};
+  height: ${({ height }) => height || "4px"};
   background-color: ${({ theme }) => theme.colors.highlightCol};
 `;

@@ -8,6 +8,9 @@ export const TableHeader = styled.div`
   background-color: ${({ theme }) => theme.colors.secondBackgrCol};
   display: flex;
   padding: 10px 15%;
+  @media (max-width: 1190px) {
+    padding: 10px 2%;
+  }
 `;
 
 export const TableRow = styled.div`
@@ -42,12 +45,26 @@ export const ColTitle = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.title};
   font-family: ${({ theme }) => theme.fonts.bold};
   white-space: nowrap;
+  vertical-align: middle;
+  @media (max-width: 880px) {
+    font-size: ${({ theme }) => theme.mdFontSizes.title};
+  }
+  @media (max-width: 680px) {
+    font-size: ${({ theme }) => theme.smFontSizes.title};
+  }
 `;
 
 export const CellText = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.subTitle};
   font-family: ${({ theme }) => theme.fonts.bold};
   white-space: nowrap;
+  vertical-align: middle;
+  @media (max-width: 880px) {
+    font-size: ${({ theme }) => theme.mdFontSizes.title};
+  }
+  @media (max-width: 680px) {
+    font-size: ${({ theme }) => theme.smFontSizes.title};
+  }
 `;
 
 export const CloseIc = styled(Close)`

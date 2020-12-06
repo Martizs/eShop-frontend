@@ -13,4 +13,16 @@ export const NavLinkCont = styled(Link)`
     color: ${(props) => props.theme.colors.highlightCol};
     cursor: pointer;
   }
+
+  @media (max-width: 1190px) {
+    font-size: ${(props) => props.theme.mdFontSizes.title};
+  }
+
+  @media (max-width: 890px) {
+    font-size: ${(props) => props.theme.smFontSizes.title};
+  }
+
+  @media (max-width: 300px) {
+    padding: 5px;
+  }
 `;

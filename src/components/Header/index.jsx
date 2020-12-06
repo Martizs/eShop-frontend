@@ -4,17 +4,13 @@ import { AdminBut } from "components/AdminBut";
 import { CartNav } from "./components/CartNav";
 /* styles */
 import { NavContainer } from "styles/NavContainer";
-import {
-  HeaderContainer,
-  IconContainer,
-  FBButton,
-  InstaButton,
-  LoggoCont,
-  EmailBut,
-} from "./style";
+import { HeaderContainer, IconContainer, LoggoCont } from "./style";
 /* icons */
 import { LoggoComp } from "icons/LoggoComp";
 import { Rat2Comp } from "icons/Rat2Comp";
+import { MailLogo } from "icons/MailLogo";
+import { FBLoggo } from "icons/FBLoggo";
+import { InstLogo } from "icons/InstLogo";
 /* redux */
 import { useDispatch, useSelector } from "react-redux";
 import { setLogin } from "redux_store/general/actions";
@@ -56,13 +52,13 @@ export const Header = () => {
       </NavContainer>
       <IconContainer>
         <NavLink to="/kontaktai">
-          <EmailBut />
+          <MailLogo />
         </NavLink>
-        <NavLink to="https://www.google.com/" ext>
-          <FBButton />
+        <NavLink to="https://www.facebook.com/dzhiungles" ext>
+          <FBLoggo />
         </NavLink>
         <NavLink to="https://www.instagram.com/dzhiungles" ext>
-          <InstaButton />
+          <InstLogo />
         </NavLink>
       </IconContainer>
     </HeaderContainer>

@@ -4,6 +4,9 @@ export const PicViewerCont = styled.div`
   display: flex;
   flex-direction: column;
   width: ${({ fullscreen }) => (fullscreen ? "100%" : "46%")};
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 export const PicRow = styled.div`

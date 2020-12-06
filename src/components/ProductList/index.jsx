@@ -3,6 +3,8 @@ import { PureComponent } from "react";
 import { ProductItem } from "components/ProductItem";
 import { AdminBut } from "components/AdminBut";
 import { LoadingIc } from "components/LoadingIc";
+import { CatNav } from "./components/CatNav";
+import { DropDown } from "components/DropDown";
 import ReactPaginate from "react-paginate";
 /* styles */
 import "./prodList.css";
@@ -14,14 +16,18 @@ import {
   InnerCont,
   BackPagArrow,
   ForwPagArrow,
+  CatDDCont,
 } from "./style";
 import { MainTitleText } from "styles/MainTitleText";
 /* utils */
+import find from "lodash/find";
+import { withResizeDetector } from "react-resize-detector";
 import { formProdList } from "./util";
 import { apiCall } from "utils/apiCalls";
 /* redux */
 import { connect } from "react-redux";
-import { CatNav } from "./components/CatNav";
+/* consts */
+import { catDDData } from "./const";
 
 class ProductList extends PureComponent {
   constructor(props) {
@@ -31,6 +37,7 @@ class ProductList extends PureComponent {
 
     this.size = props.oneRow || 9;
     this.cat = "all";
+    this.itSep = window.innerWidth <= 600 ? 2 : 3;
 
     this.state = {
       formedData: [],
@@ -56,6 +63,16 @@ class ProductList extends PureComponent {
     if (this.props.noId !== prevProps.noId) {
       this.loadData(this.state.page, this.size, this.cat);
     }
+
+    if (this.props.width !== prevProps.width) {
+      if (this.itSep === 3 && window.innerWidth <= 600) {
+        this.itSep = 2;
+        this.loadData(this.state.page, this.size, this.cat);
+      } else if (this.itSep === 2 && window.innerWidth > 600) {
+        this.itSep = 3;
+        this.loadData(this.state.page, this.size, this.cat);
+      }
+    }
   }
 
   loadData(page, size, cat) {
@@ -72,7 +89,11 @@ class ProductList extends PureComponent {
             this.setState({
               page,
               pageCount,
-              formedData: formProdList(prodData.products, this.props.oneRow),
+              formedData: formProdList(
+                prodData.products,
+                this.props.oneRow,
+                this.itSep
+              ),
               dataLoaded: true,
             });
           }
@@ -98,7 +119,22 @@ class ProductList extends PureComponent {
         {this.props.loggedIn && this.props.edit && (
           <AdminBut text="ADD PRODUCT" type="add" link="/produktas/new" />
         )}
-        {this.props.shop && <CatNav onCatClick={this.catClick} />}
+
+        {this.props.shop && (
+          <>
+            {this.itSep === 2 ? (
+              <CatDDCont>
+                <DropDown
+                  initVal={find(catDDData, ["key", this.cat]).title}
+                  items={catDDData}
+                  onItemSelect={(cat) => this.catClick(cat.key)}
+                />
+              </CatDDCont>
+            ) : (
+              <CatNav onCatClick={this.catClick} />
+            )}
+          </>
+        )}
         <InnerCont innerCont={this.props.shop}>
           {this.state.dataLoaded ? (
             <>
@@ -152,4 +188,4 @@ const mapStateToProps = (state) => ({
   loggedIn: state.loggedIn,
 });
 
-export default connect(mapStateToProps)(ProductList);
+export default withResizeDetector(connect(mapStateToProps)(ProductList));

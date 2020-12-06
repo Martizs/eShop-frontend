@@ -1,14 +1,16 @@
 import find from "lodash/find";
 
-export function formProdList(data, oneRow) {
+export function formProdList(data, oneRow, itSep = 3) {
   const triplData = [];
+
+  const adjOneRow = oneRow && itSep !== 2;
 
   if (data) {
     let prodSet = [];
     for (let i = 0; i < data.length; i++) {
       const prod = data[i];
 
-      if (!oneRow && i !== 0 && Number.isInteger(i / 3)) {
+      if (!adjOneRow && i !== 0 && Number.isInteger(i / itSep)) {
         triplData.push(prodSet);
         prodSet = [];
       }
@@ -36,7 +38,7 @@ export function formProdList(data, oneRow) {
 
       prodSet.push(adjProd);
 
-      if (oneRow && oneRow - 1 === i) {
+      if (adjOneRow && oneRow - 1 === i) {
         break;
       }
     }

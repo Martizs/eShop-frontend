@@ -8,8 +8,8 @@ module.exports = {
   // NOTE: there are source map errors for some node modules
   // when running/serving in development mode
   // TODO: change this
-  mode: "development",
-  // mode: "production",
+  // mode: "development",
+  mode: "production",
   // NOTE: entry always defaults to './src'
   output: {
     filename: "[name].[contenthash].js",

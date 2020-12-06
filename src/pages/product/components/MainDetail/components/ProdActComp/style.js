@@ -9,26 +9,42 @@ export const ProdPrice = styled.span`
   font-size: ${(props) => props.theme.fontSizes.title};
   color: ${(props) => props.theme.colors.highlightCol};
   margin: 40px 0;
+  @media (max-width: 700px) {
+    text-align: center;
+  }
 `;
 
 export const ProdDisc = styled.div`
   margin-left: 10px;
   font-size: ${(props) => props.theme.fontSizes.title};
   color: ${(props) => props.theme.colors.secondBackgrCol};
+  @media (max-width: 700px) {
+    text-align: center;
+  }
 `;
 
 export const PriceCont = styled.div`
   margin: 40px 0;
   display: flex;
+  @media (max-width: 700px) {
+    justify-content: center;
+  }
 `;
 
 export const ProdTitle = styled.div`
   font-size: ${(props) => props.theme.fontSizes.title};
   font-family: ${(props) => props.theme.fonts.bold};
+  @media (max-width: 700px) {
+    text-align: center;
+  }
 `;
 
 export const ProdDesc = styled.div`
   font-size: ${(props) => props.theme.fontSizes.subTitle};
+  @media (max-width: 700px) {
+    text-align: center;
+    padding-bottom: 30px;
+  }
 `;
 
 export const ActContainer = styled.div`

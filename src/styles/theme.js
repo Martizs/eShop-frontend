@@ -19,4 +19,16 @@ export const theme = {
     subTitle: "1.4rem",
     text: "1rem",
   },
+
+  mdFontSizes: {
+    title: "1.4rem",
+    subTitle: "1.2rem",
+    text: "1rem",
+  },
+
+  smFontSizes: {
+    title: "1.2rem",
+    subTitle: "1rem",
+    text: "0.8rem",
+  },
 };

@@ -14,3 +14,12 @@ export const SendRow = styled.div`
 export const PostAdrInp = styled.div`
   margin-left: 2.8rem;
 `;
+
+export const ExtraInfotxt = styled.div`
+  color: ${({ theme }) => theme.colors.highlightCol};
+  text-align: end;
+`;
+
+export const PriceTextCont = styled.div`
+  margin: auto 0;
+`;

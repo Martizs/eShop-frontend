@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 /* styles */
 import { ThemeProvider } from "styled-components";
 import { theme } from "styles/theme";
@@ -23,19 +23,26 @@ import { Policy } from "pages/policy";
 import { ToastContainer } from "react-toastify";
 import { PrivateRoute } from "components/PrivateRoute";
 import { Header } from "components/Header";
+import { ActionHeader } from "components/ActionHeader";
 import { Footer } from "components/Footer";
+import { ActionMenu } from "components/ActionMenu";
 /* utils */
+import { withResizeDetector } from "react-resize-detector";
 import { apiCall } from "utils/apiCalls";
 /* redux */
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setLogin } from "redux_store/general/actions";
 /* css */
 import "react-toastify/dist/ReactToastify.css";
 
-export function App() {
+function App(props) {
   const scrollRef = useRef(null);
 
+  const [mobile, setMobile] = useState(false);
+
   const dispatch = useDispatch();
+  const menu = useSelector((state) => state.menu);
+
   useEffect(() => {
     // so if a new tab is opened,
     // OR if the page is refreshed
@@ -52,6 +59,15 @@ export function App() {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (props.width <= 800 && !mobile) {
+      setMobile(true);
+    } else if (props.width > 800 && mobile) {
+      setMobile(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.width, props.height]);
 
   const scrollTop = () => {
     scrollRef.current.scrollTo(0, 0);
@@ -71,7 +87,9 @@ export function App() {
             draggable
             pauseOnHover
           />
-          <Header />
+          {mobile ? <ActionHeader /> : <Header />}
+          {mobile && <ActionMenu open={menu} />}
+
           <MainScrollCont ref={scrollRef}>
             <Switch>
               <Route exact path="/" component={Home} />
@@ -98,3 +116,5 @@ export function App() {
     </Router>
   );
 }
+
+export default withResizeDetector(App);

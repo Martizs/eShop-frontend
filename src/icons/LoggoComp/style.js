@@ -7,4 +7,8 @@ export const LoggoStyle = styled.svg`
     fill: ${(props) => props.theme.colors.highlightCol};
     cursor: pointer;
   }
+
+  @media (max-width: 1190px) {
+    width: 180px;
+  }
 `;

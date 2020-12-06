@@ -8,6 +8,8 @@ import { ProdTable } from "./components/ProdTable";
 import { SendOpt } from "./components/SendOpt";
 import { Button } from "components/Button";
 import { PayPalModal } from "components/PayPalModal";
+import { LoadingIc } from "components/LoadingIc";
+import { MobProdTab } from "./components/MobProdTab";
 /* styles */
 import { MainTitleText } from "styles/MainTitleText";
 import {
@@ -16,10 +18,10 @@ import {
   CartContWrapper,
   CartBut,
   EmptyCartTxt,
+  LoadCont,
 } from "./style";
 import { TableCell, TableFooter } from "./components/ProdTable/style";
-/* components */
-import { LoadingIc } from "components/LoadingIc";
+
 /* utils */
 import isEqual from "lodash/isEqual";
 import { getItemSum, orderValid } from "./utils";
@@ -113,7 +115,12 @@ class OrderPage extends PureComponent {
         <MainTitleText>KREPŠELIS</MainTitleText>
         {cartItems?.length ? (
           <>
-            <ProdTable cartItems={cartItems} />
+            {window.innerWidth > 580 ? (
+              <ProdTable cartItems={cartItems} />
+            ) : (
+              <MobProdTab cartItems={cartItems} />
+            )}
+
             <MainTitleText>SIUNTIMO BŪDAS</MainTitleText>
             <SendOpt setSendOption={this.setSendOption} />
 
@@ -133,7 +140,9 @@ class OrderPage extends PureComponent {
             </CartContWrapper>
             <CartBut>
               {this.state.orderLoading ? (
-                <LoadingIc />
+                <LoadCont>
+                  <LoadingIc />
+                </LoadCont>
               ) : (
                 <Button text="TĘSTI" onClick={this.issueOrder} />
               )}

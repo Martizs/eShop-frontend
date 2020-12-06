@@ -1,6 +1,6 @@
 /* components */
 import SimpleTextPage from "components/SimpleTextPage";
-import { SlideShow } from "components/SlideShow";
+import SlideShow from "components/SlideShow";
 /* style */
 import { AboutSlideShow } from "./style";
 

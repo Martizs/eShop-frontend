@@ -5,7 +5,13 @@ import { RadioButton } from "components/RadioButton";
 import { TextInput } from "components/TextInput";
 /* styles */
 import { CartContWrapper, PriceText } from "../../style";
-import { SendCont, SendRow, PostAdrInp } from "./style";
+import {
+  SendCont,
+  SendRow,
+  PostAdrInp,
+  ExtraInfotxt,
+  PriceTextCont,
+} from "./style";
 /* utils */
 import { apiCall } from "utils/apiCalls";
 
@@ -59,7 +65,9 @@ export class SendOpt extends PureComponent {
                   checked={currOpt === option._id}
                   label={option.name}
                 />
-                <PriceText>{option.price} €</PriceText>
+                <PriceTextCont>
+                  <PriceText>{option.price} €</PriceText>
+                </PriceTextCont>
               </SendRow>
               {option.extraInfo && (
                 <AnimateHeight
@@ -81,6 +89,10 @@ export class SendOpt extends PureComponent {
               )}
             </div>
           ))}
+          <ExtraInfotxt>
+            Užsisakant siuntas šventiniu arba pandemijos laikotarpiu, siuntos
+            gali vėluoti*
+          </ExtraInfotxt>
         </CartContWrapper>
       </SendCont>
     );

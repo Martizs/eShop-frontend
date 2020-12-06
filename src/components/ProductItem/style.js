@@ -55,6 +55,9 @@ export const NotAvCont = styled.div`
   font-size: ${(props) => props.theme.fontSizes.subTitle};
   font-family: ${(props) => props.theme.fonts.bold};
   background-color: ${(props) => props.theme.colors.secondBackgrCol};
+  @media (max-width: 600px) {
+    font-size: ${(props) => props.theme.fontSizes.text};
+  }
 `;
 
 export const ProdTitle = styled.div`

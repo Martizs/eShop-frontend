@@ -10,8 +10,19 @@ const loggedIn = (state = initLogIn, action) => {
   return state;
 };
 
+const initMenu = false;
+
+const menu = (state = initMenu, action) => {
+  if (action.type === genActionTypes.TOGGLE_MENU) {
+    return !state;
+  }
+
+  return state;
+};
+
 const genReducer = {
   loggedIn,
+  menu,
 };
 
 export default genReducer;

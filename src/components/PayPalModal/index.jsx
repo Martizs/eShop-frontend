@@ -6,7 +6,7 @@ import { ThemeContext } from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 /* utils */
-import { formOrder } from "./util";
+import { formOrder, getStyle } from "./util";
 import { apiCall } from "utils/apiCalls";
 import { useHistory } from "react-router-dom";
 import { initCart } from "redux_store/cart/actions";
@@ -75,15 +75,10 @@ export const PayPalModal = (props) => {
   return (
     <Modal
       isOpen={props.open}
-      onRequestClose={props.onClose}
-      style={{
-        content: {
-          maxWidth: 750,
-          height: "fit-content",
-          margin: "auto",
-          backgroundColor: theme.colors.textColor,
-        },
+      onRequestClose={() => {
+        !ppLoading && props.onClose();
       }}
+      style={getStyle(theme)}
     >
       {ppLoading && (
         <LoadingCont>
@@ -94,6 +89,7 @@ export const PayPalModal = (props) => {
       <PayPalButton
         style={{
           color: "black",
+          pointerEvents: "none !important",
         }}
         createOrder={createOrder}
         onApprove={onApprove}

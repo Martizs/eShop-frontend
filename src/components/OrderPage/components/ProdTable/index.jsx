@@ -95,6 +95,7 @@ export const ProdTable = (props) => {
                 <CellText>{cartIt.selectedAmount}</CellText>
               ) : (
                 <Counter
+                  resp
                   defCount={cartIt.selectedAmount}
                   setCount={(count) => dispatch(setItemCount(index, count))}
                 />

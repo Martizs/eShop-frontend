@@ -23,8 +23,14 @@ export const Ordered = (props) => {
         <LoadingIc />
       ) : (
         <MessagePage
-          title="Jūsų užsakymas gautas!"
-          text="Užsakymas bus pristatytas nurodytu siuntimo būdu per 20 dienų, jei kils kokių klausimų ar nesklandumų, kreipkitės! Mūsų kontaktus galite rasti skiltyje 'KONTAKTAI' "
+          title="Jūsų užsakymas priimtas!"
+          texts={[
+            "Siunta jus turėtų pasiekti per 1-3 d.d. jeigu pasirinkote LP EXPRESS paštomatą",
+            "4-5 d.d. - registruotą LIETUVOS PAŠTO siuntą Lietuvoje",
+            "5-10 d.d. - siuntimą į užsienį.",
+            "Užsisakius Šventiniu arba pandemijos laikotarpiu, siuntų pristatymo laikas gali kisti.",
+            "Ačiū, kad remiate DZHIUNGLES!",
+          ]}
         />
       )}
     </MainOrderedCont>

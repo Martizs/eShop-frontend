@@ -7,6 +7,14 @@ export const AboutTextNorm = styled.div`
   text-align: center;
   margin: 0 auto;
   white-space: pre-wrap;
+
+  @media (max-width: 1190px) {
+    font-size: ${(props) => props.theme.mdFontSizes.title};
+  }
+
+  @media (max-width: 890px) {
+    font-size: ${(props) => props.theme.smFontSizes.title};
+  }
 `;
 
 export const AboutTextOver = styled(AboutTextNorm)`

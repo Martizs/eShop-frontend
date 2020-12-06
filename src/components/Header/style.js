@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 /* styles */
 import { HeadFootCont } from "styles/HeadFootCont";
-/* icons */
-import { Facebook, Instagram, Email } from "@material-ui/icons";
 
 export const HeaderContainer = styled(HeadFootCont)``;
 
@@ -15,31 +13,6 @@ export const IconContainer = styled.div`
   display: flex;
 `;
 
-export const EmailBut = styled(Email)`
-  font-size: 2.8rem !important;
-  &:hover {
-    color: ${(props) => props.theme.colors.highlightCol};
-    cursor: pointer;
-  }
-`;
-
-export const FBButton = styled(Facebook)`
-  font-size: 2.8rem !important;
-  &:hover {
-    color: ${(props) => props.theme.colors.highlightCol};
-    cursor: pointer;
-  }
-`;
-
-export const InstaButton = styled(Instagram)`
-  font-size: 2.8rem !important;
-  &:hover {
-    color: ${(props) => props.theme.colors.highlightCol};
-    cursor: pointer;
-  }
-`;
-
 export const LoggoCont = styled(Link)`
-  width: 279px;
   padding: 0 1%;
 `;

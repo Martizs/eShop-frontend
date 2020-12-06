@@ -29,6 +29,7 @@ export const Counter = (props) => {
   return (
     <CounterCont>
       <NumberInp
+        resp={props.resp}
         type="text"
         pattern="[0-9]*"
         value={count}

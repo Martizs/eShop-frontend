@@ -6,6 +6,9 @@ export const RadCont = styled.div`
     cursor: pointer;
   }
   padding: 5px 0;
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 export const RadLabel = styled.div`

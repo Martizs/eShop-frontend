@@ -7,15 +7,22 @@ import {
   slidImg,
   slidImgCont,
   ArrowContainer,
+  slidImgSmall,
 } from "./style";
 import "react-slideshow-image/dist/styles.css";
 /* utils */
 import { apiCall } from "utils/apiCalls";
+import { withResizeDetector } from "react-resize-detector";
 
-export const SlideShow = (props) => {
+const SlideShow = (props) => {
   const [imgData, setImgData] = useState([]);
+  const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
+    if (window.innerWidth < 600) {
+      setMobile(true);
+    }
+
     apiCall(
       "get",
       "getBanners",
@@ -29,6 +36,15 @@ export const SlideShow = (props) => {
       }
     );
   }, []);
+
+  useEffect(() => {
+    if (!mobile && window.innerWidth <= 600) {
+      setMobile(true);
+    } else if (mobile && window.innerWidth > 600) {
+      setMobile(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.width]);
 
   const zoomInProperties = {
     scale: 2,
@@ -58,9 +74,11 @@ export const SlideShow = (props) => {
     <Zoom {...zoomInProperties}>
       {imgData?.map((img, index) => (
         <div key={index} style={slidImgCont}>
-          <img style={slidImg} src={img.imgUrl} />
+          <img style={mobile ? slidImgSmall : slidImg} src={img.imgUrl} />
         </div>
       ))}
     </Zoom>
   );
 };
+
+export default withResizeDetector(SlideShow);

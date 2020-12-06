@@ -2,9 +2,12 @@
 import { NavLink } from "components/NavLink";
 /* icons */
 import { Rat1Comp } from "icons/Rat1Comp";
+import { VisaLoggo } from "icons/VisaLoggo";
+import { MasterLogo } from "icons/MasterLogo";
+import { PayPalLog } from "icons/PayPalLog";
 /* styles */
 import { NavContainer } from "styles/NavContainer";
-import { FooterCont, PaymentCont, PaymentIc, FootNavCont } from "./style";
+import { FooterCont, PaymentCont, FootNavCont } from "./style";
 
 export const Footer = () => {
   return (
@@ -18,9 +21,9 @@ export const Footer = () => {
         <Rat1Comp />
       </FootNavCont>
       <PaymentCont>
-        <PaymentIc fontSize="large" />
-        <PaymentIc fontSize="large" />
-        <PaymentIc fontSize="large" />
+        <VisaLoggo />
+        <MasterLogo />
+        <PayPalLog />
       </PaymentCont>
     </FooterCont>
   );

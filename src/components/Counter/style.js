@@ -15,6 +15,11 @@ export const NumberInp = styled.input`
   border-color: ${(props) => props.theme.colors.textColor};
   color: ${(props) => props.theme.colors.textColor};
   width: 3rem;
+  @media (max-width: 680px) {
+    font-size: ${({ theme, resp }) =>
+      resp ? theme.mdFontSizes.title : theme.fontSizes.title};
+    width: ${({ resp }) => (resp ? "2rem" : "3rem")};
+  }
 `;
 
 export const ArrowCont = styled.div`
