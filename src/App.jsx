@@ -90,7 +90,7 @@ function App(props) {
           {mobile ? <ActionHeader /> : <Header />}
           {mobile && <ActionMenu open={menu} />}
 
-          <MainScrollCont ref={scrollRef}>
+          <MainScrollCont className="main_scroll" ref={scrollRef}>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/ap" component={About} />

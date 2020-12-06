@@ -14,6 +14,7 @@ import {
 } from "./style";
 /* utils */
 import { apiCall } from "utils/apiCalls";
+import { LoadingIc } from "components/LoadingIc";
 
 export class SendOpt extends PureComponent {
   constructor(props) {
@@ -24,6 +25,7 @@ export class SendOpt extends PureComponent {
     this.state = {
       currOpt: null,
       sendOptData: [],
+      optionsLoading: true,
     };
 
     this.onExtraInfo = this.onExtraInfo.bind(this);
@@ -34,7 +36,11 @@ export class SendOpt extends PureComponent {
     apiCall("get", "getOptions", null, false, (data) => {
       this.sendOptData = data;
       this.setState(
-        { sendOptData: data, currOpt: data && data[0] && data[0]._id },
+        {
+          sendOptData: data,
+          currOpt: data && data[0] && data[0]._id,
+          optionsLoading: false,
+        },
         () => this.props.setSendOption(data[0], true)
       );
     });
@@ -56,44 +62,48 @@ export class SendOpt extends PureComponent {
 
     return (
       <SendCont>
-        <CartContWrapper>
-          {this.state.sendOptData.map((option, index) => (
-            <div key={option._id}>
-              <SendRow>
-                <RadioButton
-                  onCheck={() => this.onCheck(index)}
-                  checked={currOpt === option._id}
-                  label={option.name}
-                />
-                <PriceTextCont>
-                  <PriceText>{option.price} €</PriceText>
-                </PriceTextCont>
-              </SendRow>
-              {option.extraInfo && (
-                <AnimateHeight
-                  duration={300}
-                  height={currOpt === option._id ? "auto" : 0}
-                >
-                  <PostAdrInp>
-                    <TextInput
-                      width="50%"
-                      height="100px"
-                      type="textarea"
-                      placeholder={option.extraInfo}
-                      handleChange={(event) =>
-                        this.onExtraInfo(index, event.target.value)
-                      }
-                    />
-                  </PostAdrInp>
-                </AnimateHeight>
-              )}
-            </div>
-          ))}
-          <ExtraInfotxt>
-            Užsisakant siuntas šventiniu arba pandemijos laikotarpiu, siuntos
-            gali vėluoti*
-          </ExtraInfotxt>
-        </CartContWrapper>
+        {this.state.optionsLoading ? (
+          <LoadingIc />
+        ) : (
+          <CartContWrapper>
+            {this.state.sendOptData.map((option, index) => (
+              <div key={option._id}>
+                <SendRow>
+                  <RadioButton
+                    onCheck={() => this.onCheck(index)}
+                    checked={currOpt === option._id}
+                    label={option.name}
+                  />
+                  <PriceTextCont>
+                    <PriceText>{option.price} €</PriceText>
+                  </PriceTextCont>
+                </SendRow>
+                {option.extraInfo && (
+                  <AnimateHeight
+                    duration={300}
+                    height={currOpt === option._id ? "auto" : 0}
+                  >
+                    <PostAdrInp>
+                      <TextInput
+                        width="50%"
+                        height="100px"
+                        type="textarea"
+                        placeholder={option.extraInfo}
+                        handleChange={(event) =>
+                          this.onExtraInfo(index, event.target.value)
+                        }
+                      />
+                    </PostAdrInp>
+                  </AnimateHeight>
+                )}
+              </div>
+            ))}
+            <ExtraInfotxt>
+              Užsisakant siuntas šventiniu arba pandemijos laikotarpiu, siuntos
+              gali vėluoti*
+            </ExtraInfotxt>
+          </CartContWrapper>
+        )}
       </SendCont>
     );
   }

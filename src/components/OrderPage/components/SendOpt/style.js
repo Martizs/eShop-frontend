@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const SendCont = styled.div`
+  display: flex;
+  flex-direction: column;
   padding-bottom: 50px;
   border-bottom: 3px solid ${({ theme }) => theme.colors.secondBackgrCol};
 `;

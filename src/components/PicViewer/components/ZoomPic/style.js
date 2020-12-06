@@ -17,5 +17,8 @@ export const MainPic = styled.img`
   object-fit: cover;
   &:hover {
     opacity: 0;
+    @media (max-width: 800px) {
+      opacity: 1;
+    }
   }
 `;

@@ -12,6 +12,7 @@ import { LoadingIc } from "components/LoadingIc";
 export const BannerImages = () => {
   const [imgData, setImgData] = useState([]);
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     apiCall(
@@ -30,6 +31,7 @@ export const BannerImages = () => {
   }, []);
 
   const updateBanners = () => {
+    setUploading(true);
     const formData = new FormData();
     const adjImgData = [];
     imgData.forEach((img) => {
@@ -47,6 +49,7 @@ export const BannerImages = () => {
 
     apiCall("post", "updtCreateBan", formData, true, () => {
       toast.success("Banner images updated!");
+      setUploading(false);
     });
   };
 
@@ -65,11 +68,17 @@ export const BannerImages = () => {
       )}
 
       {!!imgData.length && (
-        <AdminBut
-          text="SAVE BANNER IMAGES"
-          type="add"
-          onClick={updateBanners}
-        />
+        <>
+          {uploading ? (
+            <LoadingIc />
+          ) : (
+            <AdminBut
+              text="SAVE BANNER IMAGES"
+              type="add"
+              onClick={updateBanners}
+            />
+          )}
+        </>
       )}
     </BanImgCont>
   );

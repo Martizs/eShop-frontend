@@ -9,11 +9,12 @@ import { HomeCont, AboutWrapper } from "./style";
 import { ProdListWrap } from "styles/ProdListWrap";
 /* utils */
 import { apiCall } from "utils/apiCalls";
+import { LoadingIc } from "components/LoadingIc";
 
 export const Home = () => {
   let history = useHistory();
 
-  const [aboutText, setText] = useState("");
+  const [aboutText, setText] = useState(null);
 
   useEffect(() => {
     apiCall("get", "getAbout", null, false, (data) => {
@@ -31,7 +32,7 @@ export const Home = () => {
         <ProductList title="PARDUOTUVĖ" />
       </ProdListWrap>
       <AboutWrapper onClick={() => history.push("/ap")}>
-        <AboutText overFlow text={aboutText} />
+        {!aboutText ? <LoadingIc /> : <AboutText overFlow text={aboutText} />}
       </AboutWrapper>
     </HomeCont>
   );

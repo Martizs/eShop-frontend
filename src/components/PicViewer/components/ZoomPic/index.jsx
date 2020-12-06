@@ -19,9 +19,13 @@ class ZoomPic extends React.Component {
 
     this.onMouseMove = this.onMouseMove.bind(this);
     this.setMainPicPos = this.setMainPicPos.bind(this);
+    this.onScroll = this.onScroll.bind(this);
   }
 
   componentDidMount() {
+    document
+      .querySelector(".main_scroll")
+      .addEventListener("scroll", this.onScroll);
     this.setMainPicPos();
   }
 
@@ -36,6 +40,16 @@ class ZoomPic extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    document
+      .querySelector(".main_scroll")
+      .removeEventListener("scroll", this.onScroll);
+  }
+
+  onScroll() {
+    this.setMainPicPos();
+  }
+
   setMainPicPos() {
     const rect = document.getElementById("mainPic").getBoundingClientRect();
 
@@ -44,17 +58,19 @@ class ZoomPic extends React.Component {
   }
 
   onMouseMove(event) {
-    const x = event.pageX;
-    const y = event.pageY;
+    if (!window.innerWidth < 800) {
+      const x = event.pageX;
+      const y = event.pageY;
 
-    // position within the container
-    const xPosInCont = x - this.mainPicPosX;
-    const yPosInCont = y - this.mainPicPosY;
+      // position within the container
+      const xPosInCont = x - this.mainPicPosX;
+      const yPosInCont = y - this.mainPicPosY;
 
-    const xPerc = (100 * xPosInCont) / this.mainPicWidth;
-    const yPerc = (100 * yPosInCont) / this.mainPicHeight;
+      const xPerc = (100 * xPosInCont) / this.mainPicWidth;
+      const yPerc = (100 * yPosInCont) / this.mainPicHeight;
 
-    this.setState({ xPerc, yPerc });
+      this.setState({ xPerc, yPerc });
+    }
   }
 
   render() {
@@ -68,7 +84,7 @@ class ZoomPic extends React.Component {
         backgrImg={mainUri}
         onMouseMove={this.onMouseMove}
       >
-        <MainPic src={mainUri} alt="img" />
+        <MainPic isMobile src={mainUri} alt="img" />
       </MainPicWrap>
     );
   }

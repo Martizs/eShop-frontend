@@ -29,6 +29,7 @@ export class SendOptions extends PureComponent {
     this.state = {
       rendOptions: [],
       dataLoaded: false,
+      uploading: false,
     };
 
     this.addOption = this.addOption.bind(this);
@@ -114,14 +115,17 @@ export class SendOptions extends PureComponent {
     if (validate !== 1) {
       toast.error(validate);
     } else {
-      apiCall(
-        "post",
-        "optUpdtCreate",
-        { sendOptions: JSON.stringify(this.actualOptions) },
-        true,
-        () => {
-          toast.success("Send Options saved");
-        }
+      this.setState({ uploading: true }, () =>
+        apiCall(
+          "post",
+          "optUpdtCreate",
+          { sendOptions: JSON.stringify(this.actualOptions) },
+          true,
+          () => {
+            toast.success("Send Options saved");
+            this.setState({ uploading: false });
+          }
+        )
       );
     }
   }
@@ -203,11 +207,17 @@ export class SendOptions extends PureComponent {
           <LoadingIc />
         )}
         {!!this.state.rendOptions.length && (
-          <AdminBut
-            text="SAVE OPTIONS"
-            type="add"
-            onClick={this.createUpdate}
-          />
+          <>
+            {this.state.uploading ? (
+              <LoadingIc />
+            ) : (
+              <AdminBut
+                text="SAVE OPTIONS"
+                type="add"
+                onClick={this.createUpdate}
+              />
+            )}
+          </>
         )}
       </SendOptionsStyle>
     );

@@ -42,3 +42,7 @@ export const ForwArrow = styled(BackArrow)`
     left: -70px;
   }
 `;
+
+export const OutCont = styled.div`
+  display: flex;
+`;

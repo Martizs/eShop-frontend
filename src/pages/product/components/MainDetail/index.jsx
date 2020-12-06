@@ -1,4 +1,4 @@
-import { PureComponent, createRef } from "react";
+import { PureComponent } from "react";
 import { withRouter } from "react-router-dom";
 /* components */
 import { LoadingIc } from "components/LoadingIc";
@@ -49,6 +49,7 @@ class MainDetail extends PureComponent {
       sizes: this.sizes,
       imgData: this.imgData,
       dataLoaded: false,
+      uploading: false,
     };
 
     this.addSize = this.addSize.bind(this);
@@ -209,6 +210,7 @@ class MainDetail extends PureComponent {
         this.props.history.push("/parduotuve");
       });
     } else {
+      this.setState({ uploading: false });
       toast.error(valMsg);
     }
   }
@@ -219,6 +221,8 @@ class MainDetail extends PureComponent {
       apiCall("post", "delProd", { id }, true, () => {
         this.props.history.push("/parduotuve");
       });
+    } else {
+      this.setState({ uploading: false });
     }
   }
 
@@ -318,17 +322,37 @@ class MainDetail extends PureComponent {
             </MainDetStyleIn>
             {loggedIn && (
               <MainDetButCont>
-                <AdminBut
-                  type="add"
-                  text="SAVE PRODUCT"
-                  onClick={this.addUpdate}
-                />
-                {match.params.id !== "new" && (
-                  <AdminBut
-                    type="del"
-                    text="DELETE PRODUCT"
-                    onClick={this.delete}
-                  />
+                {this.state.uploading ? (
+                  <LoadingIc />
+                ) : (
+                  <>
+                    <AdminBut
+                      type="add"
+                      text="SAVE PRODUCT"
+                      onClick={() =>
+                        this.setState(
+                          {
+                            uploading: true,
+                          },
+                          () => this.addUpdate()
+                        )
+                      }
+                    />
+                    {match.params.id !== "new" && (
+                      <AdminBut
+                        type="del"
+                        text="DELETE PRODUCT"
+                        onClick={() =>
+                          this.setState(
+                            {
+                              uploading: true,
+                            },
+                            () => this.delete()
+                          )
+                        }
+                      />
+                    )}
+                  </>
                 )}
               </MainDetButCont>
             )}

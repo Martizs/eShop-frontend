@@ -24,6 +24,7 @@ class SimpleTextPage extends PureComponent {
     this.state = {
       text: "",
       dataLoaded: false,
+      uploading: false,
     };
 
     this.saveText = this.saveText.bind(this);
@@ -43,14 +44,17 @@ class SimpleTextPage extends PureComponent {
   }
 
   saveText() {
-    apiCall(
-      "post",
-      this.props.saveEndpoint,
-      { text: this.text, id: this.id },
-      true,
-      () => {
-        toast.success("Text updated!");
-      }
+    this.setState({ uploading: true }, () =>
+      apiCall(
+        "post",
+        this.props.saveEndpoint,
+        { text: this.text, id: this.id },
+        true,
+        () => {
+          toast.success("Text updated!");
+          this.setState({ uploading: false });
+        }
+      )
     );
   }
 
@@ -72,7 +76,11 @@ class SimpleTextPage extends PureComponent {
               <LoadingIc />
             )}
 
-            <AdminBut text="SAVE TEXT" type="add" onClick={this.saveText} />
+            {this.state.uploading ? (
+              <LoadingIc />
+            ) : (
+              <AdminBut text="SAVE TEXT" type="add" onClick={this.saveText} />
+            )}
           </SimpleInput>
         ) : (
           <AboutText text={this.state.text} />

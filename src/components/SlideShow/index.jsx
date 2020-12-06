@@ -8,20 +8,25 @@ import {
   slidImgCont,
   ArrowContainer,
   slidImgSmall,
+  OutCont,
 } from "./style";
 import "react-slideshow-image/dist/styles.css";
 /* utils */
 import { apiCall } from "utils/apiCalls";
 import { withResizeDetector } from "react-resize-detector";
+import { LoadingIc } from "components/LoadingIc";
 
 const SlideShow = (props) => {
   const [imgData, setImgData] = useState([]);
   const [mobile, setMobile] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (window.innerWidth < 600) {
       setMobile(true);
     }
+
+    console.log("imgData", imgData);
 
     apiCall(
       "get",
@@ -30,6 +35,7 @@ const SlideShow = (props) => {
       false,
       (data) => {
         setImgData(data);
+        setLoading(false);
       },
       (err) => {
         // nothing happens
@@ -71,13 +77,21 @@ const SlideShow = (props) => {
   }
 
   return (
-    <Zoom {...zoomInProperties}>
-      {imgData?.map((img, index) => (
-        <div key={index} style={slidImgCont}>
-          <img style={mobile ? slidImgSmall : slidImg} src={img.imgUrl} />
-        </div>
-      ))}
-    </Zoom>
+    <>
+      {loading ? (
+        <OutCont>
+          <LoadingIc />
+        </OutCont>
+      ) : (
+        <Zoom {...zoomInProperties}>
+          {imgData?.map((img, index) => (
+            <div key={index} style={slidImgCont}>
+              <img style={mobile ? slidImgSmall : slidImg} src={img.imgUrl} />
+            </div>
+          ))}
+        </Zoom>
+      )}
+    </>
   );
 };
 
