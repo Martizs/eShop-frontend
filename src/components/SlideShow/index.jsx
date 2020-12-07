@@ -26,8 +26,6 @@ const SlideShow = (props) => {
       setMobile(true);
     }
 
-    console.log("imgData", imgData);
-
     apiCall(
       "get",
       "getBanners",

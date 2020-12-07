@@ -41,9 +41,10 @@ export const ProdTitle = styled.div`
 
 export const ProdDesc = styled.div`
   font-size: ${(props) => props.theme.fontSizes.subTitle};
+  white-space: pre-wrap;
+  padding-bottom: 30px;
   @media (max-width: 700px) {
     text-align: center;
-    padding-bottom: 30px;
   }
 `;
 
