@@ -18,6 +18,7 @@ export const slidImgCont = {
 
 export const ArrowContainer = styled.div`
   position: relative;
+  margin-bottom: 50px;
 `;
 
 export const BackArrow = styled(ArrowBackIos)`
@@ -30,7 +31,7 @@ export const BackArrow = styled(ArrowBackIos)`
     cursor: pointer;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     font-size: 3rem !important;
   }
 `;
