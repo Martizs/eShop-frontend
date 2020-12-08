@@ -67,7 +67,7 @@ export const ProdTable = (props) => {
       </TableHeader>
       <CartContWrapper>
         {props.cartItems.map((cartIt, index) => (
-          <TableRow key={cartIt.key}>
+          <TableRow key={`${cartIt.key}-${index}`}>
             {!props.admin && (
               <TableCell percWidth={currCols[0]} toStart>
                 <CloseIc onClick={() => dispatch(remItem(index))} />

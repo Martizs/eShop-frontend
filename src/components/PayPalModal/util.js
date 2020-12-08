@@ -33,7 +33,7 @@ export function formOrder(cartItems, sendOpt) {
 
   return {
     orderItems,
-    total_price,
+    total_price: Math.round((total_price + Number.EPSILON) * 100) / 100,
   };
 }
 

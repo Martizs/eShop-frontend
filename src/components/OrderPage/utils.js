@@ -7,7 +7,7 @@ export function getItemSum(cartItems) {
     sum += parseFloat(cartIt.price, 10) * parseInt(cartIt.selectedAmount, 10);
   });
 
-  return sum;
+  return Math.round((sum + Number.EPSILON) * 100) / 100;
 }
 
 export function orderValid(cartItems, orderData) {
