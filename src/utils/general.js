@@ -26,3 +26,7 @@ export function imgSort(imgData) {
 
   return sortedData;
 }
+
+export function floatNumAdj(number) {
+  return Math.round((number + Number.EPSILON) * 100) / 100;
+}

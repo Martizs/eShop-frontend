@@ -17,6 +17,7 @@ import {
   CellText,
 } from "./style";
 /* utils */
+import { floatNumAdj } from "utils/general";
 import { getItemSum } from "../../utils";
 /* redux */
 import { useDispatch } from "react-redux";
@@ -104,8 +105,10 @@ export const ProdTable = (props) => {
             {!props.admin && (
               <TableCell percWidth={currCols[5]} toEnd>
                 <PriceText>
-                  {parseFloat(cartIt.price, 10) *
-                    parseInt(cartIt.selectedAmount, 10)}{" "}
+                  {floatNumAdj(
+                    parseFloat(cartIt.price, 10) *
+                      parseInt(cartIt.selectedAmount, 10)
+                  )}{" "}
                   €
                 </PriceText>
               </TableCell>

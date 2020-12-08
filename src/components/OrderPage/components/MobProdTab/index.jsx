@@ -14,6 +14,8 @@ import {
 /* redux */
 import { useDispatch } from "react-redux";
 import { remItem, setItemCount } from "redux_store/cart/actions";
+/* utils */
+import { floatNumAdj } from "utils/general";
 
 export const MobProdTab = ({ cartItems }) => {
   const dispatch = useDispatch();
@@ -49,8 +51,10 @@ export const MobProdTab = ({ cartItems }) => {
           <MobTabRow>
             <MobColTitle>VISO</MobColTitle>
             <MobPriceText>
-              {parseFloat(cartIt.price, 10) *
-                parseInt(cartIt.selectedAmount, 10)}{" "}
+              {floatNumAdj(
+                parseFloat(cartIt.price, 10) *
+                  parseInt(cartIt.selectedAmount, 10)
+              )}{" "}
               €
             </MobPriceText>
           </MobTabRow>
