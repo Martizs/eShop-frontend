@@ -52,17 +52,19 @@ class OrderPage extends PureComponent {
 
   componentDidUpdate(prevProps) {
     if (!isEqual(this.props.cartItems, prevProps.cartItems)) {
+      const tempSum =
+        getItemSum(this.props.cartItems) + this.orderData.sendOption.price;
       this.setState({
-        wholeSum:
-          getItemSum(this.props.cartItems) + this.orderData.sendOption.price,
+        wholeSum: Math.round((tempSum + Number.EPSILON) * 100) / 100,
       });
     }
   }
 
   setSendOption(option, newOpt) {
     if (newOpt && option) {
+      const tempSum = getItemSum(this.props.cartItems) + option.price;
       this.setState({
-        wholeSum: getItemSum(this.props.cartItems) + option.price,
+        wholeSum: Math.round((tempSum + Number.EPSILON) * 100) / 100,
       });
     }
     this.orderData.sendOption = option;
