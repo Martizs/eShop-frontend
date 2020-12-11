@@ -8,11 +8,7 @@ export const NavLink = (props) => {
   };
 
   return (
-    <NavLinkCont
-      langkey={props.langkey}
-      onMouseDown={mouseDownHandler}
-      to={props.to || ""}
-    >
+    <NavLinkCont onMouseDown={mouseDownHandler} to={props.to || ""}>
       {props?.children}
     </NavLinkCont>
   );

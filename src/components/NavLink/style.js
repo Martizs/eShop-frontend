@@ -8,7 +8,7 @@ export const NavLinkCont = styled(Link)`
   text-decoration: none;
   white-space: nowrap;
   margin: auto 0;
-  padding: ${({ langkey }) => (langkey === "en" ? "0 3%" : "0 1%")};
+  padding: 0 1%;
   &:hover {
     color: ${(props) => props.theme.colors.highlightCol};
     cursor: pointer;

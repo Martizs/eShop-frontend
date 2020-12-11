@@ -63,9 +63,7 @@ export const Header = () => {
         <LoggoCont to="/">
           <LoggoComp />
         </LoggoCont>
-        <NavLink langkey={currLang.key} to="/parduotuve">
-          {currLang.shopTxt}
-        </NavLink>
+        <NavLink to="/parduotuve">{currLang.shopTxt}</NavLink>
         <CartNav text={currLang.cartTxt} />
       </NavContainer>
       <IconContainer>
