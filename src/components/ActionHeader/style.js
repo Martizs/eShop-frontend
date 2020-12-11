@@ -16,13 +16,10 @@ export const MenuBut = styled(Menu)`
   }
 `;
 
-export const InvBut = styled(MenuBut)`
-  visibility: hidden;
-  @media (max-width: 300px) {
-    font-size: 0 !important;
-  }
-`;
-
 export const ActHeadLog = styled(Link)`
   margin: 0 auto;
+
+  @media (max-width: 300px) {
+    margin: auto;
+  }
 `;

@@ -22,7 +22,11 @@ export const DropDown = (props) => {
 
   return (
     <DDContainer>
-      <Button onClick={() => setOpen(!open)} text={currItem} />
+      <Button
+        fontSize={props.fontSize}
+        onClick={() => setOpen(!open)}
+        text={currItem}
+      />
       <AbsAnimateHeight duration={500} height={open ? "auto" : 0}>
         <DDList>
           {props.items.map((item, index) => {
@@ -33,6 +37,7 @@ export const DropDown = (props) => {
             return (
               <DDItem key={`${item.key}-${index}`}>
                 <DDItemText
+                  fontSize={props.fontSize}
                   disabled={item.disabled}
                   onClick={() => onItemPress(item)}
                 >

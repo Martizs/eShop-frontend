@@ -8,12 +8,12 @@ export const DDContainer = styled.div`
 export const AbsAnimateHeight = styled(AnimateHeight)`
   position: absolute;
   width: 100%;
+  z-index: 12;
 `;
 
 export const DDList = styled.ul`
   padding-left: 0;
   list-style-type: none;
-  z-index: 1;
   background-color: ${(props) => props.theme.colors.backgrColor};
   border: 2px solid;
   left: 0;
@@ -40,5 +40,12 @@ export const DDItemText = styled.div`
   &:hover {
     cursor: pointer;
     color: ${(props) => props.theme.colors.highlightCol};
+  }
+
+  @media (max-width: 930px) {
+    font-size: ${(props) =>
+      props.fontSize
+        ? props.theme.fontSizes.text
+        : props.theme.fontSizes.subTitle};
   }
 `;

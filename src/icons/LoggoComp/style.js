@@ -8,7 +8,11 @@ export const LoggoStyle = styled.svg`
     cursor: pointer;
   }
 
-  @media (max-width: 1190px) {
+  @media (max-width: 1310px) {
     width: 180px;
+  }
+
+  @media (max-width: 300px) {
+    width: 150px;
   }
 `;

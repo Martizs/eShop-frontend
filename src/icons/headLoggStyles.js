@@ -9,11 +9,11 @@ export const HeadLogStyle = styled.svg`
     cursor: pointer;
   }
 
-  @media (max-width: 1190px) {
+  @media (max-width: 1310px) {
     width: 27px;
   }
 
-  @media (max-width: 890px) {
+  @media (max-width: 1020px) {
     width: ${({ big }) => (big ? "27px" : "22px")};
   }
 `;

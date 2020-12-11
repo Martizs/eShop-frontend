@@ -72,7 +72,11 @@ export class SendOpt extends PureComponent {
                   <RadioButton
                     onCheck={() => this.onCheck(index)}
                     checked={currOpt === option._id}
-                    label={option.name}
+                    label={
+                      this.props.currLang.key === "en"
+                        ? option.enName
+                        : option.name
+                    }
                   />
                   <PriceTextCont>
                     <PriceText>{option.price} €</PriceText>
@@ -88,7 +92,11 @@ export class SendOpt extends PureComponent {
                         width="50%"
                         height="100px"
                         type="textarea"
-                        placeholder={option.extraInfo}
+                        placeholder={
+                          this.props.currLang.key === "en"
+                            ? option.enExtraInfo
+                            : option.extraInfo
+                        }
                         handleChange={(event) =>
                           this.onExtraInfo(index, event.target.value)
                         }

@@ -61,9 +61,9 @@ function App(props) {
   }, []);
 
   useEffect(() => {
-    if (props.width <= 800 && !mobile) {
+    if (props.width <= 930 && !mobile) {
       setMobile(true);
-    } else if (props.width > 800 && mobile) {
+    } else if (props.width > 930 && mobile) {
       setMobile(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

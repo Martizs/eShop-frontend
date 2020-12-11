@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TextInpMainCont = styled.div`
   width: ${({ width }) => width || "100%"};
-  height: ${({ height }) => height || "100%"};
+  height: ${({ height }) => height || "fit-content"};
 `;
 
 export const TextAreaCont = styled.textarea`

@@ -17,12 +17,14 @@ export const Home = () => {
   const currLang = useSelector((state) => state.currLang);
 
   const [aboutText, setText] = useState(null);
+  const [enAboutText, setEnText] = useState("");
 
   useEffect(() => {
     apiCall("get", "getAbout", null, false, (data) => {
       const item = data[0];
       if (item) {
         setText(item.text);
+        setEnText(item.enText);
       }
     });
   }, []);
@@ -34,7 +36,14 @@ export const Home = () => {
         <ProductList title={currLang.shopTxt} />
       </ProdListWrap>
       <AboutWrapper onClick={() => history.push("/ap")}>
-        {!aboutText ? <LoadingIc /> : <AboutText overFlow text={aboutText} />}
+        {!aboutText ? (
+          <LoadingIc />
+        ) : (
+          <AboutText
+            overFlow
+            text={currLang.key === "en" ? enAboutText : aboutText}
+          />
+        )}
       </AboutWrapper>
     </HomeCont>
   );

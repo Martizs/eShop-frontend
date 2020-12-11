@@ -36,9 +36,11 @@ export class SendOptions extends PureComponent {
     this.remOption = this.remOption.bind(this);
     this.createUpdate = this.createUpdate.bind(this);
     this.editName = this.editName.bind(this);
+    this.editEnName = this.editEnName.bind(this);
     this.editPrice = this.editPrice.bind(this);
     this.checkExtra = this.checkExtra.bind(this);
     this.editExtra = this.editExtra.bind(this);
+    this.editEnExtra = this.editEnExtra.bind(this);
   }
 
   componentDidMount() {
@@ -85,6 +87,10 @@ export class SendOptions extends PureComponent {
     this.actualOptions[index].name = value;
   }
 
+  editEnName(index, value) {
+    this.actualOptions[index].enName = value;
+  }
+
   editShort(index, value) {
     this.actualOptions[index].short = value;
   }
@@ -97,6 +103,7 @@ export class SendOptions extends PureComponent {
     const newRendOpts = [...this.state.rendOptions];
 
     newRendOpts[index].extraInfo = value ? "" : null;
+    newRendOpts[index].enExtraInfo = value ? "" : null;
 
     this.setState({
       rendOptions: newRendOpts,
@@ -107,6 +114,10 @@ export class SendOptions extends PureComponent {
 
   editExtra(index, value) {
     this.actualOptions[index].extraInfo = value;
+  }
+
+  editEnExtra(index, value) {
+    this.actualOptions[index].enExtraInfo = value;
   }
 
   createUpdate() {
@@ -160,9 +171,18 @@ export class SendOptions extends PureComponent {
                     req
                     defaultValue={rendOpt.name}
                     width="30%"
-                    label="Label:"
+                    label="LT Label:"
                     handleChange={(event) =>
                       this.editName(index, event.target.value)
+                    }
+                  />
+                  <TextInput
+                    req
+                    defaultValue={rendOpt.enName}
+                    width="30%"
+                    label="EN Label:"
+                    handleChange={(event) =>
+                      this.editEnName(index, event.target.value)
                     }
                   />
                   <TextInput
@@ -188,16 +208,28 @@ export class SendOptions extends PureComponent {
                   />
                   {rendOpt.extraInfo !== null &&
                     rendOpt.extraInfo !== undefined && (
-                      <ExtraInfoWrap>
-                        <TextInput
-                          req
-                          defaultValue={rendOpt.extraInfo}
-                          placeholder="Enter an extra info placeholder"
-                          handleChange={(event) =>
-                            this.editExtra(index, event.target.value)
-                          }
-                        />
-                      </ExtraInfoWrap>
+                      <>
+                        <ExtraInfoWrap>
+                          <TextInput
+                            req
+                            defaultValue={rendOpt.extraInfo}
+                            placeholder="LT - Enter an extra info placeholder"
+                            handleChange={(event) =>
+                              this.editExtra(index, event.target.value)
+                            }
+                          />
+                        </ExtraInfoWrap>
+                        <ExtraInfoWrap>
+                          <TextInput
+                            req
+                            defaultValue={rendOpt.enExtraInfo}
+                            placeholder="EN - Enter an extra info placeholder"
+                            handleChange={(event) =>
+                              this.editEnExtra(index, event.target.value)
+                            }
+                          />
+                        </ExtraInfoWrap>
+                      </>
                     )}
                 </ExtraInfoCont>
               </SendOptionRow>

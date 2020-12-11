@@ -29,6 +29,7 @@ export function formProdList(data, oneRow, itSep = 3) {
       const adjProd = {
         id: prod._id,
         title: prod.title,
+        enTitle: prod.enTitle,
         price: prod.price,
         discPrice: prod.discPrice,
         primaryPic: find(prod.imgData, "primary")?.imgUrl,

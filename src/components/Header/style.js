@@ -22,3 +22,20 @@ export const NavTxtAdj = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+export const HeadLanCont = styled.div`
+  padding-left: 10px;
+  width: 50px;
+  margin-bottom: auto;
+
+  @media (max-width: 930px) {
+    width: 30px;
+    padding-left: 0;
+    padding-right: 10px;
+    margin: auto 0;
+  }
+
+  @media (max-width: 300px) {
+    padding-right: 0;
+  }
+`;

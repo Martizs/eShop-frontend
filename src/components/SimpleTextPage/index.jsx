@@ -19,10 +19,12 @@ class SimpleTextPage extends PureComponent {
     super();
 
     this.text = "";
+    this.enText = "";
     this.id = null;
 
     this.state = {
       text: "",
+      enText: "",
       dataLoaded: false,
       uploading: false,
     };
@@ -34,8 +36,13 @@ class SimpleTextPage extends PureComponent {
     apiCall("get", this.props.getEndpoint, null, false, (data) => {
       const item = data[0];
       if (item) {
-        this.setState({ text: item.text, dataLoaded: true });
+        this.setState({
+          text: item.text,
+          enText: item.enText,
+          dataLoaded: true,
+        });
         this.text = item.text;
+        this.enText = item.enText;
         this.id = item._id;
       } else {
         this.setState({ dataLoaded: true });
@@ -48,7 +55,7 @@ class SimpleTextPage extends PureComponent {
       apiCall(
         "post",
         this.props.saveEndpoint,
-        { text: this.text, id: this.id },
+        { text: this.text, enText: this.enText, id: this.id },
         true,
         () => {
           toast.success("Text updated!");
@@ -66,12 +73,22 @@ class SimpleTextPage extends PureComponent {
         {this.props.loggedIn ? (
           <SimpleInput>
             {this.state.dataLoaded ? (
-              <TextInput
-                textRef={(ref) => autosize(ref)}
-                type="textarea"
-                defaultValue={this.state.text}
-                handleChange={(event) => (this.text = event.target.value)}
-              />
+              <>
+                <TextInput
+                  label="LT"
+                  textRef={(ref) => autosize(ref)}
+                  type="textarea"
+                  defaultValue={this.state.text}
+                  handleChange={(event) => (this.text = event.target.value)}
+                />
+                <TextInput
+                  label="EN"
+                  textRef={(ref) => autosize(ref)}
+                  type="textarea"
+                  defaultValue={this.state.enText}
+                  handleChange={(event) => (this.enText = event.target.value)}
+                />
+              </>
             ) : (
               <LoadingIc />
             )}
@@ -83,7 +100,13 @@ class SimpleTextPage extends PureComponent {
             )}
           </SimpleInput>
         ) : (
-          <AboutText text={this.state.text} />
+          <AboutText
+            text={
+              this.props.currLang.key === "en"
+                ? this.state.enText
+                : this.state.text
+            }
+          />
         )}
       </SimpleTextCont>
     );
@@ -92,6 +115,7 @@ class SimpleTextPage extends PureComponent {
 
 const mapStateToProps = (state) => ({
   loggedIn: state.loggedIn,
+  currLang: state.currLang,
 });
 
 export default connect(mapStateToProps)(SimpleTextPage);

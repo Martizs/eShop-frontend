@@ -146,7 +146,11 @@ class ProductList extends PureComponent {
                           disabled={prod.disabled}
                           loggedIn={this.props.loggedIn && this.props.edit}
                           id={prod.id}
-                          title={prod.title}
+                          title={
+                            this.props.currLang.key === "en"
+                              ? prod.enTitle
+                              : prod.title
+                          }
                           price={prod.price}
                           discPrice={prod.discPrice}
                           primaryPic={prod.primaryPic}

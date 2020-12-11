@@ -14,11 +14,11 @@ export const NavLinkCont = styled(Link)`
     cursor: pointer;
   }
 
-  @media (max-width: 1190px) {
+  @media (max-width: 1310px) {
     font-size: ${(props) => props.theme.mdFontSizes.title};
   }
 
-  @media (max-width: 890px) {
+  @media (max-width: 1020px) {
     font-size: ${(props) => props.theme.smFontSizes.title};
   }
 

@@ -58,7 +58,7 @@ class ZoomPic extends React.Component {
   }
 
   onMouseMove(event) {
-    if (!window.innerWidth < 800) {
+    if (!window.innerWidth < 930) {
       const x = event.pageX;
       const y = event.pageY;
 

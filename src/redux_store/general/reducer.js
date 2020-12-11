@@ -21,10 +21,11 @@ const menu = (state = initMenu, action) => {
   return state;
 };
 
-const initLang = enLang;
+const initLang = localStorage.getItem("lang") === "en" ? enLang : ltLang;
 
 const currLang = (state = initLang, action) => {
   if (action.type === genActionTypes.SET_LANG) {
+    localStorage.setItem("lang", action.lang.key);
     return action.lang;
   }
 

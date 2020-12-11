@@ -8,15 +8,15 @@ export const Rat1Style = styled.svg`
   right: 20px;
   bottom: 10px;
 
-  @media (max-width: 1190px) {
+  @media (max-width: 1310px) {
     width: 90px;
   }
 
-  @media (max-width: 890px) {
+  @media (max-width: 1020px) {
     width: 80px;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 930px) {
     display: none;
   }
 `;

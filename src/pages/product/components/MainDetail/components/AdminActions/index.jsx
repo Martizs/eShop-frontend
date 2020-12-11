@@ -12,9 +12,14 @@ export const AdminActions = (props) => (
   <ProdActCont>
     <AdInpWraper>
       <TextInput
-        label="Title:"
+        label="LT Title:"
         defaultValue={props.title}
         handleChange={props.titleChange}
+      />
+      <TextInput
+        label="EN Title:"
+        defaultValue={props.enTitle}
+        handleChange={props.enTitleChange}
       />
     </AdInpWraper>
 
@@ -39,8 +44,15 @@ export const AdminActions = (props) => (
         height="200px"
         type="textarea"
         defaultValue={props.desc}
-        label="Description:"
+        label="LT Description:"
         handleChange={props.descChange}
+      />
+      <TextInput
+        height="200px"
+        type="textarea"
+        defaultValue={props.enDesc}
+        label="EN Description:"
+        handleChange={props.enDescChange}
       />
     </AdInpWraper>
     <CatContainer>

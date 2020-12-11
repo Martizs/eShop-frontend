@@ -12,6 +12,7 @@ export const SendOptionRow = styled.div`
 
 export const SendOptionRowInn = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 `;
 

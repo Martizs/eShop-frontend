@@ -27,9 +27,11 @@ class MainDetail extends PureComponent {
     this.mounted = true;
 
     this.title = "";
+    this.enTitle = "";
     this.price = "";
     this.discPrice = "";
     this.desc = "";
+    this.enDesc = "";
     this.category = prodCategories[2];
     this.noSize = false;
     this.sizes = [];
@@ -42,8 +44,10 @@ class MainDetail extends PureComponent {
     // components when new data comes in
     this.state = {
       title: this.title,
+      enTitle: this.enTitle,
       price: this.price,
       desc: this.desc,
+      enDesc: this.enDesc,
       discPrice: this.discPrice,
       category: this.category,
       sizes: this.sizes,
@@ -96,9 +100,11 @@ class MainDetail extends PureComponent {
           newProd.dataLoaded = true;
 
           this.title = newProd.title;
+          this.enTitle = newProd.enTitle;
           this.price = newProd.price + "";
           this.discPrice = newProd.discPrice + "";
           this.desc = newProd.desc;
+          this.enDesc = newProd.enDesc || "";
           this.category = newProd.category;
           this.sizes = newProd.sizes?.map((size) => {
             return {
@@ -167,9 +173,11 @@ class MainDetail extends PureComponent {
   addUpdate() {
     const {
       title,
+      enTitle,
       price,
       discPrice,
       desc,
+      enDesc,
       category,
       sizes,
       imgData,
@@ -183,10 +191,13 @@ class MainDetail extends PureComponent {
       if (id !== "new") {
         formData.append("id", id);
       }
+
       formData.append("title", title);
+      formData.append("enTitle", enTitle);
       formData.append("price", price);
       formData.append("discPrice", discPrice);
       formData.append("desc", desc);
+      formData.append("enDesc", enDesc);
       formData.append("category", category?.key);
       formData.append("sizes", JSON.stringify(sizes));
 
@@ -251,6 +262,7 @@ class MainDetail extends PureComponent {
           prodId: id,
           key: Math.random().toString(36).substr(2, 10),
           title: this.title,
+          enTitle: this.enTitle,
           selectedSize: this.selectedSize,
           price:
             this.discPrice.length && this.discPrice !== "null"
@@ -269,8 +281,10 @@ class MainDetail extends PureComponent {
 
     const {
       title,
+      enTitle,
       price,
       desc,
+      enDesc,
       discPrice,
       category,
       sizes,
@@ -291,13 +305,17 @@ class MainDetail extends PureComponent {
               {loggedIn ? (
                 <AdminActions
                   title={title}
+                  enTitle={enTitle}
                   price={price}
                   desc={desc}
+                  enDesc={enDesc}
                   discPrice={discPrice}
                   category={category}
                   titleChange={(event) => (this.title = event.target.value)}
+                  enTitleChange={(event) => (this.enTitle = event.target.value)}
                   priceChange={(event) => (this.price = event.target.value)}
                   descChange={(event) => (this.desc = event.target.value)}
+                  enDescChange={(event) => (this.enDesc = event.target.value)}
                   onCatSelect={(item) => (this.category = item)}
                   discChange={(event) => (this.discPrice = event.target.value)}
                   defSizes={sizes}
@@ -310,9 +328,11 @@ class MainDetail extends PureComponent {
               ) : (
                 <ProdActComp
                   title={title}
+                  enTitle={enTitle}
                   price={price}
                   discPrice={discPrice}
                   desc={desc}
+                  enDesc={enDesc}
                   defSizes={sizes}
                   userSelSize={this.userSelSize}
                   addToBasket={this.addToBasket}
