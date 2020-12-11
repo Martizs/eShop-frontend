@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 /* components */
 import { MenuItemBadg } from "./components/MenuItemBadg";
 import { MenuItem } from "./components/MenuItem";
@@ -9,28 +10,30 @@ import { MailLogo } from "icons/MailLogo";
 import { ActMenCont, IconsText } from "./style";
 
 export const ActionMenu = (props) => {
+  const currLang = useSelector((state) => state.currLang);
+
   return (
     <ActMenCont open={props.open}>
       <MenuItem
         to="https://www.youtube.com/channel/UCVfhKzY261aiqKnx6UyZ4Gg"
         ext
       >
-        KANALAS
+        {currLang.chanTxt}
       </MenuItem>
-      <MenuItem to="/ap">APIE MUS</MenuItem>
-      <MenuItem to="/parduotuve">PARDUOTUVĖ</MenuItem>
-      <MenuItemBadg />
+      <MenuItem to="/ap">{currLang.abTxt}</MenuItem>
+      <MenuItem to="/parduotuve">{currLang.shopTxt}</MenuItem>
+      <MenuItemBadg text={currLang.cartTxt} />
       <MenuItem to="/kontaktai">
         <MailLogo big />
-        <IconsText>KONTAKTAI</IconsText>
+        <IconsText>{currLang.contactsTxt}</IconsText>
       </MenuItem>
       <MenuItem to="https://www.facebook.com/dzhiungles" ext>
         <FBLoggo big />
-        <IconsText>FACEBOOK'AS</IconsText>
+        <IconsText>{currLang.fbTxt}</IconsText>
       </MenuItem>
       <MenuItem to="https://www.instagram.com/dzhiungles" ext>
         <InstLogo big />
-        <IconsText>INSTAGRAMAS</IconsText>
+        <IconsText>{currLang.instaTxt}</IconsText>
       </MenuItem>
     </ActMenCont>
   );

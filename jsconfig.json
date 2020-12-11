@@ -9,7 +9,7 @@
         "redux_store/*": ["src/redux_store/*"],
         "styles/*": ["src/styles/*"],
         "icons/*": ["src/icons/*"],
-        "mock/*": ["src/mock/*"],
+        "language/*": ["src/language/*"],
       }
     },
     "exclude": ["node_modules", "build", "dist"]

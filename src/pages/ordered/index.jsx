@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 /* components */
 import { MessagePage } from "components/MessagePage";
 import { LoadingIc } from "components/LoadingIc";
@@ -7,6 +8,7 @@ import { MainOrderedCont } from "./style";
 
 export const Ordered = (props) => {
   const [success, setSuccess] = useState(null);
+  const currLang = useSelector((state) => state.currLang);
 
   useEffect(() => {
     if (props.location.state?.order_successful) {
@@ -23,14 +25,8 @@ export const Ordered = (props) => {
         <LoadingIc />
       ) : (
         <MessagePage
-          title="Jūsų užsakymas priimtas!"
-          texts={[
-            "Siunta jus turėtų pasiekti per 1-3 d.d. jeigu pasirinkote LP EXPRESS paštomatą",
-            "4-5 d.d. - registruotą LIETUVOS PAŠTO siuntą Lietuvoje",
-            "5-10 d.d. - siuntimą į užsienį.",
-            "Užsisakius Šventiniu arba pandemijos laikotarpiu, siuntų pristatymo laikas gali kisti.",
-            "Ačiū, kad remiate DZHIUNGLES!",
-          ]}
+          title={currLang.orderedTitle}
+          texts={currLang.orderedTexts}
         />
       )}
     </MainOrderedCont>

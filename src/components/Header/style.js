@@ -16,3 +16,9 @@ export const IconContainer = styled.div`
 export const LoggoCont = styled(Link)`
   padding: 0 1%;
 `;
+
+export const NavTxtAdj = styled.div`
+  min-width: 188px;
+  display: flex;
+  justify-content: center;
+`;

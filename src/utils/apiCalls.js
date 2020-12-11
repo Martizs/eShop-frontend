@@ -51,7 +51,9 @@ export function apiCall(
         errorCallback(error.response.data.msg);
       }
 
-      toast.error("Įvyko klaida, pabandykite perkrauti puslapį");
+      const state = store.getState();
+
+      toast.error(state.currLang.errTxt);
       console.log("error:", error.response.data.msg);
     });
 }

@@ -1,4 +1,5 @@
 import findIndex from "lodash/findIndex";
+import store from "redux_store/store";
 
 export function getItemSum(cartItems) {
   let sum = 0;
@@ -11,6 +12,8 @@ export function getItemSum(cartItems) {
 }
 
 export function orderValid(cartItems, orderData) {
+  const state = store.getState();
+
   // so here we have to recheck if the user again does not try to exceed
   // the amount of products available for a size
   const ordProdSizes = [];
@@ -47,15 +50,21 @@ export function orderValid(cartItems, orderData) {
       !ordProdSize.selectedAmount ||
       !(ordProdSize.selectedAmount + "").length
     ) {
-      return `Turite pasirinkti prekių kiekį`;
+      return state.currLang.errAmountTxt;
     }
 
     if (ordProdSize.selectedAmount > ordProdSize.sizeAmount) {
       if (!ordProdSize.sizeTitle) {
-        return `Prekės "${ordProdSize.prodTitle}" yra like tik ${ordProdSize.sizeAmount} vienetai, pasirinkite nedaugiau kaip ${ordProdSize.sizeAmount}`;
+        return state.currLang.errSpecTooMuchSingleSTxt(
+          ordProdSize.prodTitle,
+          ordProdSize.sizeAmount
+        );
       } else {
-        return `Prekės "${ordProdSize.prodTitle}" dydžio "${ordProdSize.sizeTitle}" yra like tik ${ordProdSize.sizeAmount} vienetai, 
-                pasirinkite nedaugiau kaip ${ordProdSize.sizeAmount}`;
+        return state.currLang.errSpecTooMuchSingleMTxt(
+          ordProdSize.prodTitle,
+          ordProdSize.sizeTitle,
+          ordProdSize.sizeAmount
+        );
       }
     }
   }
@@ -64,11 +73,11 @@ export function orderValid(cartItems, orderData) {
 
   if (sendOption.extraInfo) {
     if (!sendOption.extraVal || !sendOption.extraVal.length) {
-      return "Užpildykite pasirinkto siuntimo būdo lauką";
+      return state.currLang.sendEmptTxt;
     }
 
     if (sendOption.extraVal.length > 86) {
-      return "Siuntimo būdo laukelis negali viršyti 86 raidžių";
+      return state.currLang.sendExceeTxt;
     }
   }
 

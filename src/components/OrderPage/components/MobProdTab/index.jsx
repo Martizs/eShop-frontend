@@ -17,31 +17,34 @@ import { remItem, setItemCount } from "redux_store/cart/actions";
 /* utils */
 import { floatNumAdj } from "utils/general";
 
-export const MobProdTab = ({ cartItems }) => {
+export const MobProdTab = ({ cartItems, currLang }) => {
   const dispatch = useDispatch();
 
   return (
     <MobProdCont>
       {cartItems.map((cartIt, index) => (
-        <MobItemCont key={cartIt.prodId}>
+        <MobItemCont key={`${cartIt.prodId}-${index}`}>
           <MobTabBut>
-            <Button text="PAŠALINTI" onClick={() => dispatch(remItem(index))} />
+            <Button
+              text={currLang.remTxt}
+              onClick={() => dispatch(remItem(index))}
+            />
           </MobTabBut>
 
           <MobTabRow>
-            <MobColTitle>PRODUKTAS</MobColTitle>
+            <MobColTitle>{currLang.prodTxt}</MobColTitle>
             <MobTableImg src={cartIt.img.imgUrl} alt="img_title" />
           </MobTabRow>
           <MobTabRow>
-            <MobColTitle>DYDIS</MobColTitle>
+            <MobColTitle>{currLang.sizeTxt}</MobColTitle>
             <MobPriceText>{cartIt.selectedSize.name || ""}</MobPriceText>
           </MobTabRow>
           <MobTabRow>
-            <MobColTitle>VIENETO KAINA</MobColTitle>
+            <MobColTitle>{currLang.vntTxt}</MobColTitle>
             <MobPriceText>{cartIt.price} €</MobPriceText>
           </MobTabRow>
           <MobTabRow>
-            <MobColTitle>KIEKIS</MobColTitle>
+            <MobColTitle>{currLang.amountTxt}</MobColTitle>
             <Counter
               resp
               defCount={cartIt.selectedAmount}
@@ -49,7 +52,7 @@ export const MobProdTab = ({ cartItems }) => {
             />
           </MobTabRow>
           <MobTabRow>
-            <MobColTitle>VISO</MobColTitle>
+            <MobColTitle>{currLang.totTxt}</MobColTitle>
             <MobPriceText>
               {floatNumAdj(
                 parseFloat(cartIt.price, 10) *

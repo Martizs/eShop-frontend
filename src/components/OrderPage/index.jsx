@@ -106,7 +106,7 @@ class OrderPage extends PureComponent {
   }
 
   render() {
-    const { cartItems } = this.props;
+    const { cartItems, currLang } = this.props;
 
     return (
       <CartContainer>
@@ -114,23 +114,23 @@ class OrderPage extends PureComponent {
           open={this.state.openPaypal}
           onClose={this.onPayPalClose}
         />
-        <MainTitleText>KREPŠELIS</MainTitleText>
+        <MainTitleText>{currLang.cartTxt}</MainTitleText>
         {cartItems?.length ? (
           <>
             {window.innerWidth > 580 ? (
-              <ProdTable cartItems={cartItems} />
+              <ProdTable cartItems={cartItems} currLang={currLang} />
             ) : (
-              <MobProdTab cartItems={cartItems} />
+              <MobProdTab cartItems={cartItems} currLang={currLang} />
             )}
 
-            <MainTitleText>SIUNTIMO BŪDAS</MainTitleText>
-            <SendOpt setSendOption={this.setSendOption} />
+            <MainTitleText>{currLang.sendTxt}</MainTitleText>
+            <SendOpt setSendOption={this.setSendOption} currLang={currLang} />
 
             <CartContWrapper>
               <TableFooter>
                 <TableCell percWidth={colWidths[0]} />
                 <TableCell percWidth={colWidths[1]}>
-                  <PriceText>VISO</PriceText>
+                  <PriceText>{currLang.totTxt}</PriceText>
                 </TableCell>
                 <TableCell percWidth={colWidths[2]} />
                 <TableCell percWidth={colWidths[3]} />
@@ -146,12 +146,12 @@ class OrderPage extends PureComponent {
                   <LoadingIc />
                 </LoadCont>
               ) : (
-                <Button text="TĘSTI" onClick={this.issueOrder} />
+                <Button text={currLang.contTxt} onClick={this.issueOrder} />
               )}
             </CartBut>
           </>
         ) : (
-          <EmptyCartTxt>KREPŠELIS TUŠČIAS</EmptyCartTxt>
+          <EmptyCartTxt>{currLang.emptCartTxt}</EmptyCartTxt>
         )}
       </CartContainer>
     );

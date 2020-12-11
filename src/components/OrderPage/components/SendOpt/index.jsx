@@ -98,10 +98,7 @@ export class SendOpt extends PureComponent {
                 )}
               </div>
             ))}
-            <ExtraInfotxt>
-              Užsisakant siuntas šventiniu arba pandemijos laikotarpiu, siuntos
-              gali vėluoti*
-            </ExtraInfotxt>
+            <ExtraInfotxt>{this.props.currLang.extraSendInfo}</ExtraInfotxt>
           </CartContWrapper>
         )}
       </SendCont>

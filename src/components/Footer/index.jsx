@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 /* components */
 import { NavLink } from "components/NavLink";
 /* icons */
@@ -10,13 +11,15 @@ import { NavContainer } from "styles/NavContainer";
 import { FooterCont, PaymentCont, FootNavCont } from "./style";
 
 export const Footer = () => {
+  const currLang = useSelector((state) => state.currLang);
+
   return (
     <FooterCont>
       <FootNavCont>
         <NavContainer>
-          <NavLink to="/kontaktai">KONTAKTAI</NavLink>
-          <NavLink to="/info">INFORMACIJA</NavLink>
-          <NavLink to="/priv">PRIVATUMO POLITIKA</NavLink>
+          <NavLink to="/kontaktai">{currLang.contactsTxt}</NavLink>
+          <NavLink to="/info">{currLang.infoTxt}</NavLink>
+          <NavLink to="/priv">{currLang.policyTxt}</NavLink>
         </NavContainer>
         <Rat1Comp />
       </FootNavCont>

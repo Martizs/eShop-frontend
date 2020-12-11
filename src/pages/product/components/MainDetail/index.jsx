@@ -105,7 +105,7 @@ class MainDetail extends PureComponent {
               ...size,
               amount: size.amount + "",
               disabled: size.amount < 1,
-              disabledText: " - išbarduota",
+              disabledText: ` - ${this.props.currLang.outOfStockTxt}`,
             };
           });
           this.imgData = newProd.imgData;
@@ -317,6 +317,7 @@ class MainDetail extends PureComponent {
                   userSelSize={this.userSelSize}
                   addToBasket={this.addToBasket}
                   setSelAmount={this.setSelAmount}
+                  currLang={this.props.currLang}
                 />
               )}
             </MainDetStyleIn>

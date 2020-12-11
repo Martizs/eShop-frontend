@@ -19,6 +19,7 @@ import { apiCall } from "utils/apiCalls";
 
 export const Header = () => {
   const loggedIn = useSelector((state) => state.loggedIn);
+  const currLang = useSelector((state) => state.currLang);
   const dispatch = useDispatch();
 
   return (
@@ -41,14 +42,16 @@ export const Header = () => {
           to="https://www.youtube.com/channel/UCVfhKzY261aiqKnx6UyZ4Gg"
           ext
         >
-          KANALAS
+          {currLang.chanTxt}
         </NavLink>
-        <NavLink to="/ap">APIE MUS</NavLink>
+        <NavLink to="/ap">{currLang.abTxt}</NavLink>
         <LoggoCont to="/">
           <LoggoComp />
         </LoggoCont>
-        <NavLink to="/parduotuve">PARDUOTUVĖ</NavLink>
-        <CartNav />
+        <NavLink langkey={currLang.key} to="/parduotuve">
+          {currLang.shopTxt}
+        </NavLink>
+        <CartNav text={currLang.cartTxt} />
       </NavContainer>
       <IconContainer>
         <NavLink to="/kontaktai">

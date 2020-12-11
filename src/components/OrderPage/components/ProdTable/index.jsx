@@ -46,23 +46,23 @@ export const ProdTable = (props) => {
       <TableHeader>
         {!props.admin && <TableCell percWidth={currCols[0]} />}
         <TableCell percWidth={currCols[1]}>
-          <ColTitle>PRODUKTAS</ColTitle>
+          <ColTitle>{props.currLang.prodTxt}</ColTitle>
         </TableCell>
         <TableCell percWidth={currCols[2]}>
-          <ColTitle>DYDIS</ColTitle>
+          <ColTitle>{props.currLang.sizeTxt}</ColTitle>
         </TableCell>
         {!props.admin && (
           <TableCell percWidth={currCols[3]}>
-            <ColTitle>VIENETO KAINA</ColTitle>
+            <ColTitle>{props.currLang.vntTxt}</ColTitle>
           </TableCell>
         )}
 
         <TableCell percWidth={currCols[4]}>
-          <ColTitle>KIEKIS</ColTitle>
+          <ColTitle>{props.currLang.amountTxt}</ColTitle>
         </TableCell>
         {!props.admin && (
           <TableCell percWidth={currCols[5]} toEnd>
-            <ColTitle>VISO</ColTitle>
+            <ColTitle>{props.currLang.totTxt}</ColTitle>
           </TableCell>
         )}
       </TableHeader>
@@ -119,7 +119,7 @@ export const ProdTable = (props) => {
           <TableFooter>
             <TableCell percWidth={currCols[0]} />
             <TableCell percWidth={currCols[1]}>
-              <PriceText>SUMA</PriceText>
+              <PriceText>{props.currLang.sumTxt}</PriceText>
             </TableCell>
             <TableCell percWidth={currCols[2]} />
             <TableCell percWidth={currCols[3]} />

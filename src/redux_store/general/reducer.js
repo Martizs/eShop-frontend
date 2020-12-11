@@ -1,3 +1,4 @@
+import { enLang, ltLang } from "language/";
 import { genActionTypes } from "./actions";
 
 const initLogIn = null;
@@ -20,9 +21,20 @@ const menu = (state = initMenu, action) => {
   return state;
 };
 
+const initLang = enLang;
+
+const currLang = (state = initLang, action) => {
+  if (action.type === genActionTypes.SET_LANG) {
+    return action.lang;
+  }
+
+  return state;
+};
+
 const genReducer = {
   loggedIn,
   menu,
+  currLang,
 };
 
 export default genReducer;

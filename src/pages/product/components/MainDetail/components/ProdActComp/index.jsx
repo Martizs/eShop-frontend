@@ -40,13 +40,13 @@ export const ProdActComp = (props) => (
         {props.defSizes && props.defSizes[0]?.name && (
           <DDWrapper>
             <DropDown
-              initVal="DYDIS"
+              initVal={props.currLang.sizeTxt}
               items={props.defSizes}
               onItemSelect={props.userSelSize}
             />
           </DDWrapper>
         )}
-        <Button onClick={props.addToBasket} text="Į KREPŠELĮ" />
+        <Button onClick={props.addToBasket} text={props.currLang.toCartTxt} />
       </ButtContainer>
     </ActContainer>
   </ProdActCont>

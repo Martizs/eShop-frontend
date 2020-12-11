@@ -26,8 +26,6 @@ import { formProdList } from "./util";
 import { apiCall } from "utils/apiCalls";
 /* redux */
 import { connect } from "react-redux";
-/* consts */
-import { catDDData } from "./const";
 
 class ProductList extends PureComponent {
   constructor(props) {
@@ -125,13 +123,13 @@ class ProductList extends PureComponent {
             {this.itSep === 2 ? (
               <CatDDCont>
                 <DropDown
-                  initVal={find(catDDData, ["key", this.cat]).title}
-                  items={catDDData}
+                  initVal={find(this.props.catDDData, ["key", this.cat]).title}
+                  items={this.props.catDDData}
                   onItemSelect={(cat) => this.catClick(cat.key)}
                 />
               </CatDDCont>
             ) : (
-              <CatNav onCatClick={this.catClick} />
+              <CatNav onCatClick={this.catClick} items={this.props.catDDData} />
             )}
           </>
         )}
@@ -144,6 +142,7 @@ class ProductList extends PureComponent {
                     {row.map((prod, prodInd) => (
                       <GridItem key={`title-${rowInd}-${prodInd}`}>
                         <ProductItem
+                          currLang={this.props.currLang}
                           disabled={prod.disabled}
                           loggedIn={this.props.loggedIn && this.props.edit}
                           id={prod.id}
@@ -186,6 +185,7 @@ class ProductList extends PureComponent {
 
 const mapStateToProps = (state) => ({
   loggedIn: state.loggedIn,
+  currLang: state.currLang,
 });
 
 export default withResizeDetector(connect(mapStateToProps)(ProductList));

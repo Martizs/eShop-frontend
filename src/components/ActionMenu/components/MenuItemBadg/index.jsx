@@ -5,7 +5,7 @@ import { toggleMenu } from "redux_store/general/actions";
 import { MenuItemStyle } from "../MenuItem/style";
 import { StyledMenBadge } from "./style";
 
-export const MenuItemBadg = () => {
+export const MenuItemBadg = (props) => {
   const cartItems = useSelector((state) => state.cartItems);
   const history = useHistory();
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ export const MenuItemBadg = () => {
         invisible={!cartItems.length}
         badgeContent={cartItems.length}
       >
-        KREPŠELIS
+        {props.text}
       </StyledMenBadge>
     </MenuItemStyle>
   );

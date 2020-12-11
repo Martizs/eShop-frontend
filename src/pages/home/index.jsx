@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 /* components */
 import { AboutText } from "components/AboutText";
 import ProductList from "components/ProductList";
@@ -13,6 +14,7 @@ import { LoadingIc } from "components/LoadingIc";
 
 export const Home = () => {
   let history = useHistory();
+  const currLang = useSelector((state) => state.currLang);
 
   const [aboutText, setText] = useState(null);
 
@@ -29,7 +31,7 @@ export const Home = () => {
     <HomeCont>
       <SlideShow />
       <ProdListWrap>
-        <ProductList title="PARDUOTUVĖ" />
+        <ProductList title={currLang.shopTxt} />
       </ProdListWrap>
       <AboutWrapper onClick={() => history.push("/ap")}>
         {!aboutText ? <LoadingIc /> : <AboutText overFlow text={aboutText} />}

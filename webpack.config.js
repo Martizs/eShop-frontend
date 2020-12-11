@@ -103,7 +103,7 @@ module.exports = {
       redux_store: path.resolve(__dirname, "src/redux_store/"),
       styles: path.resolve(__dirname, "src/styles/"),
       icons: path.resolve(__dirname, "src/icons/"),
-      mock: path.resolve(__dirname, "src/mock/"),
+      language: path.resolve(__dirname, "src/language/"),
     },
     extensions: [".js", ".jsx"],
   },

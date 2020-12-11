@@ -1,3 +1,5 @@
+import store from "redux_store/store";
+
 export function prodValidation(title, price, noSize, sizes, imgData) {
   if (!title || !title.length) {
     return "Product requires a title";
@@ -79,13 +81,15 @@ export function prodValidation(title, price, noSize, sizes, imgData) {
 }
 
 export function baskValidation(selectedSize, selectedAmount, noSize, sizes) {
+  const state = store.getState();
+
   if (!selectedSize) {
-    return "Pasirinkite prekės dydį";
+    return state.currLang.errSizeTxt;
   }
 
   const selAmount = parseInt(selectedAmount, 10);
   if (!selAmount) {
-    return "Pasirinkite prekių kiekį";
+    return state.currLang.errAmountTxt;
   }
 
   let notAvailable = true;
@@ -100,15 +104,15 @@ export function baskValidation(selectedSize, selectedAmount, noSize, sizes) {
   }
 
   if (notAvailable) {
-    return "Šios prekės nebėra";
+    return state.currLang.errNotAvTxt;
   }
 
   const sizeAmount = parseInt(selectedSize.amount, 10);
   if (selAmount > sizeAmount) {
     if (noSize) {
-      return `Deja, šios prekės liko tik ${sizeAmount}, pasirinkite nedaugiau kaip ${sizeAmount} vienetus`;
+      return state.currLang.errTooMuchSingleSTxt(sizeAmount);
     } else {
-      return `Pasirinkto dydžio prekių liko tik ${sizeAmount}, pasirinkite nedaugiau kaip ${sizeAmount} vienetus`;
+      return state.currLang.errTooMuchSingleMTxt(sizeAmount);
     }
   }
 
