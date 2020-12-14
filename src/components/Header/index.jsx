@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import { ThemeContext } from "styled-components";
 /* components */
 import { NavLink } from "components/NavLink";
 import { AdminBut } from "components/AdminBut";
 import { CartNav } from "./components/CartNav";
 import { DropDown } from "components/DropDown";
+import { NavLinkExt } from "components/NavLinkExt";
 /* styles */
 import { NavContainer } from "styles/NavContainer";
 import {
@@ -53,12 +52,9 @@ export const Header = () => {
       )}
 
       <NavContainer>
-        <NavLink
-          to="https://www.youtube.com/channel/UCVfhKzY261aiqKnx6UyZ4Gg"
-          ext
-        >
+        <NavLinkExt to="https://www.youtube.com/channel/UCVfhKzY261aiqKnx6UyZ4Gg">
           {currLang.chanTxt}
-        </NavLink>
+        </NavLinkExt>
         <NavLink to="/ap">{currLang.abTxt}</NavLink>
         <LoggoCont to="/">
           <LoggoComp />
@@ -70,12 +66,12 @@ export const Header = () => {
         <NavLink to="/kontaktai">
           <MailLogo />
         </NavLink>
-        <NavLink to="https://www.facebook.com/dzhiungles" ext>
+        <NavLinkExt to="https://www.facebook.com/dzhiungles">
           <FBLoggo />
-        </NavLink>
-        <NavLink to="https://www.instagram.com/dzhiungles" ext>
+        </NavLinkExt>
+        <NavLinkExt to="https://www.instagram.com/dzhiungles">
           <InstLogo />
-        </NavLink>
+        </NavLinkExt>
         <HeadLanCont>
           <DropDown
             fontSize="1.3rem"
