@@ -67,50 +67,50 @@ class SimpleTextPage extends PureComponent {
 
   render() {
     return (
-      <div><SimpleTextCont>
-      <MainTitleText>{this.props.title}</MainTitleText>
-      {this.props?.children}
-      {this.props.loggedIn ? (
-        <SimpleInput>
-          {this.state.dataLoaded ? (
-            <>
-              <TextInput
-                label="LT"
-                textRef={(ref) => autosize(ref)}
-                type="textarea"
-                defaultValue={this.state.text}
-                handleChange={(event) => (this.text = event.target.value)}
-              />
-              <TextInput
-                label="EN"
-                textRef={(ref) => autosize(ref)}
-                type="textarea"
-                defaultValue={this.state.enText}
-                handleChange={(event) => (this.enText = event.target.value)}
-              />
-            </>
-          ) : (
-            <LoadingIc />
-          )}
+      <div>
+        <SimpleTextCont>
+          <MainTitleText>{this.props.title}</MainTitleText>
+          {this.props?.children}
+          {this.props.loggedIn ? (
+            <SimpleInput>
+              {this.state.dataLoaded ? (
+                <>
+                  <TextInput
+                    label="LT"
+                    textRef={(ref) => autosize(ref)}
+                    type="textarea"
+                    defaultValue={this.state.text}
+                    handleChange={(event) => (this.text = event.target.value)}
+                  />
+                  <TextInput
+                    label="EN"
+                    textRef={(ref) => autosize(ref)}
+                    type="textarea"
+                    defaultValue={this.state.enText}
+                    handleChange={(event) => (this.enText = event.target.value)}
+                  />
+                </>
+              ) : (
+                <LoadingIc />
+              )}
 
-          {this.state.uploading ? (
-            <LoadingIc />
+              {this.state.uploading ? (
+                <LoadingIc />
+              ) : (
+                <AdminBut text="SAVE TEXT" type="add" onClick={this.saveText} />
+              )}
+            </SimpleInput>
           ) : (
-            <AdminBut text="SAVE TEXT" type="add" onClick={this.saveText} />
+            <AboutText
+              text={
+                this.props.currLang.key === "en"
+                  ? this.state.enText
+                  : this.state.text
+              }
+            />
           )}
-        </SimpleInput>
-      ) : (
-        
-        <AboutText
-          text={
-            this.props.currLang.key === "en"
-              ? this.state.enText
-              : this.state.text
-          }
-        />
-      )}
-    </SimpleTextCont></div>
-      
+        </SimpleTextCont>
+      </div>
     );
   }
 }
