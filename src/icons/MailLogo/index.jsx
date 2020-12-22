@@ -10,7 +10,6 @@ export const MailLogo = (props) => {
       viewBox="0 0 85.04 85.04"
       {...props}
     >
-      <title>{"MAIL (ffda7c YELLOW)"}</title>
       <path
         className="prefix__cls-1"
         d="M67.44 58.11a1.86 1.86 0 00.07-.52v-23.1L51.86 46.32zM44.2 52.13a2.46 2.46 0 01-3 0l-3.57-2.7-14.14 10.64h38.32L47.74 49.45zM17.91 34.6v23a1.86 1.86 0 00.09.4l15.51-11.68z"
