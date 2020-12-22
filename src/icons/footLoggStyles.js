@@ -7,6 +7,7 @@ export const FootLogStyle = styled.svg`
 
   @media (max-width: 1190px) {
     width: 65px;
+    height: 65px;
   }
 
   @media (max-width: 890px) {
