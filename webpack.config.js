@@ -34,7 +34,7 @@ module.exports = {
     // it was './src' before and now its 'src'
     // which i think fixed the issue
     contentBase: "src",
-    hot: true,
+    hot: false,
     // needed for routing to work properly
     historyApiFallback: true,
     // NOTE: for some reason clientLogLevel=silent does not work here
